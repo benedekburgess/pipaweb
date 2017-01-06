@@ -287,11 +287,11 @@ while($row = mysqli_fetch_assoc($query)){
 					$type = $row['type'];
 					$by = get_username($row['user_id'],$mysqli);
 					$diff = (time()-$ts)/60;
-					if($diff>0 && $diff<10){
+					if($diff>0 && $diff<15){
 						$vanpipa = "Készül";
-					}elseif($diff>=10 && $diff<40){
+					}elseif($diff>=15 && $diff<45){
 						$vanpipa = "Aktív";
-					}elseif($diff>=40 && $diff<65){
+					}elseif($diff>=45 && $diff<70){
 						$vanpipa = "Meghaló";
 					}else{
 						$vanpipa = "Meghalt";
@@ -322,7 +322,9 @@ while($row = mysqli_fetch_assoc($query)){
 		$query = mysqli_query($mysqli,"SELECT * FROM info");
 		while($row = mysqli_fetch_assoc($query)){
 		?>
-			<a class="info button" href="changestate.php?name=<?php echo $row['name']; ?>" style="<?php if($row['name']=="szen"){ ?>border-right:1px solid rgba(0,0,0,0.4);<?php } if($row['description']=="true"){ ?>background:green;<?php }else{ echo "background:rgba(255,50,0,1);"; } ?>">
+			<a class="info button" href="changestate.php?name=<?php echo $row['name']; ?>" style="<?php if($row['name']=="szen"){ 
+			?>border-right:1px solid rgba(0,0,0,0.4);<?php } if($row['description']=="true"){ ?>background:green;
+			<?php }elseif($row['description']=="nemelado"){ echo "background:yellow;"; }else{ echo "background:rgba(255,50,0,1);"; } ?>">
 				<div><?php if($row['name']=="szen"){ echo "Szén"; } if($row['name']=="dohany"){ echo "Dohány"; } ?></div>
 			</a>
 				

@@ -13,6 +13,8 @@ if(isset($_GET['name'])){
 		$row = mysqli_fetch_assoc($query);
 		$set = $row['description'];
 		if($set=="true"){
+			$set = "nemelado";
+		}elseif($set=="nemelado"){
 			$set = "false";
 		}else{
 			$set = "true";
