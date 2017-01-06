@@ -219,7 +219,7 @@ while($row = mysqli_fetch_assoc($query)){
 					$page = 1;
 				}else{
 					if($uri[3]>=1){
-						$page = $uri[3]];
+						$page = $uri[3];
 					}
 				}
 				?>
