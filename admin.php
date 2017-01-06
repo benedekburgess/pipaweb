@@ -46,7 +46,7 @@ while($row = mysqli_fetch_assoc($query)){
 		<meta name="keywords" content="pipa, 1020, sir, schönherz, SCH, hookah">
 		<meta name="author" content="Beni">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="icon" type="image/png" href="favicon.png">
+		<link rel="icon" type="image/png" href="img/favicon.png">
 		<link rel="stylesheet" type="text/css" href="css/main.css" />
 		<title>Van-e pipa a 1020-ban? - Admin</title>
 	</head>
@@ -65,7 +65,7 @@ while($row = mysqli_fetch_assoc($query)){
 					123=>"<a href='http://www.bonnie.info/wp-content/uploads/2014/12/image-14.jpeg'>:)</a>",
 					433=>"<video width='640' height='480' autoplay><source src='pocok.mp4' type='video/mp4'></video>",
 					466=>"Nem vicces.<br><img src='nemvicces.jpg'>",
-					8496=>"<img src='adobizonylat.jpg'>",
+					8496=>"<img src='img/adobizonylat.jpg'>",
 					74555=>"Szarok a vicceid",
 					136786=>"<iframe width='560' height='315' src='https://www.youtube.com/embed/RIYUyq-UvI0' frameborder='0' allowfullscreen></iframe>",
 					9745=>"<img src='https://pbs.twimg.com/media/BXRdLmvCEAARF-p.jpg:large'>",
@@ -85,7 +85,7 @@ while($row = mysqli_fetch_assoc($query)){
 					789654=>"<img src='https://i.ytimg.com/vi/9P1M138_H_Q/hqdefault.jpg'>X1000",
 					56285=>"<img src='https://csakazolvassamost.files.wordpress.com/2014/06/gerle-eva-takony-pisi.jpg'>",
 					55996=>"<img src='http://4vector.com/i/free-vector-pepito_065121_pepito.png'>",
-					786121=>"<img src='bubi.png'>");
+					786121=>"<img src='img/bubi.png'>");
 					if(isset($_GET['szarvagy'])){
 						echo $szar[$_GET['szarvagy']];
 					}
@@ -180,7 +180,7 @@ while($row = mysqli_fetch_assoc($query)){
 					<tr>
 						<td><h3><?php echo $id; ?></h3></td>
 						<td><h3 class="user"><?php echo $username; ?></h3></td>
-						<td><h3><img width="24" src="<?php if($admin==true){ echo "pipa.png"; }else{ echo "x.png"; }?>"></h3></td>
+						<td><h3><img width="24" src="<?php if($admin==true){ echo "img/pipa.png"; }else{ echo "img/x.png"; }?>"></h3></td>
 						<td><h3><?php if(($admin==false || $current_su==true) && $user_id!=$id){ ?><a href="remove_user.php?id=<?php echo $id; ?>"><span style="font-family:'Comic Sans MS';">X</span></a><?php } ?></h3></td>
 						<td><h3><?php
 						if($admin==false && $current_user_admin > 0){
