@@ -48,5 +48,5 @@ if($_SERVER['REMOTE_ADDR']!='152.66.180.120'){
 	//exit("buzi");
 }
 echo $_SERVER['REQUEST_URI'];
-$uri = explode($_SERVER['REQUEST_URI'],'/');
+$uri = explode('/',$_SERVER['REQUEST_URI']);
 ?>
