@@ -23,6 +23,7 @@ while($row = mysqli_fetch_assoc($query)){
 	}else{
 		$iter++;
 	}
+	echo $iter;
 	if($diff>0 && $diff<15){
 		$vanpipa = "keszul";
 		$type = $row['type'];
