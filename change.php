@@ -2,7 +2,7 @@
 require_once "inc/init.php";
 setcookie('admin');
 if($logged_in==false){
-	header("Location: /pipa/admin.php");
+	header("Location: ../admin");
 }
 if(isset($_POST['type']) && isset($_POST['time']) && isset($_POST['sent'])){
 	$type = mysqli_real_escape_string($mysqli,$_POST['type']);
@@ -36,7 +36,7 @@ if(isset($_POST['type']) && isset($_POST['time']) && isset($_POST['sent'])){
 		add_to_log($mysqli,"change_pipe:type",$user_id);
 		echo mysqli_error($mysqli);
 	}
-	header("Location: /pipa/admin.php");
+	header("Location: ../admin");
 }
-header("Location: /pipa/admin.php");
+header("Location: ../admin");
 ?>

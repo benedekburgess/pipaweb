@@ -74,7 +74,7 @@ while($row = mysqli_fetch_assoc($query)){
 		
 		</footer>
 		<span class="adminlink">
-			<a href="admin.php">Admin</a><?php if($logged_in==true){ ?>
+			<a href="admin">Admin</a><?php if($logged_in==true){ ?>
 			<a href="logout.php">Kijelentkezés</a><?php } ?>
 		</span>
 		<span class="fasz">Írta: én<br>

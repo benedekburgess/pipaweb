@@ -3,7 +3,7 @@
 setcookie("admin");
 
 if($logged_in==false){
-	header("Location: /pipa");
+	header("Location: ../");
 }
 
 $query = mysqli_query($mysqli,"SELECT * FROM emailek");
@@ -17,5 +17,5 @@ if($fasz==false){
 	$msg = "<b>LEGYEN PIPA</b><br><i>$current_username</i>";
 	mail("benedekb97@gmail.com","Legyen pipa",$msg);
 }*/
-header("Location: /pipa");
+header("Location: ../");
 ?>

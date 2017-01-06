@@ -1,4 +1,8 @@
 <?php
+if($_GET['admin']==1){
+	include("admin.php");
+	exit();
+}
 require_once "inc/init.php";
 if(isset($user_id)){
 	if(!isset($_COOKIE['admin'])){
@@ -227,7 +231,7 @@ while($row = mysqli_fetch_assoc($query)){
 				<?php
 				$num_pages = ceil(mysqli_num_rows(mysqli_query($mysqli,"SELECT * FROM log LIMIT 300"))/15);
 				for($i=1;$i<=$num_pages;$i++){
-					?><a<?php if($i==$page){ echo " style='color:red;' "; } ?> href="admin.php?mode=log&page=<?php echo $i; ?>"><?php echo $i; ?></a>
+					?><a<?php if($i==$page){ echo " style='color:red;' "; } ?> href="admin?mode=log&page=<?php echo $i; ?>"><?php echo $i; ?></a>
 					<?php
 					
 				};
@@ -262,7 +266,7 @@ while($row = mysqli_fetch_assoc($query)){
 				<?php
 				$num_pages = ceil(mysqli_num_rows(mysqli_query($mysqli,"SELECT * FROM log LIMIT 300"))/15);
 				for($i=1;$i<=$num_pages;$i++){
-					?><a<?php if($i==$page){ echo " style='color:red;' "; } ?> href="admin.php?mode=log&page=<?php echo $i; ?>"><?php echo $i; ?></a>
+					?><a<?php if($i==$page){ echo " style='color:red;' "; } ?> href="admin?mode=log&page=<?php echo $i; ?>"><?php echo $i; ?></a>
 					<?php
 					
 				};
@@ -334,7 +338,7 @@ while($row = mysqli_fetch_assoc($query)){
 		
 		</footer>
 		<span class="adminlink">
-			<a href="/pipa">Vissza</a><?php if($logged_in==true){ ?>
+			<a href="../">Vissza</a><?php if($logged_in==true){ ?>
 			<a href="logout.php">Kijelentkezés</a><?php } ?>
 		</span>
 	</body>

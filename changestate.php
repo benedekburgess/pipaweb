@@ -2,7 +2,7 @@
 require_once "inc/init.php";
 setcookie('admin');
 if($logged_in==false){
-	header("Location: /pipa/admin.php");
+	header("Location: ../admin");
 }
 if(isset($_GET['name'])){
 	$name = mysqli_real_escape_string($mysqli,$_GET['name']);
@@ -24,5 +24,5 @@ if(isset($_GET['name'])){
 		add_to_log($mysqli,"change_state:$name",$user_id);
 	}
 }
-header("Location: /pipa/admin.php");
+header("Location: ./admin");
 ?>

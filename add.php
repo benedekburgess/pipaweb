@@ -2,7 +2,7 @@
 require_once "inc/init.php";
 setcookie('admin');
 if($logged_in==false){
-	header("Location: /pipa/admin.php");
+	header("Location: ../admin");
 }
 $query = mysqli_query($mysqli,"SELECT * FROM pipe");
 while($row = mysqli_fetch_assoc($query)){
@@ -14,13 +14,13 @@ while($row = mysqli_fetch_assoc($query)){
 	}
 }
 if($iter>3){
-	header("Location: /pipa/admin.php");
+	header("Location: ../admin");
 }
 if(isset($_POST['type']) && isset($_POST['time']) && isset($_POST['sent'])){
 	$type = mysqli_real_escape_string($mysqli,$_POST['type']);
 	$time = mysqli_real_escape_string($mysqli,$_POST['time']);
 	if($type==""){
-		header("Location: /pipa/admin.php");
+		header("Location: ../admin");
 	}
 	if($time=="keszul"){
 		$time = time();
@@ -34,8 +34,8 @@ if(isset($_POST['type']) && isset($_POST['time']) && isset($_POST['sent'])){
 	$query = mysqli_query($mysqli,"INSERT INTO pipe (type,ts,user_id) VALUES ('$type','$time','$user_id')");
 	add_to_log($mysqli,"add_pipe:$type,$time",$user_id);
 	echo mysqli_error($mysqli);
-	header("Location: /pipa");
+	header("Location: ..");
 }else{
-	header("Location: /pipa/admin.php");
+	header("Location: ../admin");
 }
 ?>
