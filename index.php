@@ -1,5 +1,5 @@
 <?php
-if(isset($_GET['/admin'])){
+if($_SERVER['REQUEST_URI']=="/admin"){
 	require_once "admin.php";
 	exit();
 }
