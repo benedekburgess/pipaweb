@@ -4,6 +4,32 @@ if($uri[1]=="admin"){
 	require_once "admin.php";
 	exit();
 }
+switch($uri[1]){
+	case "add":
+	require_once "add.php";
+	exit();
+	case "adduser":
+	require_once "adduser.php";
+	exit();
+	case "change":
+	require_once "change.php";
+	exit();
+	case "changepw":
+	require_once "changepw.php";
+	exit();
+	case "changestate":
+	require_once "changestate.php";
+	exit();
+	case "login":
+	require_once "login.php";
+	exit();
+	case "logout":
+	require_once "logout.php";
+	exit();
+	case "remove":
+	require_once "remove.php";
+	exit();	
+}
 setcookie('admin');
 if(isset($user_id)){
 	add_to_log($mysqli,"view_page:index.php",$user_id);
