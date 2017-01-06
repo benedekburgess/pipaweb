@@ -92,7 +92,7 @@ while($row = mysqli_fetch_assoc($query)){
 				if($logged_in==false){
 					
 					?>
-			<form action="login.php" method="POST">
+			<form action="/login" method="POST">
 				<input id="username_input" maxlength="64" type="text" name="username" placeholder="Felhasználónév">
 				<input maxlength="64" type="password" name="password" placeholder="Jelszó">
 				<input type="submit" value="Bejelentkezés">
@@ -102,7 +102,7 @@ while($row = mysqli_fetch_assoc($query)){
 					if($vanpipa==false){
 						
 					?>
-						<form action="add.php" method="POST" id="form">
+						<form action="/add" method="POST" id="form">
 							<select name="time" form="form">
 								<option value="keszul">Készül</option>
 								<option value="van">Van</option>
@@ -119,7 +119,7 @@ while($row = mysqli_fetch_assoc($query)){
 						
 						
 						?>
-						<form action="change.php" method="POST" id="form">
+						<form action="/change" method="POST" id="form">
 							<select name="time" form="form">
 								<option value="keszul"<?php if($vanpipa=="keszul"){echo " SELECTED";}?>>Készül</option>
 								<option value="van"<?php if($vanpipa=="kesz"){echo " SELECTED";}?>>Van</option>
@@ -197,7 +197,7 @@ while($row = mysqli_fetch_assoc($query)){
 				?>
 			</table>
 			<div id="box">
-				<form action="changepw.php" method="POST">
+				<form action="/change" method="POST">
 					<input id="hidden" type="hidden" name="username" value="">
 					<input id="password_input" type="password" name="pw1" placeholder="Új jelszó">
 					<input type="password" name="pw2" placeholder="Jelszó megint">
@@ -206,7 +206,7 @@ while($row = mysqli_fetch_assoc($query)){
 			</div>
 			<hr>
 			<h3 style="margin-top:10px !important;">Új felhasználó:</h3>
-			<form action="adduser.php" method="POST">
+			<form action="/adduser" method="POST">
 				<input <?php if(isset($error)){ if($error=="username"){ ?>style="background:red;"<?php } } ?> type="text" name="username" placeholder="Felhasználónév"><br>
 				<input <?php if(isset($error)){ if($error=="password"){ ?>style="background:red;"<?php } } ?> type="password" name="password" placeholder="Jelszó"><br>
 				<input <?php if(isset($error)){ if($error=="password"){ ?>style="background:red;"<?php } } ?> type="password" name="password2" placeholder="Jelszó megint"><br>
