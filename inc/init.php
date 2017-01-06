@@ -1,8 +1,8 @@
 <?php
 session_start();
 header('Content-Type: text/html; charset=utf-8');
-$mysql_password = "bTGfY47sbSjKPYuZ";
-$mysqli = mysqli_connect("127.0.0.1","root",$mysql_password,"pipa");
+require_once "config.php";
+$mysqli = mysqli_connect("127.0.0.1",$mysql_user,$mysql_password,"pipa");
 mysqli_query($mysqli,"SET NAMES 'utf8'");
 function add_user_to_db($username,$password,$admin,$mysqli){
 	$salt = "";
