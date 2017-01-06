@@ -197,7 +197,7 @@ while($row = mysqli_fetch_assoc($query)){
 				?>
 			</table>
 			<div id="box">
-				<form action="/change" method="POST">
+				<form action="/changepw" method="POST">
 					<input id="hidden" type="hidden" name="username" value="">
 					<input id="password_input" type="password" name="pw1" placeholder="Új jelszó">
 					<input type="password" name="pw2" placeholder="Jelszó megint">
@@ -302,7 +302,7 @@ while($row = mysqli_fetch_assoc($query)){
 						<td><h3><?php echo $type; ?></h3></td>
 						<td><h3><?php echo $vanpipa; ?></h3></td>
 						<td><h3><?php echo $by; ?></h3></td>
-						<td><h3><a href="remove/<?php echo $id; ?>"><span style="font-family:'Comic Sans MS';">X</span></a></h3></td>
+						<td><h3><a href="/remove/<?php echo $id; ?>"><span style="font-family:'Comic Sans MS';">X</span></a></h3></td>
 						<td><h3><?php if($vanpipa!="Meghalt"){ ?><a href="kill/<?php echo $id; ?>"><span style="font-family:'Comic Sans MS';">X</span></a><?php } ?></h3></td>
 					</tr>
 					<?php
@@ -322,7 +322,7 @@ while($row = mysqli_fetch_assoc($query)){
 		$query = mysqli_query($mysqli,"SELECT * FROM info");
 		while($row = mysqli_fetch_assoc($query)){
 		?>
-			<a class="info button" href="changestate/<?php echo $row['name']; ?>" style="<?php if($row['name']=="szen"){ 
+			<a class="info button" href="/changestate/<?php echo $row['name']; ?>" style="<?php if($row['name']=="szen"){ 
 			?>border-right:1px solid rgba(0,0,0,0.4);<?php } if($row['description']=="true"){ ?>background:green;
 			<?php }elseif($row['description']=="nemelado"){ echo "background:yellow;"; }else{ echo "background:rgba(255,50,0,1);"; } ?>">
 				<div><?php if($row['name']=="szen"){ echo "Szén"; } if($row['name']=="dohany"){ echo "Dohány"; } ?></div>
