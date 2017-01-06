@@ -34,7 +34,7 @@ if(isset($_POST['type']) && isset($_POST['time']) && isset($_POST['sent'])){
 	$query = mysqli_query($mysqli,"INSERT INTO pipe (type,ts,user_id) VALUES ('$type','$time','$user_id')");
 	add_to_log($mysqli,"add_pipe:$type,$time",$user_id);
 	echo mysqli_error($mysqli);
-	header("Location: ..");
+	header("Location: ../");
 }else{
 	header("Location: ../admin");
 }

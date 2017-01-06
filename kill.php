@@ -2,14 +2,14 @@
 require_once "inc/init.php";
 setcookie('admin');
 if($logged_in==false){
-	header("Location: ../admin?szarvagy=12");
+	header("Location: ../admin/12");
 }
-if(!isset($_GET['id'])){
-	header("Location: ../admin?szarvagy=12");
+if(!isset($uri[1])){
+	header("Location: ../admin/12");
 }
-$id = $_GET['id'];
+$id = $uri[1];
 $time = time()-7200;
 mysqli_query($mysqli,"UPDATE pipe SET ts='$time' WHERE id='$id'");
 add_to_log($mysqli,"kill_pipe:$id",$user_id);
-header("Location: ../admin?mode=pipes");
+header("Location: ../admin/pipes");
 ?>

@@ -47,4 +47,6 @@ function add_to_log($mysqli,$data,$user_id){
 if($_SERVER['REMOTE_ADDR']!='152.66.180.120'){
 	//exit("buzi");
 }
+
+$uri = explode($_SERVER['REQUEST_URI']),'/');
 ?>

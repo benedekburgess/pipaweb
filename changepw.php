@@ -14,7 +14,7 @@ $pw1 = $_POST['pw1'];
 $pw2 = $_POST['pw2'];
 
 if($pw1!=$pw2){
-	header("Location: ../admin?mode=users");
+	header("Location: ../admin/users");
 }
 
 $pw1 = sha1($pw1);
@@ -38,8 +38,8 @@ if($admin==2){
 	mysqli_query($mysqli,"UPDATE users SET password='$password', salt='$salt' WHERE username='$username'");
 }else{
 	add_to_log($mysqli,"failed_pw_chg",$uid);
-	header("Location: ../admin?mode=users");
+	header("Location: ../admin/users");
 }
 add_to_log($mysqli,"chgpw:$username",$uid);
-header("Location: ../admin?mode=users");
+header("Location: ../admin/users");
 ?>

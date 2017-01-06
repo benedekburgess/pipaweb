@@ -1,8 +1,4 @@
 <?php
-if($_GET['admin']==1){
-	include("admin.php");
-	exit();
-}
 require_once "inc/init.php";
 if(isset($user_id)){
 	if(!isset($_COOKIE['admin'])){
@@ -90,8 +86,8 @@ while($row = mysqli_fetch_assoc($query)){
 					56285=>"<img src='https://csakazolvassamost.files.wordpress.com/2014/06/gerle-eva-takony-pisi.jpg'>",
 					55996=>"<img src='http://4vector.com/i/free-vector-pepito_065121_pepito.png'>",
 					786121=>"<img src='img/bubi.png'>");
-					if(isset($_GET['szarvagy'])){
-						echo $szar[$_GET['szarvagy']];
+					if(isset($uri[2])){
+						echo $szar[$uri[2]];
 					}
 				if($logged_in==false){
 					
@@ -117,7 +113,7 @@ while($row = mysqli_fetch_assoc($query)){
 						
 					<input type="submit" value="<?php if($iter<=3){ ?>Elküld<?php }else{ echo "Mosd ki a pipát"; } ?>"<?php if($iter>3){ echo " disabled"; }?>>
 						</form>
-						<?php if($iter>3){ ?><h3><a href="mosas.php">Pipamosás</a></h3><?php } ?>
+						<?php if($iter>3){ ?><h3><a href="mosas">Pipamosás</a></h3><?php } ?>
 					<?php
 					}else{
 						
@@ -143,23 +139,23 @@ while($row = mysqli_fetch_assoc($query)){
 		<?php
 		if($logged_in==true){
 			if($current_user_admin>0){ 
-				if(isset($_GET['mode'])){
-					$mode = $_GET['mode'];
+				if(isset($uri[2])){
+					$mode = $uri[2];
 				}
 				?>
 		<section>
 		Fejlesztői opciók
-			<h2><a href="?mode=users"<?php if(isset($mode) && $mode=="users"){ echo " id='selected'"; }?>>Felhasználók</a> | <a href="?mode=log"<?php if(isset($mode) && $mode=="log"){ echo " id='selected'"; }?>>Eseménynapló</a> | <a href="?mode=pipes"<?php if(isset($mode) && $mode=="pipes"){ echo " id='selected'"; }?>>Pipák</a></h2>
+			<h2><a href="users"<?php if(isset($mode) && $mode=="users"){ echo " id='selected'"; }?>>Felhasználók</a> | <a href="log"<?php if(isset($mode) && $mode=="log"){ echo " id='selected'"; }?>>Eseménynapló</a> | <a href="pipes"<?php if(isset($mode) && $mode=="pipes"){ echo " id='selected'"; }?>>Pipák</a></h2>
 		</section>
 		<?php
-				if(isset($_GET['mode'])){
-					$mode = $_GET['mode'];
+				if(isset($uri[2])){
+					$mode = $uri[2];
 					?>
 		<nav>
 			<?php
 			if($mode=="users"){						// ###################### FELHASZNÁLÓK ######################
-				if(isset($_GET['error'])){
-					$error = $_GET['error'];
+				if(isset($uri[3])){
+					$error = $uri[3];
 				}
 				?>
 			<table>
@@ -185,7 +181,7 @@ while($row = mysqli_fetch_assoc($query)){
 						<td><h3><?php echo $id; ?></h3></td>
 						<td><h3 class="user"><?php echo $username; ?></h3></td>
 						<td><h3><img width="24" src="<?php if($admin==true){ echo "img/pipa.png"; }else{ echo "img/x.png"; }?>"></h3></td>
-						<td><h3><?php if(($admin==false || $current_su==true) && $user_id!=$id){ ?><a href="remove_user.php?id=<?php echo $id; ?>"><span style="font-family:'Comic Sans MS';">X</span></a><?php } ?></h3></td>
+						<td><h3><?php if(($admin==false || $current_su==true) && $user_id!=$id){ ?><a href="remove_user/<?php echo $id; ?>"><span style="font-family:'Comic Sans MS';">X</span></a><?php } ?></h3></td>
 						<td><h3><?php
 						if($admin==false && $current_user_admin > 0){
 							?><a href="#" class="faszkalap"><span style="font-family:'Comic Sans MS';">X</span></a><?php
@@ -219,11 +215,11 @@ while($row = mysqli_fetch_assoc($query)){
 				<?php
 				
 			}elseif($mode=="log"){				// ###################### ESEMÉNYNAPLÓ ######################
-				if(!isset($_GET['page'])){
+				if(!isset($uri[3])){
 					$page = 1;
 				}else{
-					if($_GET['page']>=1){
-						$page = $_GET['page'];
+					if($uri[3]>=1){
+						$page = $uri[3]];
 					}
 				}
 				?>
@@ -231,7 +227,7 @@ while($row = mysqli_fetch_assoc($query)){
 				<?php
 				$num_pages = ceil(mysqli_num_rows(mysqli_query($mysqli,"SELECT * FROM log LIMIT 300"))/15);
 				for($i=1;$i<=$num_pages;$i++){
-					?><a<?php if($i==$page){ echo " style='color:red;' "; } ?> href="admin?mode=log&page=<?php echo $i; ?>"><?php echo $i; ?></a>
+					?><a<?php if($i==$page){ echo " style='color:red;' "; } ?> href="admin/log/<?php echo $i; ?>"><?php echo $i; ?></a>
 					<?php
 					
 				};
@@ -266,7 +262,7 @@ while($row = mysqli_fetch_assoc($query)){
 				<?php
 				$num_pages = ceil(mysqli_num_rows(mysqli_query($mysqli,"SELECT * FROM log LIMIT 300"))/15);
 				for($i=1;$i<=$num_pages;$i++){
-					?><a<?php if($i==$page){ echo " style='color:red;' "; } ?> href="admin?mode=log&page=<?php echo $i; ?>"><?php echo $i; ?></a>
+					?><a<?php if($i==$page){ echo " style='color:red;' "; } ?> href="log/<?php echo $i; ?>"><?php echo $i; ?></a>
 					<?php
 					
 				};
@@ -306,8 +302,8 @@ while($row = mysqli_fetch_assoc($query)){
 						<td><h3><?php echo $type; ?></h3></td>
 						<td><h3><?php echo $vanpipa; ?></h3></td>
 						<td><h3><?php echo $by; ?></h3></td>
-						<td><h3><a href="remove.php?id=<?php echo $id; ?>"><span style="font-family:'Comic Sans MS';">X</span></a></h3></td>
-						<td><h3><?php if($vanpipa!="Meghalt"){ ?><a href="kill.php?id=<?php echo $id; ?>"><span style="font-family:'Comic Sans MS';">X</span></a><?php } ?></h3></td>
+						<td><h3><a href="remove/<?php echo $id; ?>"><span style="font-family:'Comic Sans MS';">X</span></a></h3></td>
+						<td><h3><?php if($vanpipa!="Meghalt"){ ?><a href="kill/<?php echo $id; ?>"><span style="font-family:'Comic Sans MS';">X</span></a><?php } ?></h3></td>
 					</tr>
 					<?php
 				}
@@ -326,7 +322,7 @@ while($row = mysqli_fetch_assoc($query)){
 		$query = mysqli_query($mysqli,"SELECT * FROM info");
 		while($row = mysqli_fetch_assoc($query)){
 		?>
-			<a class="info button" href="changestate.php?name=<?php echo $row['name']; ?>" style="<?php if($row['name']=="szen"){ 
+			<a class="info button" href="changestate/<?php echo $row['name']; ?>" style="<?php if($row['name']=="szen"){ 
 			?>border-right:1px solid rgba(0,0,0,0.4);<?php } if($row['description']=="true"){ ?>background:green;
 			<?php }elseif($row['description']=="nemelado"){ echo "background:yellow;"; }else{ echo "background:rgba(255,50,0,1);"; } ?>">
 				<div><?php if($row['name']=="szen"){ echo "Szén"; } if($row['name']=="dohany"){ echo "Dohány"; } ?></div>
@@ -339,7 +335,7 @@ while($row = mysqli_fetch_assoc($query)){
 		</footer>
 		<span class="adminlink">
 			<a href="../">Vissza</a><?php if($logged_in==true){ ?>
-			<a href="logout.php">Kijelentkezés</a><?php } ?>
+			<a href="logout">Kijelentkezés</a><?php } ?>
 		</span>
 	</body>
 		<span class="fasz">Írta: én<br>

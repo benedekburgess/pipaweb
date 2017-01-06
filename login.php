@@ -106,26 +106,26 @@ if(isset($db_salt)){
 		$_SESSION['uid'] = $db_id;
 		add_to_log($mysqli,"login:$db_id",$db_id);
 		if(isset($szar)){
-			header("Location: ../admin?szarvagy=$szar");
+			header("Location: ../admin/$szar");
 		}else{
 			header("Location: ../admin");
 		}
 	}else{
 		if(!isset($szar)){
 			add_to_log($mysqli,"login_attempt:$username",0);
-			header("Location: ../admin?szarvagy=12");
+			header("Location: ../admin/12");
 		}else{
 			add_to_log($mysqli,"login_attempt:$username",0);
-			header("Location: ../admin?szarvagy=$szar");
+			header("Location: ../admin/$szar");
 		}
 	}
 }else{
 	if(!isset($szar)){
 		add_to_log($mysqli,"login_attempt:$username",0);
-		header("Location: ../admin?szarvagy=12");
+		header("Location: ../admin/12");
 	}else{
 		add_to_log($mysqli,"login_attempt:$username",0);
-		header("Location: ../admin?szarvagy=$szar");
+		header("Location: ../admin/$szar");
 	}
 }
 ?>
