@@ -1,5 +1,5 @@
 <?php
-if(isset($_GET['admin'])){
+if(isset($_GET['/admin'])){
 	require_once "admin.php";
 	exit();
 }
