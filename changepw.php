@@ -1,7 +1,6 @@
 <?php
 require_once "inc/init.php";
 setcookie('admin');
-exit("buzi");
 if($logged_in==false){
 	header("Location: ../admin");
 }
