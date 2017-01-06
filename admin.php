@@ -145,7 +145,7 @@ while($row = mysqli_fetch_assoc($query)){
 				?>
 		<section>
 		Fejlesztői opciók
-			<h2><a href="users"<?php if(isset($mode) && $mode=="users"){ echo " id='selected'"; }?>>Felhasználók</a> | <a href="log"<?php if(isset($mode) && $mode=="log"){ echo " id='selected'"; }?>>Eseménynapló</a> | <a href="pipes"<?php if(isset($mode) && $mode=="pipes"){ echo " id='selected'"; }?>>Pipák</a></h2>
+			<h2><a href="/admin/users"<?php if(isset($mode) && $mode=="users"){ echo " id='selected'"; }?>>Felhasználók</a> | <a href="/admin/log"<?php if(isset($mode) && $mode=="log"){ echo " id='selected'"; }?>>Eseménynapló</a> | <a href="/admin/pipes"<?php if(isset($mode) && $mode=="pipes"){ echo " id='selected'"; }?>>Pipák</a></h2>
 		</section>
 		<?php
 				if(isset($uri[2])){
@@ -227,7 +227,7 @@ while($row = mysqli_fetch_assoc($query)){
 				<?php
 				$num_pages = ceil(mysqli_num_rows(mysqli_query($mysqli,"SELECT * FROM log LIMIT 300"))/15);
 				for($i=1;$i<=$num_pages;$i++){
-					?><a<?php if($i==$page){ echo " style='color:red;' "; } ?> href="admin/log/<?php echo $i; ?>"><?php echo $i; ?></a>
+					?><a<?php if($i==$page){ echo " style='color:red;' "; } ?> href="/admin/log/<?php echo $i; ?>"><?php echo $i; ?></a>
 					<?php
 					
 				};
@@ -262,7 +262,7 @@ while($row = mysqli_fetch_assoc($query)){
 				<?php
 				$num_pages = ceil(mysqli_num_rows(mysqli_query($mysqli,"SELECT * FROM log LIMIT 300"))/15);
 				for($i=1;$i<=$num_pages;$i++){
-					?><a<?php if($i==$page){ echo " style='color:red;' "; } ?> href="log/<?php echo $i; ?>"><?php echo $i; ?></a>
+					?><a<?php if($i==$page){ echo " style='color:red;' "; } ?> href="/admin/log/<?php echo $i; ?>"><?php echo $i; ?></a>
 					<?php
 					
 				};
