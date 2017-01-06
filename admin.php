@@ -340,6 +340,6 @@ while($row = mysqli_fetch_assoc($query)){
 	</body>
 		<span class="fasz">Írta: én<br>
 						Hint: vannak easter egg-ek</span>
-	<script type="text/javascript" src="js/jquery.js"></script>
-	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="/js/jquery.js"></script>
+	<script type="text/javascript" src="/js/main.js"></script>
 </html>
