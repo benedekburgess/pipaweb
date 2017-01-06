@@ -1,5 +1,6 @@
 <?php
 require_once "inc/init.php";
+print_r($uri);
 if($uri[1]=="admin"){
 	require_once "admin.php";
 	exit();
