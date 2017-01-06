@@ -1,9 +1,9 @@
 <?php
-if($_SERVER['REQUEST_URI']=="/admin"){
+require_once "inc/init.php";
+if($uri[1]=="admin"){
 	require_once "admin.php";
 	exit();
 }
-require_once "inc/init.php";
 setcookie('admin');
 if(isset($user_id)){
 	add_to_log($mysqli,"view_page:index.php",$user_id);
