@@ -67,6 +67,22 @@ while($row = mysqli_fetch_assoc($query)){
 			<div class="info" style="<?php if($row['name']=="szen"){ ?>border-right:1px solid rgba(0,0,0,0.4);<?php 
 			} if($row['description']=="true"){ ?>background:green;<?php }elseif($row['description']=="nemelado"){ echo "background:yellow;"; }else{ echo "background:rgba(255,50,0,1);"; } ?>"><?php 
 			if($row['name']=="szen"){ echo "Szén"; } if($row['name']=="dohany"){ echo "Dohány"; } ?>
+			<h3>
+			<?php 
+			switch($row['description']){
+				case "true":
+				echo "Van";
+				break;
+				case "nemelado":
+				echo "Kevés van";
+				break;
+				default:
+				echo "Nincs";
+				break;
+				
+			}
+			?>
+			</h3>
 			</div>
 		<?php
 		}
