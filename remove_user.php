@@ -2,19 +2,16 @@
 require_once "inc/init.php";
 setcookie('admin');
 if($logged_in==false){
-	echo "login";
-	//header("Location: ../admin/12");
+	header("Location: ../admin/12");
 }
 if(!isset($uri[2])){
-	echo "uri";
-	//header("Location: ../admin/12");
+	header("Location: ../admin/12");
 }
-if($current_user_admin!=1){
-	echo "useradmin";
-	//header("Location: ../admin/12");
+if($current_user_admin<1){
+	header("Location: ../admin/12");
 }
 $id = $uri[2];
 mysqli_query($mysqli,"DELETE FROM users WHERE id='$id'");
 add_to_log($mysqli,"remove_user:$id",$user_id);
-//header("Location: ../admin/users");
+header("Location: ../admin/users");
 ?>
