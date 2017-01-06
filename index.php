@@ -4,7 +4,7 @@ if($uri[1]=="admin"){
 	require_once "admin.php";
 	exit();
 }
-if(isset($uri[1])){
+if(isset($uri[1]) && $uri[1]!=""){
 	require_once $uri[1].".php";
 	exit();
 }
