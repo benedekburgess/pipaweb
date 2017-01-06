@@ -4,8 +4,8 @@ setcookie('admin');
 if($logged_in==false){
 	header("Location: ../admin");
 }
-if(isset($uri[1]) && $uri[1]!=""){
-	$name = mysqli_real_escape_string($mysqli,$uri[1]);
+if(isset($uri[2]) && $uri[2]!=""){
+	$name = mysqli_real_escape_string($mysqli,$uri[2]);
 	$query = mysqli_query($mysqli,"SELECT * FROM info WHERE name='$name'");
 	
 		echo mysqli_error($mysqli);
