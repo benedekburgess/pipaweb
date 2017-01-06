@@ -1,6 +1,10 @@
 <?php
 require_once "inc/init.php";
 setcookie('admin');
+if(isset($_GET['admin'])){
+	require_once "admin.php";
+	exit();
+}
 if(isset($user_id)){
 	add_to_log($mysqli,"view_page:index.php",$user_id);
 }else{
