@@ -252,7 +252,8 @@ while($row = mysqli_fetch_assoc($query)){
 					<td><h3><?php echo $ip; ?></h3></td>
 					<td><h3><?php echo $data; ?></h3></td>
 					<td><h3><?php echo gmdate("Y/n/d H:i:s",$ts+3600); ?></h3></td>
-					<td><h3><?php echo $uid; ?></h3></td>
+					<td><h3><?php echo $uid; ?></h3></td
+					
 				</tr>
 					<?php
 				}
@@ -278,6 +279,7 @@ while($row = mysqli_fetch_assoc($query)){
 					<th><h3><b>Felhasználó</b></h3></th>
 					<th><h3><b>Töröl</b></h3></th>
 					<th><h3><b>Megölés</b></h3></th>
+					<th><h3><b>Mosás</b></h3></th>
 				</tr>
 				<?php
 				$query = mysqli_query($mysqli,"SELECT * FROM pipe");
@@ -285,6 +287,7 @@ while($row = mysqli_fetch_assoc($query)){
 					$id = $row['id'];
 					$ts = $row['ts'];
 					$type = $row['type'];
+					$mosas = $row['mosas'];
 					$by = get_username($row['user_id'],$mysqli);
 					$diff = (time()-$ts)/60;
 					if($diff>0 && $diff<15){
@@ -304,6 +307,7 @@ while($row = mysqli_fetch_assoc($query)){
 						<td><h3><?php echo $by; ?></h3></td>
 						<td><h3><a href="/remove/<?php echo $id; ?>"><span style="font-family:'Comic Sans MS';">X</span></a></h3></td>
 						<td><h3><?php if($vanpipa!="Meghalt"){ ?><a href="kill/<?php echo $id; ?>"><span style="font-family:'Comic Sans MS';">X</span></a><?php } ?></h3></td>
+						<td><h3><img width="24" src="<?php if($mosas!=0){ echo "/img/pipa.png"; }else{ echo "/img/x.png"; }?>"></h3></td>
 					</tr>
 					<?php
 				}
