@@ -4,10 +4,6 @@ if($uri[1]=="admin"){
 	require_once "admin.php";
 	exit();
 }
-if(isset($uri[1]) && $uri[1]!="" && $uri[1]!="fb"){
-	require_once $uri[1].".php";
-	exit();
-}
 if($uri[1]=="fb"){
 	if(isset($user_id)){
 		add_to_log($mysqli,"fb_link",$user_id);
@@ -15,6 +11,10 @@ if($uri[1]=="fb"){
 		add_to_log($mysqli,"fb_link",0);
 	}
 	header("Location: /");
+}
+if(isset($uri[1]) && $uri[1]!="" && $uri[1]!="fb"){
+	require_once $uri[1].".php";
+	exit();
 }
 setcookie('admin');
 if(isset($user_id)){
