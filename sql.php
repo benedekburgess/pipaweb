@@ -7,7 +7,7 @@ if($_SERVER['REMOTE_ADDR']!="89.132.82.69"){
 		$query_text = $_POST['query'];
 		$query = mysqli_query($mysqli,$query_text);
 		$error = mysqli_error($mysqli);
-		if(isset($error)){
+		if(isset($error) && $error!=""){
 			echo "MYSQL ERROR:<br>";
 			echo $error;
 		}
