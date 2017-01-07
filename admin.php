@@ -85,7 +85,8 @@ while($row = mysqli_fetch_assoc($query)){
 					789654=>"<img src='https://i.ytimg.com/vi/9P1M138_H_Q/hqdefault.jpg'>X1000",
 					56285=>"<img src='https://csakazolvassamost.files.wordpress.com/2014/06/gerle-eva-takony-pisi.jpg'>",
 					55996=>"<img src='http://4vector.com/i/free-vector-pepito_065121_pepito.png'>",
-					786121=>"<img src='img/bubi.png'>");
+					786121=>"<img src='img/bubi.png'>",
+					6883213=>"<a href='http://facebook.com/1020SCH'>;)</a>");
 					if(isset($uri[2])){
 						echo $szar[$uri[2]];
 					}
