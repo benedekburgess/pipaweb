@@ -3,7 +3,7 @@ body{
 	margin:auto;
 }
 html{
-	font-family:Calibri Arial !important;
+	font-family:Arial !important;
 }
 header{
 	width:calc(100% - 20px);

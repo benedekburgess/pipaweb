@@ -14,8 +14,9 @@ while($row = mysqli_fetch_assoc($query)){
 	}
 }
 if($fasz==false){
-	$msg = "<b>LEGYEN PIPA</b><br><i>$current_username</i>";
-	mail("benedekb97@gmail.com","Legyen pipa",$msg);
+	$msg = "LEGYEN PIPA\n$current_username";
+	$headers = 'From: info@pipa.ml' . "\r\n" . 'Reply-To: info@pipa.ml' . "\r\n" . 'X-Mailer: PHP/' . phpversion();
+	mail("benedekb97@gmail.com","Legyen pipa",$msg,$headers);
 }
 header("Location: ../");
 ?>
