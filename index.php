@@ -109,7 +109,7 @@ while($row = mysqli_fetch_assoc($query)){
 			<a href="admin">Admin</a><?php if($logged_in==true){ ?>
 			<a href="logout.php">Kijelentkezés</a><?php } ?>
 		</span>
-		<span class="fasz">Írta: én<br>
+		<span class="fasz">Írta: beni<br>
 						Hint: vannak easter egg-ek</span>
 	</body>
 </html>

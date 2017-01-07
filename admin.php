@@ -342,7 +342,7 @@ while($row = mysqli_fetch_assoc($query)){
 			<a href="../logout">Kijelentkezés</a><?php } ?>
 		</span>
 	</body>
-		<span class="fasz">Írta: én<br>
+		<span class="fasz">Írta: beni<br>
 						Hint 2: próbálgass felhasználóneveket</span>
 	<script type="text/javascript" src="/js/jquery.js"></script>
 	<script type="text/javascript" src="/js/main.js"></script>
