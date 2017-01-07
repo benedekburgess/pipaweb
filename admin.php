@@ -225,7 +225,7 @@ while($row = mysqli_fetch_assoc($query)){
 				?>
 				<h3>
 				<?php
-				$num_pages = ceil(mysqli_num_rows(mysqli_query($mysqli,"SELECT * FROM log LIMIT 300"))/15);
+				$num_pages = ceil(mysqli_num_rows(mysqli_query($mysqli,"SELECT * FROM log LIMIT 150"))/15);
 				for($i=1;$i<=$num_pages;$i++){
 					?><a<?php if($i==$page){ echo " style='color:red;' "; } ?> href="/admin/log/<?php echo $i; ?>"><?php echo $i; ?></a>
 					<?php
@@ -261,12 +261,24 @@ while($row = mysqli_fetch_assoc($query)){
 			</table>
 				<h3>
 				<?php
-				$num_pages = ceil(mysqli_num_rows(mysqli_query($mysqli,"SELECT * FROM log LIMIT 300"))/15);
+				$num_pages = ceil(mysqli_num_rows(mysqli_query($mysqli,"SELECT * FROM log LIMIT 150"))/15);
+				if($page>3){
+					?><a href="/admin/log/<?php echo $page-3; ?>"><span style="font-family:'Comic Sans MS;'"><<<</span></a><?php
+				}
+				if($page>1){
+					?><a href="/admin/log/<?php echo $page-1; ?>"><span style="font-family:'Comic Sans MS;'"><</span></a><?php
+				}
 				for($i=1;$i<=$num_pages;$i++){
 					?><a<?php if($i==$page){ echo " style='color:red;' "; } ?> href="/admin/log/<?php echo $i; ?>"><?php echo $i; ?></a>
 					<?php
 					
 				};
+				if($page<15){
+					?><a href="/admin/log/<?php echo $page+1; ?>"><span style="font-family:'Comic Sans MS;'">></span></a><?php
+				}
+				if($page<13){
+					?><a href="/admin/log/<?php echo $page+3; ?>"><span style="font-family:'Comic Sans MS;'">>>></span></a><?php
+				}
 				?></h3><?php
 			}elseif($mode=="pipes"){				// ###################### PIPÁK ######################
 				?>
