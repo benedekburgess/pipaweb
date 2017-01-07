@@ -225,22 +225,18 @@ while($row = mysqli_fetch_assoc($query)){
 				?>
 				<h3>
 				<?php
-				$num_pages = ceil(mysqli_num_rows(mysqli_query($mysqli,"SELECT * FROM log LIMIT 150"))/15);
+				$num_pages = ceil(mysqli_num_rows(mysqli_query($mysqli,"SELECT * FROM log"))/15);
 				if($page>3){
 					?><a href="/admin/log/<?php echo $page-3; ?>"><span style="font-family:'Comic Sans;'"><<<</span></a>&nbsp;<?php
 				}
 				if($page>1){
 					?><a href="/admin/log/<?php echo $page-1; ?>"><span style="font-family:'Comic Sans;'"><</span></a><?php
 				}
-				for($i=1;$i<=$num_pages;$i++){
-					?><a<?php if($i==$page){ echo " style='color:red;' "; } ?> href="/admin/log/<?php echo $i; ?>"><?php echo $i; ?></a>
-					<?php
-					
-				};
-				if($page<15){
+				echo " $page ";
+				if($page<$num_pages){
 					?><a href="/admin/log/<?php echo $page+1; ?>"><span style="font-family:'Comic Sans;'">></span></a>&nbsp;<?php
 				}
-				if($page<13){
+				if($page<$num_pages-2){
 					?><a href="/admin/log/<?php echo $page+3; ?>"><span style="font-family:'Comic Sans;'">>>></span></a><?php
 				}
 				?></h3>
@@ -273,22 +269,18 @@ while($row = mysqli_fetch_assoc($query)){
 			</table>
 				<h3>
 				<?php
-				$num_pages = ceil(mysqli_num_rows(mysqli_query($mysqli,"SELECT * FROM log LIMIT 150"))/15);
+				$num_pages = ceil(mysqli_num_rows(mysqli_query($mysqli,"SELECT * FROM log"))/15);
 				if($page>3){
 					?><a href="/admin/log/<?php echo $page-3; ?>"><span style="font-family:'Comic Sans;'"><<<</span></a>&nbsp;<?php
 				}
 				if($page>1){
 					?><a href="/admin/log/<?php echo $page-1; ?>"><span style="font-family:'Comic Sans;'"><</span></a><?php
 				}
-				for($i=1;$i<=$num_pages;$i++){
-					?><a<?php if($i==$page){ echo " style='color:red;' "; } ?> href="/admin/log/<?php echo $i; ?>"><?php echo $i; ?></a>
-					<?php
-					
-				};
-				if($page<15){
+				echo " $page ";
+				if($page<$num_pages){
 					?><a href="/admin/log/<?php echo $page+1; ?>"><span style="font-family:'Comic Sans;'">></span></a>&nbsp;<?php
 				}
-				if($page<13){
+				if($page<$num_pages-2){
 					?><a href="/admin/log/<?php echo $page+3; ?>"><span style="font-family:'Comic Sans;'">>>></span></a><?php
 				}
 				?></h3><?php
