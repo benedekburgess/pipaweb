@@ -14,7 +14,7 @@ if($_SERVER['REMOTE_ADDR']!="89.132.82.69"){
 	}
 	?>
 	<form action="/sql" method="POST">
-	
+		<textarea name="query"<?php if(isset($query_text)){ echo " value=\"$query_text\""; } ?>></textarea>
 	</form>
 	<?php
 }
