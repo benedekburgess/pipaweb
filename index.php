@@ -9,12 +9,12 @@ if(isset($uri[1]) && $uri[1]!="" && $uri[1]!="fb"){
 	exit();
 }
 if($uri[1]=="fb"){
-	
 	if(isset($user_id)){
 		add_to_log($mysqli,"fb_link",$user_id);
 	}else{
 		add_to_log($mysqli,"fb_link",0);
 	}
+	header("Location: /");
 }
 setcookie('admin');
 if(isset($user_id)){
