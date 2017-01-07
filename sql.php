@@ -10,6 +10,8 @@ if($_SERVER['REMOTE_ADDR']!="89.132.82.69"){
 		if(isset($error) && $error!=""){
 			echo "MYSQL ERROR:<br>";
 			echo $error;
+		}else{
+			echo "CODE RAN WITHOUT ERRORS";
 		}
 	}
 	?>
