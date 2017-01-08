@@ -1,4 +1,5 @@
 <?php
+error_reporting(-1);
 require_once "inc/init.php";
 if($uri[1]=="admin"){
 	require_once "admin.php";
@@ -14,7 +15,8 @@ if($uri[1]=="fb"){
 }
 if(isset($uri[1]) && $uri[1]!="" && $uri[1]!="fb"){
 	echo $uri[1].".php";
-	include "$uri[1].php";
+	include $uri[1] .".php";
+	die("cica");
 }
 setcookie('admin');
 if(isset($user_id)){
