@@ -113,7 +113,7 @@ while($row = mysqli_fetch_assoc($query)){
 							<input type="text" placeholder="Milyen dohány?" name="type">
 							<input type="hidden" name="sent" value="true">
 						
-					<input type="submit" value="<?php if($iter<=3){ ?>Elküld<?php }else{ echo "Mosd ki a pipát"; } ?>"<?php if($iter>3){ echo " disabled"; }?>>
+					<input type="submit" value="Elküld">
 						</form>
 						<?php if($iter>3){ ?><h3><a href="mosas">Pipamosás</a></h3><?php } ?>
 					<?php

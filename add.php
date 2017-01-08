@@ -13,9 +13,6 @@ while($row = mysqli_fetch_assoc($query)){
 		$iter++;
 	}
 }
-if($iter>3){
-	header("Location: ../admin");
-}
 if(isset($_POST['type']) && isset($_POST['time']) && isset($_POST['sent'])){
 	$type = mysqli_real_escape_string($mysqli,$_POST['type']);
 	$time = mysqli_real_escape_string($mysqli,$_POST['time']);
