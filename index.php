@@ -30,6 +30,12 @@ while($row = mysqli_fetch_assoc($query)){
 	if($timestamp+86400<time()){
 		$count++;
 	}
+	$mosas = $row['mosas'];
+	if($mosas!=0){
+		$iter = 0;
+	}else{
+		$iter++;
+	}
 	$diff = (time()-$timestamp)/60;
 	if($diff>0 && $diff<15){
 		$type = $row['type'];
@@ -41,7 +47,7 @@ while($row = mysqli_fetch_assoc($query)){
 		$ts = $row['ts'];
 	}elseif($diff>=45 && $diff<70){
 		$type = $row['type'];
-		$vanpipa = "meghalo";
+		$vanpipa = "meghal";
 		$ts = $row['ts'];
 	}else{
 		$id = $row['id'];
@@ -74,7 +80,7 @@ while($row = mysqli_fetch_assoc($query)){
 				echo "Készül - ".$type." lesz<br><span style='font-size:14px;'>".gmdate("H:i", $ts+3600)." -kor kezdődött</span>";
 			}elseif($vanpipa=="van"){
 				echo "Van - ".$type."<br><span style='font-size:14px;'>".gmdate("H:i", $ts+600+3600)." -kor kezdődött</span>";
-			}elseif($vanpipa=="meghalo"){
+			}elseif($vanpipa=="meghal"){
 				echo "Kezd meghalni - ".$type."<br><span style='font-size:14px;'>".gmdate("H:i", $ts+600+360)." -kor kezdődött</span>";
 			}
 			echo "<br><span style='font-size:14px;'>Az elmúlt 24 órában $count db pipa volt</span><br>";
@@ -110,6 +116,20 @@ while($row = mysqli_fetch_assoc($query)){
 		?>
 		
 		</footer>
+		<?php
+		if($iter<3){
+			$mosni = "jo";
+		}elseif($iter>=3 && $iter<7){
+			$mosni = "mosni";
+		}else{
+			$mosni = "animals";
+		}
+		if($vanpipa==false){
+			$vanpipa = "nincs";
+		}
+		$pipatext = "pipa_$mosni_$vanpipa";
+		echo $pipatext;
+		?>
 		<span class="adminlink">
 			<a href="admin">Admin</a><?php if($logged_in==true){ ?>
 			<a href="logout.php">Kijelentkezés</a><?php } ?>
