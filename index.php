@@ -16,7 +16,7 @@ if($uri[1]=="fb"){
 if(isset($uri[1]) && !empty($uri[1]) && $uri[1]!="fb"){
 	echo $uri[1].".php";
 	include_once $uri[1] .".php";
-	die("cica");
+	exit();
 }
 setcookie('admin');
 if(isset($user_id)){

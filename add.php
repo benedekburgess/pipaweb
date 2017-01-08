@@ -13,9 +13,9 @@ while($row = mysqli_fetch_assoc($query)){
 	}else{
 		$iter++;
 	}
-}/*
+}
 if(isset($_POST['type']) && isset($_POST['time']) && isset($_POST['sent'])){
-	if(isset($_POST['szen')){
+	if(isset($_POST['szen'])){
 		$ujszen = 1;
 	}else{
 		$ujszen = 0;
