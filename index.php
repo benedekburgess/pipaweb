@@ -136,6 +136,7 @@ while($row = mysqli_fetch_assoc($query)){
 		}else{
 			$vaneszen = "nincs";
 		}
+		echo $szeniter;
 		$szentext = "szen_".$vaneszen;
 		if($vanpipa==false){
 			$vanpipa = "nincs";
