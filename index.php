@@ -14,7 +14,6 @@ if($uri[1]=="fb"){
 	header("Location: /");
 }
 if(isset($uri[1]) && !empty($uri[1]) && $uri[1]!="fb"){
-	echo $uri[1].".php";
 	include_once $uri[1] .".php";
 	exit();
 }
