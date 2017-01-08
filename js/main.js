@@ -16,11 +16,11 @@ $(document).ready(function(){
 	$(document).keydown(function(e){
 		switch(e.which) {
 			case 37:
-			$("#leftbutton").click();
+			document.log($("#leftbutton"));
 			break;
 			
 			case 39:
-			$("#rightbutton").click();
+			document.log($("#rightbutton"));
 			break;
 		}
 		e.preventDefault();
