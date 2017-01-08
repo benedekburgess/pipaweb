@@ -1,5 +1,5 @@
 <?php
-error_reporting(-1);
+die("asd");
 require_once "inc/init.php";
 setcookie('admin');
 if($logged_in==false){
