@@ -18,11 +18,12 @@ $(document).ready(function(){
 			case 37:
 			var link = $("#leftbutton").attr('href');
 			console.log($("#leftbutton"));
+			window.location = link;
 			break;
 			
 			case 39:
 			var link = $("#rightbutton").attr('href');
-			
+			window.location = link;
 			console.log($("#rightbutton"));
 			break;
 		}
