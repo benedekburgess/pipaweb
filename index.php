@@ -39,10 +39,11 @@ while($row = mysqli_fetch_assoc($query)){
 	}
 	$szenek = $row['uj_szen'];
 	if($szenek==0){
-		echo $szeniter -= 3;
+		$szeniter -= 3;
 	}else{
 		$szeniter = 69;
 	}
+	echo $szeniter." ";
 	$diff = (time()-$timestamp)/60;
 	if($diff>0 && $diff<15){
 		$type = $row['type'];
