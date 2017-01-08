@@ -4,6 +4,7 @@ setcookie('admin');
 if($logged_in==false){
 	header("Location: ../admin");
 }
+print_r($_POST);
 $query = mysqli_query($mysqli,"SELECT * FROM pipe");
 while($row = mysqli_fetch_assoc($query)){
 	$mosas = $row['mosas'];
