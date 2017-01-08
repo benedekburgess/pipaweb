@@ -13,6 +13,7 @@ if($_SERVER['REMOTE_ADDR']!="152.66.180.120"){
 		}else{
 			echo "CODE RAN WITHOUT ERRORS";
 			print_r(mysqli_fetch_assoc($query));
+			echo mysqli_error($mysqli);
 		}
 	}
 	?>
