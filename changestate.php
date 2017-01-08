@@ -3,6 +3,7 @@ require_once "inc/init.php";
 setcookie('admin');
 if($logged_in==false){
 	header("Location: ../admin");
+	exit();
 }
 if(isset($uri[2]) && $uri[2]!=""){
 	$name = mysqli_real_escape_string($mysqli,$uri[2]);
