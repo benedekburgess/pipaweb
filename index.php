@@ -127,7 +127,7 @@ while($row = mysqli_fetch_assoc($query)){
 		if($vanpipa==false){
 			$vanpipa = "nincs";
 		}
-		$pipatext = "pipa_$mosni_$vanpipa";
+		$pipatext = "pipa_".$mosni."_".$vanpipa;
 		echo $pipatext;
 		?>
 		<span class="adminlink">
