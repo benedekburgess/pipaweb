@@ -75,7 +75,7 @@ while($row = mysqli_fetch_assoc($query)){
 					123456789=>"<img width='640' src='http://rainbowsandlollipops.net/wp-content/uploads/2016/10/Brexit.jpg'>",
 					486532=>"<img src='https://www.antikvarium.hu/foto/varga-csaba-pici-maci-feloltozik-5899490-nagy.jpg'>",
 					75421=>"<script type='text/javascript'>alert('3 büntetőpont nevelőtanárral szembeni szemtelenségért');</script>
-							<img src='img/koza.jpg' width='640'>
+							<img src='/img/koza.jpg' width='640'>
 							<br><span style='font-size:14px;'>Disclaimer: nem én csináltam</span>",
 					1895651=>"Ez sem egy lyuk",
 					0=>"<video width='640' height='480' autoplay><source src='1002.mp4' type='video/mp4'></video>",
