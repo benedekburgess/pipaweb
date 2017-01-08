@@ -16,12 +16,12 @@ $(document).ready(function(){
 	$(document).keydown(function(e){
 		switch(e.which) {
 			case 37:
-			$("#leftbutton").click();
+			var link = $("#leftbutton").attr('href');
 			console.log($("#leftbutton"));
 			break;
 			
 			case 39:
-			$("#rightbutton").click();
+			var link = $("#rightbutton").attr('href');
 			
 			console.log($("#rightbutton"));
 			break;
