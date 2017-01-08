@@ -128,6 +128,7 @@ while($row = mysqli_fetch_assoc($query)){
 								<option value="meghalo"<?php if($vanpipa=="meghalo"){echo " SELECTED";}?>>Meghaló</option>
 							</select>
 							<input type="text" placeholder="Milyen dohány?" name="type" value="<?php echo $type; ?>">
+							<input type="checkbox" name="szen" id="szen"><span style="font-size:12px;"><label for="szen">Új szén</label></span>
 							<input type="hidden" name="sent" value="<?php echo $id; ?>">
 							<input type="submit" value="Elküld">
 						</form>
