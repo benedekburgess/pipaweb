@@ -1,7 +1,7 @@
 <?php
 die("asd");
 
-/*require_once "inc/init.php";
+require_once "inc/init.php";
 setcookie('admin');
 if($logged_in==false){
 	header("Location: ../admin");
@@ -15,7 +15,7 @@ while($row = mysqli_fetch_assoc($query)){
 	}else{
 		$iter++;
 	}
-}
+}/*
 if(isset($_POST['type']) && isset($_POST['time']) && isset($_POST['sent'])){
 	if(isset($_POST['szen')){
 		$ujszen = 1;
