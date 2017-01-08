@@ -145,7 +145,7 @@ while($row = mysqli_fetch_assoc($query)){
 		$pipatext = "pipa_".$mosni."_".$vanpipa;
 		?>
 		<nav>
-			<img src="img/<?php echo $pipatext; ?>.png" style="max-width:320px; position:relative; left:21px;"><br>
+			<img src="img/<?php echo $pipatext; ?>.png" style="max-width:320px; position:relative; left:21px;">
 			<img src="img/<?php echo $szentext; ?>.jpg" style="max-width:320px;">
 		</nav>
 		<span class="adminlink">
