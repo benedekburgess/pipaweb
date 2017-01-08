@@ -39,5 +39,5 @@ if(isset($_POST['type']) && isset($_POST['time']) && isset($_POST['sent'])){
 	header("Location: ../");
 }else{
 	header("Location: ../admin");
-}*/
+}
 ?>
