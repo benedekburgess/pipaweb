@@ -25,6 +25,7 @@ if(isset($user_id)){
 $vanpipa = false;
 $query = mysqli_query($mysqli,"SELECT * FROM pipe");
 $count = 0;
+$szeniter = 72;
 while($row = mysqli_fetch_assoc($query)){
 	$timestamp = $row['ts'];
 	if($timestamp+86400<time()){
@@ -35,6 +36,10 @@ while($row = mysqli_fetch_assoc($query)){
 		$iter = 0;
 	}else{
 		$iter++;
+	}
+	$szenek = $row['uj_szen'];
+	if($szenek!=0){
+		$szeniter -= 3;
 	}
 	$diff = (time()-$timestamp)/60;
 	if($diff>0 && $diff<15){
@@ -124,13 +129,22 @@ while($row = mysqli_fetch_assoc($query)){
 		}else{
 			$mosni = "animals";
 		}
+		if($szeniter>18){
+			$vaneszen = "van";
+		}elseif($szeniter<=18 && $szeniter>0){
+			$vaneszen = "keves";
+		}else{
+			$vaneszen = "nincs";
+		}
+		$szentext = "szen_".$vaneszen;
 		if($vanpipa==false){
 			$vanpipa = "nincs";
 		}
 		$pipatext = "pipa_".$mosni."_".$vanpipa;
 		?>
 		<nav>
-			<img src="img/<?php echo $pipatext; ?>.png" style="max-width:320px; position:relative; left:21px;">
+			<img src="img/<?php echo $pipatext; ?>.png" style="max-width:320px; position:relative; left:21px;"><br>
+			<img src="img/<?php echo $szentext; ?>.jpg" style="max-width:320px;">
 		</nav>
 		<span class="adminlink">
 			<a href="admin">Admin</a><?php if($logged_in==true){ ?>
