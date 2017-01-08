@@ -57,8 +57,12 @@ form input{
 		padding-bottom:20px;
 	}
 }
-img{
-	max-width:320px;
+@media screen and (max-width: 600px){
+	img{
+		max-width:320px;
+		position: static !important;
+		margin:auto;
+	}
 }
 .fasz{
 	position:fixed !important;
