@@ -46,7 +46,7 @@ a.button:hover{
 form input{
 	font-family:Arial;
 }
-@media screen and (max-width: 600px){
+@media screen and (max-width: 800px){
 	form input{
 		display:block;
 		clear:both;
