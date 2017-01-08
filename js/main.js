@@ -17,10 +17,13 @@ $(document).ready(function(){
 		switch(e.which) {
 			case 37:
 			$("#leftbutton").click();
+			console.log($("#leftbutton"));
 			break;
 			
 			case 39:
 			$("#rightbutton").click();
+			
+			console.log($("#rightbutton"));
 			break;
 		}
 	});
