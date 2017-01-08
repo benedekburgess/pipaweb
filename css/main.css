@@ -62,6 +62,10 @@ form input{
 		max-width:320px;
 		position: static !important;
 		margin:auto;
+		left:0px !important;
+		right:0px !important;
+		bottom:0px !important;
+		right:0px !important;
 	}
 }
 .fasz{
