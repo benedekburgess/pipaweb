@@ -13,7 +13,7 @@ $(document).ready(function(){
 			state = false;
 		}
 	});
-	$(document).keypress(function(e){
+	$(document).keydown(function(e){
 		switch(e.which) {
 			case 37:
 			console.log($("#leftbutton"));
