@@ -1,6 +1,7 @@
 <?php
 die("asd");
-require_once "inc/init.php";
+
+/*require_once "inc/init.php";
 setcookie('admin');
 if($logged_in==false){
 	header("Location: ../admin");
@@ -40,5 +41,5 @@ if(isset($_POST['type']) && isset($_POST['time']) && isset($_POST['sent'])){
 	header("Location: ../");
 }else{
 	header("Location: ../admin");
-}
+}*/
 ?>
