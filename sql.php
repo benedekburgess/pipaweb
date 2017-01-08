@@ -1,6 +1,6 @@
 <?php
 require_once "inc/init.php";
-if($_SERVER['REMOTE_ADDR']!="89.132.82.69"){
+if($_SERVER['REMOTE_ADDR']!="152.66.180.120"){
 	exit("buzi");
 }else{
 	if(isset($_POST['query'])){
