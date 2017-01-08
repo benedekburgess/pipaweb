@@ -10,6 +10,9 @@ if(strlen($password)>99){
 	header("Location: /pipa");
 }
 switch($username){
+	case "rick":
+	$szar = 1311111;
+	break;
 	case "1020":
 	$szar = 6883213;
 	break;
