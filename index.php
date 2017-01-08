@@ -145,8 +145,8 @@ while($row = mysqli_fetch_assoc($query)){
 		$pipatext = "pipa_".$mosni."_".$vanpipa;
 		?>
 		<nav>
+			<img src="img/<?php echo $szentext; ?>.png" style="max-width:320px; position:relative; bottom:50px; margin-right:40px;">
 			<img src="img/<?php echo $pipatext; ?>.png" style="max-width:320px; position:relative; left:21px;">
-			<img src="img/<?php echo $szentext; ?>.png" style="max-width:320px; position:relative; bottom:50px; margin-left:20px;">
 		</nav>
 		<span class="adminlink">
 			<a href="admin">Admin</a><?php if($logged_in==true){ ?>
