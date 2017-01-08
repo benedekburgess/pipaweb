@@ -37,7 +37,7 @@ while($row = mysqli_fetch_assoc($query)){
 	}else{
 		$iter++;
 	}
-	$szenek = $row['uj_szen'];
+	$szenek = $row['ujszen'];
 	if($szenek!=0){
 		$szeniter -= 3;
 	}
