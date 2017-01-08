@@ -13,6 +13,7 @@ if($uri[1]=="fb"){
 	header("Location: /");
 }
 if(isset($uri[1]) && $uri[1]!="" && $uri[1]!="fb"){
+	echo $uri[1].".php";
 	require_once $uri[1].".php";
 	exit();
 }
