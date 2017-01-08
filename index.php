@@ -128,8 +128,10 @@ while($row = mysqli_fetch_assoc($query)){
 			$vanpipa = "nincs";
 		}
 		$pipatext = "pipa_".$mosni."_".$vanpipa;
-		echo $pipatext;
 		?>
+		<nav>
+			<img src="img/<?php echo $pipatext; ?>.png" style="max-width:640px;">
+		</nav>
 		<span class="adminlink">
 			<a href="admin">Admin</a><?php if($logged_in==true){ ?>
 			<a href="logout.php">Kijelentkezés</a><?php } ?>
