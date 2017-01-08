@@ -72,6 +72,7 @@ while($row = mysqli_fetch_assoc($query)){
 		<meta name="keywords" content="pipa, 1020, sir, schönherz, SCH, hookah">
 		<meta name="author" content="Beni">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="google-site-verification" content="83lHvS--9C0_21c0SEy4eon4yeOS3XVkZ9gMMlup2aU" />
 		<link rel="icon" type="image/png" href="img/favicon.png">
 		<link rel="stylesheet" type="text/css" href="css/main.css" />
 		<title>Van-e pipa a 1020-ban?</title>
