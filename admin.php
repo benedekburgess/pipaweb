@@ -79,7 +79,7 @@ while($row = mysqli_fetch_assoc($query)){
 							<br><span style='font-size:14px;'>Disclaimer: nem én csináltam</span>",
 					1895651=>"Ez sem egy lyuk",
 					0=>"<video width='640' height='480' autoplay><source src='1002.mp4' type='video/mp4'></video>",
-					8522=>"<img src='https://scontent-vie1-1.xx.fbcdn.net/v/t34.0-12/15878811_1454637174609582_1392655055_n.jpg?oh=0ee19d8839dde9cd6f08826f6a1733bc&oe=5872B3C8'>",
+					8522=>"<img src='/img/navi.jpg'>",
 					741258=>"Szeretem ha horkolnak",
 					115588=>"Ví ár dö vándö vándö vándőő",
 					789654=>"<img src='https://i.ytimg.com/vi/9P1M138_H_Q/hqdefault.jpg'>X1000",
