@@ -13,7 +13,7 @@ $(document).ready(function(){
 			state = false;
 		}
 	});
-	$(document).keydown(function(e){
+	$(document).keypress(function(e){
 		switch(e.which) {
 			case 37:
 			$("#leftbutton").click();
@@ -23,6 +23,5 @@ $(document).ready(function(){
 			$("#rightbutton").click();;
 			break;
 		}
-		e.preventDefault();
 	});
 });
