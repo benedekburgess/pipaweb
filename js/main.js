@@ -33,7 +33,7 @@ $(document).ready(function(){
 			break;
 		}
 	});
-	$(document).on("swipeleft",function(){
+	/*$(document).on("swipeleft",function(){
 		var link = $("#rightbutton").attr('href');
 		if(link!=undefined){
 			window.location = link;
@@ -46,5 +46,5 @@ $(document).ready(function(){
 			window.location = link;
 			
 		}
-	});
+	});*/
 });
