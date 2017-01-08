@@ -37,8 +37,8 @@ while($row = mysqli_fetch_assoc($query)){
 	}else{
 		$iter++;
 	}
-	$szenek = $row['ujszen'];
-	if($szenek!=0){
+	$szenek = $row['uj_szen'];
+	if($szenek==0){
 		$szeniter -= 3;
 	}
 	$diff = (time()-$timestamp)/60;
@@ -136,7 +136,6 @@ while($row = mysqli_fetch_assoc($query)){
 		}else{
 			$vaneszen = "nincs";
 		}
-		echo $szeniter;
 		$szentext = "szen_".$vaneszen;
 		if($vanpipa==false){
 			$vanpipa = "nincs";
