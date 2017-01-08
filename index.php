@@ -77,7 +77,7 @@ while($row = mysqli_fetch_assoc($query)){
 			}elseif($vanpipa=="meghalo"){
 				echo "Kezd meghalni - ".$type."<br><span style='font-size:14px;'>".gmdate("H:i", $ts+600+360)." -kor kezdődött</span>";
 			}
-			echo "<br><span style='font-size:14px;'>Az elmúlt 24 órában $count db pipa volt</span>";
+			echo "<br><span style='font-size:14px;'>Az elmúlt 24 órában $count db pipa volt</span><br>";
 			?>
 		</aside>
 		<footer>
