@@ -43,6 +43,7 @@ while($row = mysqli_fetch_assoc($query)){
 	}else{
 		$szeniter = 69;
 	}
+	echo $szenek." ";
 	echo $szeniter." ";
 	$diff = (time()-$timestamp)/60;
 	if($diff>0 && $diff<15){
