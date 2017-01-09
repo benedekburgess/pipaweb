@@ -8,7 +8,7 @@ if($current_user_admin!=1){
 	header("Location: ../admin/12");
 }
 if(isset($_POST['username']) && isset($_POST['password']) && isset($_POST['password2'])){
-	if(!isset($_POST['admin'])){
+	if(!isset($_POST['admin']) && $current_su==false){
 		$admin = 0;
 	}else{
 		$admin = 1;

@@ -110,7 +110,7 @@ while($row = mysqli_fetch_assoc($query)){
 								<option value="van">Van</option>
 								<option value="meghalo">Meghaló</option>
 							</select>
-							<input type="text" placeholder="Milyen dohány?" name="type"><input type="checkbox" name="szen" id="szen" style="position:relative; top:3px;"><span style="font-size:12px;"><label for="szen">Új szén</label></span>
+							<?php if($current_su==true){ ?><input type="text" placeholder="Milyen dohány?" name="type"><input type="checkbox" name="szen" id="szen" style="position:relative; top:3px;"><span style="font-size:12px;"><label for="szen">Új szén</label></span><?php } ?>
 							<input type="hidden" name="sent" value="true">
 						
 					<input type="submit" value="Elküld">
