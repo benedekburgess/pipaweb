@@ -29,7 +29,7 @@ $count = 0;
 $szeniter = 72;
 while($row = mysqli_fetch_assoc($query)){
 	$timestamp = $row['ts'];
-	if(($timestamp+86400)<time()){
+	if(($timestamp+43200)<time()){
 		echo $row['id'];
 		$count++;
 	}
