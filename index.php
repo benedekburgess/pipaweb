@@ -30,7 +30,6 @@ $szeniter = 72;
 while($row = mysqli_fetch_assoc($query)){
 	$timestamp = $row['ts'];
 	if(($timestamp+86400)>time()){
-		echo $row['id'];
 		$count++;
 	}
 	$mosas = $row['mosas'];
