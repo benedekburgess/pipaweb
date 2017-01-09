@@ -110,7 +110,7 @@ while($row = mysqli_fetch_assoc($query)){
 								<option value="van">Van</option>
 								<option value="meghalo">Meghaló</option>
 							</select>
-							<?php if($current_su==true){ ?><input type="text" placeholder="Milyen dohány?" name="type"><input type="checkbox" name="szen" id="szen" style="position:relative; top:3px;"><span style="font-size:12px;"><label for="szen">Új szén</label></span><?php } ?>
+							<input type="text" placeholder="Milyen dohány?" name="type"><input type="checkbox" name="szen" id="szen" style="position:relative; top:3px;"><span style="font-size:12px;"><label for="szen">Új szén</label></span>
 							<input type="hidden" name="sent" value="true">
 						
 					<input type="submit" value="Elküld">
@@ -212,7 +212,7 @@ while($row = mysqli_fetch_assoc($query)){
 				<input <?php if(isset($error)){ if($error=="username"){ ?>style="background:red;"<?php } } ?> type="text" name="username" placeholder="Felhasználónév"><br>
 				<input <?php if(isset($error)){ if($error=="password"){ ?>style="background:red;"<?php } } ?> type="password" name="password" placeholder="Jelszó"><br>
 				<input <?php if(isset($error)){ if($error=="password"){ ?>style="background:red;"<?php } } ?> type="password" name="password2" placeholder="Jelszó megint"><br>
-				<h3 style="margin-top:10px !important; margin-right:10px; display:inline !important;"><input type="checkbox" name="admin" id="admin" value="true"><label for="admin">Admin</h3></label><input type="submit" value="Elküld">
+				<?php if($current_su==true){ ?><h3 style="margin-top:10px !important; margin-right:10px; display:inline !important;"><input type="checkbox" name="admin" id="admin" value="true"><label for="admin">Admin</h3></label><input type="submit" value="Elküld"><?php { ?>
 			</form>
 				<?php
 				
