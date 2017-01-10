@@ -29,11 +29,7 @@ $query = mysqli_query($mysqli,"SELECT * FROM users WHERE username='$username'");
 $row = mysqli_fetch_assoc($query);
 $admin = $row['admin'];
 
-if($admin==2){
-	mysqli_query($mysqli,"UPDATE users SET password='$password', salt='$salt' WHERE username='$username'");
-}elseif($admin==false && $current_user_admin==1){
-	mysqli_query($mysqli,"UPDATE users SET password='$password', salt='$salt' WHERE username='$username'");
-}elseif($username==$current_username){
+if($current_user_admin==2 || $current_username==$username || ($current_user_admin==1 && $admin==false)){
 	mysqli_query($mysqli,"UPDATE users SET password='$password', salt='$salt' WHERE username='$username'");
 }else{
 	add_to_log($mysqli,"failed_pw_chg",$uid);
