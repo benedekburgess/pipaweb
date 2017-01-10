@@ -173,7 +173,9 @@ while($row = mysqli_fetch_assoc($query)){
 		</nav>
 		<span class="adminlink">
 		</span>
-		<span class="fasz">Írta: beni<br>
-						Hint: vannak easter egg-ek</span>
+		<span class="fasz" style="text-align:right;">Írta: beni<br>
+						Hint: vannak easter egg-ek<br>
+						Támogatóink: DJ KotyogósHerka<br>
+						Sztyúp</span>
 	</body>
 </html>
