@@ -179,7 +179,7 @@ while($row = mysqli_fetch_assoc($query)){
 				?>
 		<section>
 		Fejlesztői opciók
-			<h2><a href="/admin/users"<?php if(isset($mode) && $mode=="users"){ echo " id='selected'"; }?>>Felhasználók</a> | <a href="/admin/log"<?php if(isset($mode) && $mode=="log"){ echo " id='selected'"; }?>>Eseménynapló</a> | <a href="/admin/pipes"<?php if(isset($mode) && $mode=="pipes"){ echo " id='selected'"; }?>>Pipák</a></h2>
+			<h2><a href="/admin/users"<?php if(isset($mode) && $mode=="users"){ echo " id='selected'"; }?>>Felhasználók</a> | <a href="/admin/log"<?php if(isset($mode) && $mode=="log"){ echo " id='selected'"; }?>>Eseménynapló</a> | <a href="/admin/pipes"<?php if(isset($mode) && $mode=="pipes"){ echo " id='selected'"; }?>>Pipák</a> | <a href="/admin/ips"<?php if(isset($mode) && $mode=="ips"){ echo " id='selected'"; }?>>IP-k</a></h2>
 		</section>
 		<?php
 				if(isset($uri[2])){
@@ -513,6 +513,9 @@ while($row = mysqli_fetch_assoc($query)){
 					?><a href="/admin/log/<?php echo $page+3; ?>"><span style="font-family:'Comic Sans;'">>>></span></a><?php
 				}
 				?></h3><?php 
+			}elseif($mode=="ips"){
+				
+				
 			}
 			?>
 		</nav>
