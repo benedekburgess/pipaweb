@@ -79,7 +79,12 @@ while($row = mysqli_fetch_assoc($query)){
 	<body>
 		<header>
 			Van-e pipa a 1020-ban?
-			<span style="text-align:right; display:block; float:right;">Hello <?php if($logged_in==true){ echo $current_username; } ?>!</span>
+			<span style="text-align:right; display:block; float:right;">Hello <?php if($logged_in==true){ echo $current_username; } ?>!
+				
+				<a href="admin">Admin</a><?php if($logged_in==true){ ?>
+				<a href="logout.php">Kijelentkezés</a><?php } ?>
+				
+			</span>
 		</header>
 		<aside>
 			<?php
@@ -152,8 +157,6 @@ while($row = mysqli_fetch_assoc($query)){
 			<img src="img/<?php echo $pipatext; ?>.png" style="max-width:320px; position:relative; left:21px;">
 		</nav>
 		<span class="adminlink">
-			<a href="admin">Admin</a><?php if($logged_in==true){ ?>
-			<a href="logout.php">Kijelentkezés</a><?php } ?>
 		</span>
 		<span class="fasz">Írta: beni<br>
 						Hint: vannak easter egg-ek</span>
