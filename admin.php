@@ -283,7 +283,7 @@ while($row = mysqli_fetch_assoc($query)){
 					}
 					if(isset($uri[5])){
 						$page = $uri[5];
-					}else{
+					}elseif(!isset($uri[5]) && !is_numeric($uri[4])){
 						$page = 1;
 					}
 				}
