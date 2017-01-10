@@ -397,8 +397,7 @@ while($row = mysqli_fetch_assoc($query)){
 					</tr>
 					<?php
 				}
-			}
-			?>
+				?>
 			</table>
 			<h3>
 				<?php
@@ -415,7 +414,9 @@ while($row = mysqli_fetch_assoc($query)){
 				if($page<$num_pages-2){
 					?><a href="/admin/log/<?php echo $page+3; ?>"><span style="font-family:'Comic Sans;'">>>></span></a><?php
 				}
-				?></h3>
+				?></h3><?php 
+			}
+			?>
 		</nav>
 					<?php
 				}
