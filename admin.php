@@ -346,11 +346,11 @@ while($row = mysqli_fetch_assoc($query)){
 					?><a href="/admin/pipes/<?php echo $page-3; ?>"><span style="font-family:'Comic Sans;'"><<<</span></a>&nbsp;<?php
 				}
 				if($page>1){
-					?><a href="/admin/pipes/<?php echo $page-1; ?>"><span style="font-family:'Comic Sans;'"><</span></a><?php
+					?><a id="leftbutton" href="/admin/pipes/<?php echo $page-1; ?>"><span style="font-family:'Comic Sans;'"><</span></a><?php
 				}
 				echo " $page ";
 				if($page<$num_pages){
-					?><a href="/admin/pipes/<?php echo $page+1; ?>"><span style="font-family:'Comic Sans;'">></span></a>&nbsp;<?php
+					?><a id="rightbutton" href="/admin/pipes/<?php echo $page+1; ?>"><span style="font-family:'Comic Sans;'">></span></a>&nbsp;<?php
 				}
 				if($page<$num_pages-2){
 					?><a href="/admin/pipes/<?php echo $page+3; ?>"><span style="font-family:'Comic Sans;'">>>></span></a><?php
