@@ -360,7 +360,7 @@ while($row = mysqli_fetch_assoc($query)){
 					<td><h3><a href="/admin/log/ip/<?php echo $ip; ?>"><?php echo get_ip($ip,$mysqli); ?></a></h3></td>
 					<td><h3><a href="/admin/log/data/<?php echo $data; ?>"><?php echo $data; ?></a></h3></td>
 					<td><h3><?php echo gmdate("Y/n/d H:i:s",$ts+3600); ?></h3></td>
-					<td><h3><a href="/admin/log/user_id/<?php echo $uid; ?>"><?php echo get_username($uid,$mysqli); ?></a></h3></td
+					<td><h3><a href="/admin/log/user_id/<?php echo $uid; ?>"><?php echo get_username($uid,$mysqli); ?></a></h3></td>
 					
 				</tr>
 					<?php
@@ -369,18 +369,29 @@ while($row = mysqli_fetch_assoc($query)){
 			</table>
 				<h3>
 				<?php
+				$arrsize = count($uri);
+				if(($arrsize==4 || ($arrsize==5 && is_numeric($uri[4]))) && !is_numeric($uri[4])){
+					$url = "/admin/log/".$group_by."/";
+				}elseif($arrsize==3){
+					$url = "/admin/log/";
+				}elseif($arrsize==5){
+					$url = "/admin/log/".$group_by."/".$gb_value."/";
+				}else{
+					$url = "/admin/log/";
+				}
+				$num_pages = ceil(mysqli_num_rows(mysqli_query($mysqli,$query))/15);
 				if($page>3){
-					?><a href="/admin/log/<?php echo $page-3; ?>"><span style="font-family:'Comic Sans;'"><<<</span></a>&nbsp;<?php
+					?><a href="<?php echo $url; ?><?php echo $page-3; ?>"><span style="font-family:'Comic Sans;'"><<<</span></a>&nbsp;<?php
 				}
 				if($page>1){
-					?><a href="/admin/log/<?php echo $page-1; ?>"><span style="font-family:'Comic Sans;'"><</span></a><?php
+					?><a id="leftbutton" href="<?php echo $url; ?><?php echo $page-1; ?>"><span style="font-family:'Comic Sans;'"><</span></a><?php
 				}
 				echo " $page ";
 				if($page<$num_pages){
-					?><a href="/admin/log/<?php echo $page+1; ?>"><span style="font-family:'Comic Sans;'">></span></a>&nbsp;<?php
+					?><a id="rightbutton" href="<?php echo $url; ?><?php echo $page+1; ?>"><span style="font-family:'Comic Sans;'">></span></a>&nbsp;<?php
 				}
 				if($page<$num_pages-2){
-					?><a href="/admin/log/<?php echo $page+3; ?>"><span style="font-family:'Comic Sans;'">>>></span></a><?php
+					?><a href="<?php echo $url; ?><?php echo $page+3; ?>"><span style="font-family:'Comic Sans;'">>>></span></a><?php
 				}
 				?></h3><?php
 			}elseif($mode=="pipes"){							// ###################### PIPÁK ######################
