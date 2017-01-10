@@ -463,6 +463,7 @@ while($row = mysqli_fetch_assoc($query)){
 					<th><h3><b>Töröl</b></h3></th>
 					<th><h3><b>Megölés</b></h3></th>
 					<th><h3><b>Mosás</b></h3></th>
+					<th><h3><b>Új szén</b></h3></th>
 				</tr>
 				<?php
 				$page2 = ($page-1)*10;
