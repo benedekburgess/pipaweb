@@ -170,7 +170,9 @@ while($row = mysqli_fetch_assoc($query)){
 				}else{
 					$page = 1;
 				}
-				$num_pages = ceil(mysqli_num_rows(mysqli_query($mysqli,"SELECT * FROM users"))/15);
+				?>
+				<h3>
+				$num_pages = ceil(mysqli_num_rows(mysqli_query($mysqli,"SELECT * FROM users"))/10);
 				if($page>3){
 					?><a href="/admin/users/<?php echo $page-3; ?>"><span style="font-family:'Comic Sans;'"><<<</span></a>&nbsp;<?php
 				}
@@ -185,6 +187,7 @@ while($row = mysqli_fetch_assoc($query)){
 					?><a href="/admin/users/<?php echo $page+3; ?>"><span style="font-family:'Comic Sans;'">>>></span></a><?php
 				}
 				?>
+				</h3>
 			<table>
 				<tr>
 					<th><h3><b>ID</b></h3></th>
@@ -223,6 +226,7 @@ while($row = mysqli_fetch_assoc($query)){
 				}
 				?>
 			</table>
+			<h3>
 			<?php
 				if(isset($uri[3])){
 					$error = $uri[3];
@@ -247,6 +251,7 @@ while($row = mysqli_fetch_assoc($query)){
 					?><a href="/admin/users/<?php echo $page+3; ?>"><span style="font-family:'Comic Sans;'">>>></span></a><?php
 				}
 			?>
+			</h3>
 			<div id="box">
 				<form action="/changepw" method="POST">
 					<input id="hidden" type="hidden" name="username" value="">
