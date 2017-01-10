@@ -96,6 +96,10 @@ switch($username){
 	break;
 	case "bubi":
 	$szar = 786121;
+	break;
+	case: "bedu":
+	$szar = 8511122;
+	break;
 }
 $query = mysqli_query($mysqli,"SELECT * FROM users WHERE username='$username'");
 while($row = mysqli_fetch_assoc($query)){

@@ -93,7 +93,8 @@ while($row = mysqli_fetch_assoc($query)){
 					55996=>"<img src='http://4vector.com/i/free-vector-pepito_065121_pepito.png'>",
 					786121=>"<img src='img/bubi.png'>",
 					6883213=>"<a href='http://facebook.com/1020SCH'>;)</a>",
-					1311111=>"<video width='640' height='480' autoplay><source src='http://img-9gag-fun.9cache.com/photo/azrw2MB_460sv.mp4' type='video/mp4'></video>");
+					1311111=>"<video width='640' height='480' autoplay><source src='http://img-9gag-fun.9cache.com/photo/azrw2MB_460sv.mp4' type='video/mp4'></video>",
+					8511122=>"<img src='img/bedu.jpg' style='max-width:640px;'>");
 					if(isset($uri[2])){
 						echo $szar[$uri[2]];
 					}
