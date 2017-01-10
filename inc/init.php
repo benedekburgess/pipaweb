@@ -46,7 +46,7 @@ function get_username($id,$mysqli){
 function get_ip($ip,$mysqli){
 	$query = mysqli_query($mysqli,"SELECT * FROM iptable WHERE ip='$ip'");
 	$row = mysqli_fetch_assoc($query);
-	if(mysqli_num_rows($mysqli)<1){
+	if(mysqli_num_rows($query)<1){
 		return $ip;
 	}else{
 		return $row['name'];
