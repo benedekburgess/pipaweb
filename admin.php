@@ -309,12 +309,14 @@ while($row = mysqli_fetch_assoc($query)){
 					$query = "SELECT * FROM log ORDER BY ts";
 				}
 				$arrsize = count($uri);
-				if($arrsize==4 || ($arrsize==5 && is_numeric($uri[4]))){
+				if(($arrsize==4 || ($arrsize==5 && is_numeric($uri[4]))) && !is_numeric($uri[4])){
 					$url = "/admin/log/".$group_by."/";
 				}elseif($arrsize==3){
 					$url = "/admin/log/";
 				}elseif($arrsize==5){
 					$url = "/admin/log/".$group_by."/".$gb_value."/";
+				}else{
+					$url = "/admin/log/";
 				}
 				$num_pages = ceil(mysqli_num_rows(mysqli_query($mysqli,$query))/15);
 				if($page>3){
