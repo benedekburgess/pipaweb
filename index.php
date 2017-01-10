@@ -168,8 +168,8 @@ while($row = mysqli_fetch_assoc($query)){
 		$szentext = "szen_".$vaneszen;
 		?>
 		<nav>
-			<img src="img/<?php echo $szentext; ?>.png" style="max-width:320px; position:relative; margin-top:50px; margin-right:10px;">
-			<img src="img/<?php echo $dohanytext; ?>.png" style="max-width:320px; margin-top:50px; margin-left:10px;">
+			<img src="img/<?php echo $szentext; ?>.png" style="max-width:320px; position:relative; margin-top:30px; margin-right:10px;">
+			<img src="img/<?php echo $dohanytext; ?>.png" style="max-width:320px; margin-top:30px; margin-left:10px;">
 		</nav>
 		<span class="adminlink">
 		</span>
