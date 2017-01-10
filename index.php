@@ -101,6 +101,13 @@ while($row = mysqli_fetch_assoc($query)){
 			if($vanpipa==false){
 				$vanpipa = "nincs";
 			}
+		if($iter<3){
+			$mosni = "jo";
+		}elseif($iter>=3 && $iter<7){
+			$mosni = "mosni";
+		}else{
+			$mosni = "animals";
+		}
 			$pipatext = "pipa_".$mosni."_".$vanpipa;
 			?>
 			
@@ -143,13 +150,6 @@ while($row = mysqli_fetch_assoc($query)){
 		
 		</footer>
 		<?php
-		if($iter<3){
-			$mosni = "jo";
-		}elseif($iter>=3 && $iter<7){
-			$mosni = "mosni";
-		}else{
-			$mosni = "animals";
-		}
 		if($szeniter>18){
 			$vaneszen = "van";
 		}elseif($szeniter<=18 && $szeniter>0){
@@ -168,8 +168,8 @@ while($row = mysqli_fetch_assoc($query)){
 		$szentext = "szen_".$vaneszen;
 		?>
 		<nav>
-			<img src="img/<?php echo $szentext; ?>.png" style="max-width:320px; position:relative; bottom:50px; margin-right:40px;">
-			<img src="img/<?php echo $dohanytext; ?>.png" style="max-width:320px;>
+			<img src="img/<?php echo $szentext; ?>.png" style="max-width:320px; position:relative; margin-top:30px;">
+			<img src="img/<?php echo $dohanytext; ?>.png" style="max-width:320px; margin-top:30px;">
 		</nav>
 		<span class="adminlink">
 		</span>
