@@ -546,7 +546,7 @@ while($row = mysqli_fetch_assoc($query)){
 						<th><b><h3>Alias</h3></b></th>
 					</tr>
 					<?php
-					$query = mysqli_query($mysqli,"SELECT * FROM iptable LIMIT 15 OFFSET $page2");
+					$query = mysqli_query($mysqli,"SELECT * FROM iptable LIMIT 15 OFFSET $page2 ORDER BY ip ASC");
 					while($row = mysqli_fetch_assoc($query)){
 						$ip = $row['ip'];
 						$id = $row['id'];
