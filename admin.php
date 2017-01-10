@@ -335,7 +335,7 @@ while($row = mysqli_fetch_assoc($query)){
 					?>
 				<tr>
 					<td><h3><a href="/admin/log/ip/<?php echo $ip; ?>"><?php echo get_ip($ip,$mysqli); ?></a></h3></td>
-					<td><h3><a href="/admin/log/data/<?php echo $data; ?>"><?php echo $data; ?></a></h3></td>
+					<td><h3><a href="/admin/log/data/'<?php echo $data; ?>'"><?php echo $data; ?></a></h3></td>
 					<td><h3><?php echo gmdate("Y/n/d H:i:s",$ts+3600); ?></h3></td>
 					<td><h3><a href="/admin/log/user_id/<?php echo $uid; ?>"><?php echo get_username($uid,$mysqli); ?></a></h3></td
 					
@@ -347,6 +347,10 @@ while($row = mysqli_fetch_assoc($query)){
 				<h3>
 				<?php
 				$num_pages = ceil(mysqli_num_rows(mysqli_query($mysqli,"SELECT * FROM log"))/15);
+				$arrsize = count($uri);
+				if($arrsize==3){
+					echo "sima log";
+				}
 				if($page>3){
 					?><a href="/admin/log/<?php echo $page-3; ?>"><span style="font-family:'Comic Sans;'"><<<</span></a>&nbsp;<?php
 				}
