@@ -12,12 +12,12 @@ if($admin==2){
 	die();
 }
 
-if($admin==1){
-	$admin = 0;
-}else{
-	$admin = 1;
-}
-if($current_user_admin==2 && $admin!=2){
+if($current_user_admin==2 && ($admin==1 || $admin==0)){
+	if($admin==1){
+		$admin = 0;
+	}elseif($admin==0){
+		$admin = 1;
+	}
 	mysqli_query($mysqli,"UPDATE users SET admin='$admin' WHERE username='$username'");
 }else{
 	add_to_log($mysqli,"failed_admin_chg",$uid);
