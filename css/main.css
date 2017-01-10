@@ -147,7 +147,3 @@ footer .info{
 footer .info:hover{
 	opacity:0.8;
 }
-header span.right{
-	display:block;
-	float:right;
-}
