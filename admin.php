@@ -274,10 +274,28 @@ while($row = mysqli_fetch_assoc($query)){
 						$page = $uri[3];
 					}
 				}
+				if(!is_numeric($page)){
+					$group_by = $uri[3];
+					if(isset($uri[4])){
+						$gb_value = $uri[4];
+					}
+					if(isset($uri[5])){
+						$page = $uri[5];
+					}else{
+						$page = 1;
+					}
+				}
 				?>
 				<h3>
 				<?php
-				$num_pages = ceil(mysqli_num_rows(mysqli_query($mysqli,"SELECT * FROM log"))/15);
+				if(isset($gb_value)){
+					$query = "SELECT * FROM log WHERE $group_by='$gb_value'";
+				}elseif(isset($group_by)){
+					$query = "SELECT * FROM log ORDER BY $group_by ASC"
+				}else{
+					$query = "SELECT * FROM log ORDER BY ts";
+				}
+				$num_pages = ceil(mysqli_num_rows(mysqli_query($mysqli,$query))/15);
 				if($page>3){
 					?><a href="/admin/log/<?php echo $page-3; ?>"><span style="font-family:'Comic Sans;'"><<<</span></a>&nbsp;<?php
 				}
@@ -294,14 +312,21 @@ while($row = mysqli_fetch_assoc($query)){
 				?></h3>
 			<table>
 				<tr>
-					<th><h3><b>IP</b></h3></th>
-					<th><h3><b>Művelet</b></h3></th>
-					<th><h3><b>Idő</b></h3></th>
-					<th><h3><b>Felhasználó</b></h3></th>
+					<th><h3><b><a href="ip">IP</a></b></h3></th>
+					<th><h3><b><a href="data">Művelet</a></b></h3></th>
+					<th><h3><b><a href="ts">Idő</a></b></h3></th>
+					<th><h3><b><a href="user_id">Felhasználó</a></b></h3></th>
 				</tr>
 				<?php
 				$page2 = ($page-1)*15;
-				$query = mysqli_query($mysqli,"SELECT * FROM log ORDER BY ts DESC LIMIT 15 OFFSET $page2");
+				if(isset($gb_value)){
+					$query = "SELECT * FROM log WHERE $group_by='$gb_value' ORDER BY ts DESC LIMIT 15 OFFSET $page2";
+				}elseif(isset($group_by)){
+					$query = "SELECT * FROM log ORDER BY $group_by ASC LIMIT 15 OFFSET $page2";
+				}else{
+					$query ="SELECT * FROM log ORDER BY ts DESC LIMIT 15 OFFSET $page2";
+				}
+				$query = mysqli_query($mysqli,$query);
 				while($row = mysqli_fetch_assoc($query)){
 					$ip  = $row['ip'];
 					$data = $row['data'];
@@ -309,10 +334,10 @@ while($row = mysqli_fetch_assoc($query)){
 					$uid = $row['user_id'];
 					?>
 				<tr>
-					<td><h3><?php echo get_ip($ip,$mysqli); ?></h3></td>
-					<td><h3><?php echo $data; ?></h3></td>
+					<td><h3><a href="ip/<?php echo $ip; ?>"><?php echo get_ip($ip,$mysqli); ?></a></h3></td>
+					<td><h3><a href="data/<?php echo $data; ?>"><?php echo $data; ?></a></h3></td>
 					<td><h3><?php echo gmdate("Y/n/d H:i:s",$ts+3600); ?></h3></td>
-					<td><h3><?php echo get_username($uid,$mysqli); ?></h3></td
+					<td><h3><a href="user_id/<?php echo $uid; ?>"><?php echo get_username($uid,$mysqli); ?></a></h3></td
 					
 				</tr>
 					<?php
