@@ -537,7 +537,7 @@ while($row = mysqli_fetch_assoc($query)){
 					<tr>
 						<th><b><h3>ID</h3></b></th>
 						<th><b><h3>IP</h3></b></th>
-						</th><b><h3>Alia</h3></b></th>
+						<th><b><h3>Alias</h3></b></th>
 					</tr>
 					<?php
 					if(isset($uri[3]) && $uri[3]!=""){
