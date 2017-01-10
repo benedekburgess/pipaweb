@@ -11,8 +11,8 @@ $username=$uri[2];
 
 $query = mysqli_query($mysqli,"SELECT * FROM users WHERE username='$username'");
 $row = mysqli_fetch_assoc($query);
-$admin = $row['admin'];
-
+echo $admin = $row['admin'];
+die();
 if($admin==2){
 	header("Location: ../admin/users");
 }
