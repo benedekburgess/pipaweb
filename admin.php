@@ -165,7 +165,11 @@ while($row = mysqli_fetch_assoc($query)){
 				if(isset($uri[3])){
 					$error = $uri[3];
 				}
-				$page = $uri[4];
+				if(isset($uri[4]) && $uri[4]!=""){
+					$page = $uri[4];
+				}else($uri[4]==""){
+					$page = 1;
+				}
 				$num_pages = ceil(mysqli_num_rows(mysqli_query($mysqli,"SELECT * FROM users"))/15);
 				if($page>3){
 					?><a href="/admin/users/<?php echo $page-3; ?>"><span style="font-family:'Comic Sans;'"><<<</span></a>&nbsp;<?php
@@ -220,7 +224,11 @@ while($row = mysqli_fetch_assoc($query)){
 				?>
 			</table>
 			<?php
-				$page = $uri[4];
+				if(isset($uri[4]) && $uri[4]!=""){
+					$page = $uri[4];
+				}else($uri[4]==""){
+					$page = 1;
+				}
 				$num_pages = ceil(mysqli_num_rows(mysqli_query($mysqli,"SELECT * FROM users"))/15);
 				if($page>3){
 					?><a href="/admin/users/<?php echo $page-3; ?>"><span style="font-family:'Comic Sans;'"><<<</span></a>&nbsp;<?php
