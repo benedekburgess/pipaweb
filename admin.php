@@ -344,7 +344,7 @@ while($row = mysqli_fetch_assoc($query)){
 				?>
 				<h3>
 				<?php
-				$num_pages = ceil(mysqli_num_rows(mysqli_query($mysqli,"SELECT * FROM pipe"))/15);
+				$num_pages = ceil(mysqli_num_rows(mysqli_query($mysqli,"SELECT * FROM pipe"))/10);
 				if($page>3){
 					?><a href="/admin/pipes/<?php echo $page-3; ?>"><span style="font-family:'Comic Sans;'"><<<</span></a>&nbsp;<?php
 				}
@@ -371,7 +371,7 @@ while($row = mysqli_fetch_assoc($query)){
 				</tr>
 				<?php
 				$page2 = ($page-1)*15;
-				$query = mysqli_query($mysqli,"SELECT * FROM pipe ORDER BY ts DESC LIMIT 15 OFFSET $page2");
+				$query = mysqli_query($mysqli,"SELECT * FROM pipe ORDER BY ts DESC LIMIT 10 OFFSET $page2");
 				while($row = mysqli_fetch_assoc($query)){
 					$id = $row['id'];
 					$ts = $row['ts'];
