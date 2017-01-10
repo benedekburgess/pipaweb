@@ -333,10 +333,10 @@ while($row = mysqli_fetch_assoc($query)){
 				?></h3>
 			<table>
 				<tr>
-					<th><h3><b><form action="" method="POST"><input type="hidden" name="order" value="<?php echo $neworder; ?>"><a onClick="$(this).parent.submit()" href="/admin/log/ip">IP</a></form></b></h3></th>
-					<th><h3><b><form action="" method="POST"><input type="hidden" name="order" value="<?php echo $neworder; ?>"><a onClick="$(this).parent.submit()" href="/admin/log/data">Művelet</a></form></b></h3></th>
-					<th><h3><b><form action="" method="POST"><input type="hidden" name="order" value="<?php echo $neworder; ?>"><a onClick="$(this).parent.submit()" href="/admin/log/ts">Idő</a></form></b></h3></th>
-					<th><h3><b><form action="" method="POST"><input type="hidden" name="order" value="<?php echo $neworder; ?>"><a onClick="$(this).parent.submit()" href="/admin/log/user_id">Felhasználó</a></form></b></h3></th>
+					<th><h3><b><form action="/admin/log" method="POST"><input type="hidden" name="order" value="<?php echo $neworder; ?>"><a onClick="$(this).parent.submit()" href="/admin/log/ip">IP</a></form></b></h3></th>
+					<th><h3><b><form action="/admin/log" method="POST"><input type="hidden" name="order" value="<?php echo $neworder; ?>"><a onClick="$(this).parent.submit()" href="/admin/log/data">Művelet</a></form></b></h3></th>
+					<th><h3><b><form action="/admin/log" method="POST"><input type="hidden" name="order" value="<?php echo $neworder; ?>"><a onClick="$(this).parent.submit()" href="/admin/log/ts">Idő</a></form></b></h3></th>
+					<th><h3><b><form action="/admin/log" method="POST"><input type="hidden" name="order" value="<?php echo $neworder; ?>"><a onClick="$(this).parent.submit()" href="/admin/log/user_id">Felhasználó</a></form></b></h3></th>
 				</tr>
 				<?php
 				$page2 = ($page-1)*15;
