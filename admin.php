@@ -262,7 +262,7 @@ while($row = mysqli_fetch_assoc($query)){
 					<td><h3><?php echo $ip; ?></h3></td>
 					<td><h3><?php echo $data; ?></h3></td>
 					<td><h3><?php echo gmdate("Y/n/d H:i:s",$ts+3600); ?></h3></td>
-					<td><h3><?php echo $uid; ?></h3></td
+					<td><h3><?php echo get_username($uid); ?></h3></td
 					
 				</tr>
 					<?php

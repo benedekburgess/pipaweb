@@ -38,6 +38,9 @@ if(isset($_SESSION['uid'])){
 function get_username($id,$mysqli){
 	$query = mysqli_query($mysqli,"SELECT * FROM users WHERE id='$id'");
 	$row = mysqli_fetch_assoc($query);
+	if($id==0){
+		return "unknown";
+	}
 	return $row['username'];
 }
 function add_to_log($mysqli,$data,$user_id){
