@@ -75,7 +75,7 @@ while($row = mysqli_fetch_assoc($query)){
 					74555=>"Szarok a vicceid",
 					136786=>"<iframe width='560' height='315' src='https://www.youtube.com/embed/RIYUyq-UvI0' frameborder='0' allowfullscreen></iframe>",
 					9745=>"<img src='https://pbs.twimg.com/media/BXRdLmvCEAARF-p.jpg:large'>",
-					69=>"Ne legyél buzi",
+					69=>"Csinicsani",
 					1=>"Miért hagyod üresen bazdmeg??",
 					941111=>"<video width='640' height='480' autoplay><source src='csupity.mp4' type='video/mp4'></video>",
 					123456789=>"<img width='640' src='http://rainbowsandlollipops.net/wp-content/uploads/2016/10/Brexit.jpg'>",
