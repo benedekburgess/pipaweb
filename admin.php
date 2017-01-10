@@ -343,6 +343,9 @@ while($row = mysqli_fetch_assoc($query)){
 				<?php
 				$page2 = ($page-1)*15;
 				if(isset($gb_value)){
+					if($group_by=="user_id"){
+						$gb_value = explode("'",$gb_value)[1];
+					}
 					$query = "SELECT * FROM log WHERE $group_by='$gb_value' ORDER BY ts $order LIMIT 15 OFFSET $page2";
 				}elseif(isset($group_by)){
 					$query = "SELECT * FROM log ORDER BY $group_by $order LIMIT 15 OFFSET $page2";
@@ -360,7 +363,7 @@ while($row = mysqli_fetch_assoc($query)){
 					<td><h3><a href="/admin/log/ip/<?php echo $ip; ?>"><?php echo get_ip($ip,$mysqli); ?></a></h3></td>
 					<td><h3><a href="/admin/log/data/<?php echo $data; ?>"><?php echo $data; ?></a></h3></td>
 					<td><h3><?php echo gmdate("Y/n/d H:i:s",$ts+3600); ?></h3></td>
-					<td><h3><a href="/admin/log/user_id/<?php echo $uid; ?>/"><?php echo get_username($uid,$mysqli); ?></a></h3></td>
+					<td><h3><a href="/admin/log/user_id/'<?php echo $uid; ?>'"><?php echo get_username($uid,$mysqli); ?></a></h3></td>
 					
 				</tr>
 					<?php
