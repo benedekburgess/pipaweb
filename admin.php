@@ -312,7 +312,7 @@ while($row = mysqli_fetch_assoc($query)){
 					$query = "SELECT * FROM log ORDER BY ts";
 				}
 				$arrsize = count($uri);
-				if(($arrsize==4 && !is_numeric($uri[3])) || ($arrsize==5 && is_numeric($uri[4])) || (!isset($uri[4]) && $uri[3]=="user_id") || ($arrsize==5 && $uri[3]=="user_id")){
+				if(($arrsize==4 && !is_numeric($uri[3])) || ($arrsize==5 && is_numeric($uri[4]))){
 					$url = "/admin/log/".$group_by."/";
 					echo 1;
 				}elseif($arrsize==3){
