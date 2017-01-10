@@ -276,8 +276,10 @@ while($row = mysqli_fetch_assoc($query)){
 				}
 				if(!is_numeric($page)){
 					$group_by = $uri[3];
-					if(isset($uri[4])){
+					if(isset($uri[4]) && !is_numeric($uri[4])){
 						$gb_value = $uri[4];
+					}elseif(isset($uri[4]) && is_numeric($uri[4])){
+						$page = $uri[4];
 					}
 					if(isset($uri[5])){
 						$page = $uri[5];
@@ -294,6 +296,10 @@ while($row = mysqli_fetch_assoc($query)){
 					$query = "SELECT * FROM log ORDER BY $group_by ASC";
 				}else{
 					$query = "SELECT * FROM log ORDER BY ts";
+				}
+				$arrsize = count($uri);
+				if($arrsize==4){
+					
 				}
 				$num_pages = ceil(mysqli_num_rows(mysqli_query($mysqli,$query))/15);
 				if($page>3){
@@ -346,11 +352,6 @@ while($row = mysqli_fetch_assoc($query)){
 			</table>
 				<h3>
 				<?php
-				$num_pages = ceil(mysqli_num_rows(mysqli_query($mysqli,"SELECT * FROM log"))/15);
-				$arrsize = count($uri);
-				if($arrsize==3){
-					echo "sima log";
-				}
 				if($page>3){
 					?><a href="/admin/log/<?php echo $page-3; ?>"><span style="font-family:'Comic Sans;'"><<<</span></a>&nbsp;<?php
 				}
