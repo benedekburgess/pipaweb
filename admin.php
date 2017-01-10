@@ -360,7 +360,7 @@ while($row = mysqli_fetch_assoc($query)){
 					<td><h3><a href="/admin/log/ip/<?php echo $ip; ?>"><?php echo get_ip($ip,$mysqli); ?></a></h3></td>
 					<td><h3><a href="/admin/log/data/<?php echo $data; ?>"><?php echo $data; ?></a></h3></td>
 					<td><h3><?php echo gmdate("Y/n/d H:i:s",$ts+3600); ?></h3></td>
-					<td><h3><a href="/admin/log/user_id/<?php echo $uid; ?>"><?php echo get_username($uid,$mysqli); ?></a></h3></td>
+					<td><h3><a href="/admin/log/user_id/<?php echo $uid; ?>/"><?php echo get_username($uid,$mysqli); ?></a></h3></td>
 					
 				</tr>
 					<?php
