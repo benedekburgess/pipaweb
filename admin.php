@@ -165,6 +165,21 @@ while($row = mysqli_fetch_assoc($query)){
 				if(isset($uri[3])){
 					$error = $uri[3];
 				}
+				$page = $uri[4];
+				$num_pages = ceil(mysqli_num_rows(mysqli_query($mysqli,"SELECT * FROM users"))/15);
+				if($page>3){
+					?><a href="/admin/users/<?php echo $page-3; ?>"><span style="font-family:'Comic Sans;'"><<<</span></a>&nbsp;<?php
+				}
+				if($page>1){
+					?><a id="leftbutton" href="/admin/users/<?php echo $page-1; ?>"><span style="font-family:'Comic Sans;'"><</span></a><?php
+				}
+				echo " $page ";
+				if($page<$num_pages){
+					?><a id="rightbutton" href="/admin/users/<?php echo $page+1; ?>"><span style="font-family:'Comic Sans;'">></span></a>&nbsp;<?php
+				}
+				if($page<$num_pages-2){
+					?><a href="/admin/users/<?php echo $page+3; ?>"><span style="font-family:'Comic Sans;'">>>></span></a><?php
+				}
 				?>
 			<table>
 				<tr>
@@ -204,6 +219,23 @@ while($row = mysqli_fetch_assoc($query)){
 				}
 				?>
 			</table>
+			<?php
+				$page = $uri[4];
+				$num_pages = ceil(mysqli_num_rows(mysqli_query($mysqli,"SELECT * FROM users"))/15);
+				if($page>3){
+					?><a href="/admin/users/<?php echo $page-3; ?>"><span style="font-family:'Comic Sans;'"><<<</span></a>&nbsp;<?php
+				}
+				if($page>1){
+					?><a id="leftbutton" href="/admin/users/<?php echo $page-1; ?>"><span style="font-family:'Comic Sans;'"><</span></a><?php
+				}
+				echo " $page ";
+				if($page<$num_pages){
+					?><a id="rightbutton" href="/admin/users/<?php echo $page+1; ?>"><span style="font-family:'Comic Sans;'">></span></a>&nbsp;<?php
+				}
+				if($page<$num_pages-2){
+					?><a href="/admin/users/<?php echo $page+3; ?>"><span style="font-family:'Comic Sans;'">>>></span></a><?php
+				}
+			?>
 			<div id="box">
 				<form action="/changepw" method="POST">
 					<input id="hidden" type="hidden" name="username" value="">
