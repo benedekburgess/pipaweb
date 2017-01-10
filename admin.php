@@ -500,21 +500,86 @@ while($row = mysqli_fetch_assoc($query)){
 			<h3>
 				<?php
 				if($page>3){
-					?><a href="/admin/log/<?php echo $page-3; ?>"><span style="font-family:'Comic Sans;'"><<<</span></a>&nbsp;<?php
+					?><a href="/admin/log/<?php echo $page-3; ?>"><span style="font-family:'Comic Sans MS';"><<<</span></a>&nbsp;<?php
 				}
 				if($page>1){
-					?><a href="/admin/log/<?php echo $page-1; ?>"><span style="font-family:'Comic Sans;'"><</span></a><?php
+					?><a href="/admin/log/<?php echo $page-1; ?>"><span style="font-family:'Comic Sans MS';"><</span></a><?php
 				}
 				echo " $page ";
 				if($page<$num_pages){
-					?><a href="/admin/log/<?php echo $page+1; ?>"><span style="font-family:'Comic Sans;'">></span></a>&nbsp;<?php
+					?><a href="/admin/log/<?php echo $page+1; ?>"><span style="font-family:'Comic Sans MS';">></span></a>&nbsp;<?php
 				}
 				if($page<$num_pages-2){
-					?><a href="/admin/log/<?php echo $page+3; ?>"><span style="font-family:'Comic Sans;'">>>></span></a><?php
+					?><a href="/admin/log/<?php echo $page+3; ?>"><span style="font-family:'Comic Sans MS';">>>></span></a><?php
 				}
 				?></h3><?php 
 			}elseif($mode=="ips"){
-				
+				?>
+				<h3>
+				<?php
+				$numpages = ceil(mysqli_num_rows(mysqli_query($mysqli,"SELECT * FROM iptable"))/15);
+				if($page>3){
+					?><a href="/admin/ips/<?php echo $page-3; ?>"><span style="font-family:'Comic Sans';"><<<</span></a>&nbsp;<?php
+				}
+				if($page>1){
+					?><a href="/admin/ips/<?php echo $page-1; ?>"><span style="font-family:'Comic Sans';"><</span></a><?php
+				}
+				echo " $page ";
+				if($page<$numpages){
+					?><a href="/admin/ips/<?php echo $page+1; ?>"><span style="font-family:'Comic Sans';">></span></a>&nbsp;<?php
+				}
+				if($page<$numpages-2){
+					?><a href="/admin/ips/<?php echo $page+3; ?>"><span style="font-family:'Comic Sans';">>>></span></a><?php
+				}
+				?>
+				</h3>
+				<table>
+					<tr>
+						<th><b><h3>ID</h3></b></th>
+						<th><b><h3>IP</h3></b></th>
+						</th><b><h3>Alia</h3></b></th>
+					</tr>
+					<?php
+					if(isset($uri[3]) && $uri[3]!=""){
+						$page=$uri[3];
+					}else{
+						$page = 1;
+					}
+					$page2 = ($page-1)*15;
+					$query = mysqli_query($mysqli,"SELECT * FROM iptable LIMIT 15 OFFSET $page2");
+					while($row = mysqli_fetch_assoc($query)){
+						$ip = $row['ip'];
+						$id = $row['id'];
+						$name = $row['name'];
+						?>
+						<tr>
+							<td><h3><?php echo $id; ?></h3></td>
+							<td><h3><?php echo $ip; ?></h3></td>
+							<td><h3><?php echo $name; ?></h3></td>
+						</tr>
+						<?php
+					}
+					?>
+				</table>
+				<h3>
+				<?php
+				$numpages = ceil(mysqli_num_rows(mysqli_query($mysqli,"SELECT * FROM iptable"))/15);
+				if($page>3){
+					?><a href="/admin/ips/<?php echo $page-3; ?>"><span style="font-family:'Comic Sans';"><<<</span></a>&nbsp;<?php
+				}
+				if($page>1){
+					?><a href="/admin/ips/<?php echo $page-1; ?>"><span style="font-family:'Comic Sans';"><</span></a><?php
+				}
+				echo " $page ";
+				if($page<$numpages){
+					?><a href="/admin/ips/<?php echo $page+1; ?>"><span style="font-family:'Comic Sans';">></span></a>&nbsp;<?php
+				}
+				if($page<$numpages-2){
+					?><a href="/admin/ips/<?php echo $page+3; ?>"><span style="font-family:'Comic Sans';">>>></span></a><?php
+				}
+				?>
+				</h3>
+				<?php
 				
 			}
 			?>
