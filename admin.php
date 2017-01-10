@@ -528,17 +528,17 @@ while($row = mysqli_fetch_assoc($query)){
 					$page2 = ($page-1)*15;
 				$numpages = ceil(mysqli_num_rows(mysqli_query($mysqli,"SELECT * FROM iptable"))/15);
 				if($page>3){
-					?><a href="/admin/ips/<?php echo $page-3; ?>"><span style="font-family:'Comic Sans';"><<<</span></a>&nbsp;<?php
+					?><a href="/admin/ips/<?php echo $page-3; ?>"><span style="font-family:'Comic Sans MS';"><<<</span></a>&nbsp;<?php
 				}
 				if($page>1){
-					?><a id="leftbutton" href="/admin/ips/<?php echo $page-1; ?>"><span style="font-family:'Comic Sans';"><</span></a><?php
+					?><a id="leftbutton" href="/admin/ips/<?php echo $page-1; ?>"><span style="font-family:'Comic Sans MS';"><</span></a><?php
 				}
 				echo " $page ";
 				if($page<$numpages){
-					?><a id="rightbutton" href="/admin/ips/<?php echo $page+1; ?>"><span style="font-family:'Comic Sans';">></span></a>&nbsp;<?php
+					?><a id="rightbutton" href="/admin/ips/<?php echo $page+1; ?>"><span style="font-family:'Comic Sans MS';">></span></a>&nbsp;<?php
 				}
 				if($page<$numpages-2){
-					?><a href="/admin/ips/<?php echo $page+3; ?>"><span style="font-family:'Comic Sans';">>>></span></a><?php
+					?><a href="/admin/ips/<?php echo $page+3; ?>"><span style="font-family:'Comic Sans MS';">>>></span></a><?php
 				}
 				?>
 				</h3>
@@ -567,17 +567,17 @@ while($row = mysqli_fetch_assoc($query)){
 				<h3>
 				<?php
 				if($page>3){
-					?><a href="/admin/ips/<?php echo $page-3; ?>"><span style="font-family:'Comic Sans';"><<<</span></a>&nbsp;<?php
+					?><a href="/admin/ips/<?php echo $page-3; ?>"><span style="font-family:'Comic Sans MS';"><<<</span></a>&nbsp;<?php
 				}
 				if($page>1){
-					?><a href="/admin/ips/<?php echo $page-1; ?>"><span style="font-family:'Comic Sans';"><</span></a><?php
+					?><a href="/admin/ips/<?php echo $page-1; ?>"><span style="font-family:'Comic Sans MS';"><</span></a><?php
 				}
 				echo " $page ";
 				if($page<$numpages){
-					?><a href="/admin/ips/<?php echo $page+1; ?>"><span style="font-family:'Comic Sans';">></span></a>&nbsp;<?php
+					?><a href="/admin/ips/<?php echo $page+1; ?>"><span style="font-family:'Comic Sans MS';">></span></a>&nbsp;<?php
 				}
 				if($page<$numpages-2){
-					?><a href="/admin/ips/<?php echo $page+3; ?>"><span style="font-family:'Comic Sans';">>>></span></a><?php
+					?><a href="/admin/ips/<?php echo $page+3; ?>"><span style="font-family:'Comic Sans MS';">>>></span></a><?php
 				}
 				?>
 				</h3>
