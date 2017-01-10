@@ -98,6 +98,14 @@ while($row = mysqli_fetch_assoc($query)){
 			}elseif($vanpipa=="meghal"){
 				echo "Kezd meghalni - ".$type."<br><span style='font-size:14px;'>".gmdate("H:i", $ts+600+360)." -kor kezdődött</span>";
 			}
+			if($vanpipa==false){
+				$vanpipa = "nincs";
+			}
+			$pipatext = "pipa_".$mosni."_".$vanpipa;
+			?>
+			
+			<img src="img/<?php echo $pipatext; ?>.png" style="max-width:320px;">
+			<?php
 			echo "<br><span style='font-size:14px;'>Az elmúlt 24 órában $count db pipa volt</span><br>";
 			?>
 		</aside>
@@ -105,6 +113,9 @@ while($row = mysqli_fetch_assoc($query)){
 		<?php 
 		$query = mysqli_query($mysqli,"SELECT * FROM info");
 		while($row = mysqli_fetch_assoc($query)){
+			if($row['name']=="dohany"){
+				$vanedohany=$row['description'];
+			}
 		?>
 			<div <?php if($row['description']=="nemelado"){ echo "title='= Nincs eladó'"; } ?> class="info" style="<?php if($row['name']=="szen"){ ?>border-right:1px solid rgba(0,0,0,0.4);<?php 
 			} if($row['description']=="true"){ ?>background:green;<?php }elseif($row['description']=="nemelado"){ echo "background:yellow;"; }else{ echo "background:rgba(255,50,0,1);"; } ?>"><?php 
@@ -146,15 +157,19 @@ while($row = mysqli_fetch_assoc($query)){
 		}else{
 			$vaneszen = "nincs";
 		}
-		$szentext = "szen_".$vaneszen;
-		if($vanpipa==false){
-			$vanpipa = "nincs";
+		if($vanedohany=="nemelado"){
+			$dohanytext = "dohany_keves";
+		}elseif($vanedohany=="false"){
+			$dohanytext = "dohany_nincs";
+		}else{
+			$dohanytext = "dohany_van";
 		}
-		$pipatext = "pipa_".$mosni."_".$vanpipa;
+			
+		$szentext = "szen_".$vaneszen;
 		?>
 		<nav>
 			<img src="img/<?php echo $szentext; ?>.png" style="max-width:320px; position:relative; bottom:50px; margin-right:40px;">
-			<img src="img/<?php echo $pipatext; ?>.png" style="max-width:320px; position:relative; left:21px;">
+			<img src="img/<?php echo $dohanytext; ?>.png" style="max-width:320px;>
 		</nav>
 		<span class="adminlink">
 		</span>
