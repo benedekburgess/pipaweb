@@ -203,17 +203,17 @@ while($row = mysqli_fetch_assoc($query)){
 				<h3><?php
 				$num_pages = ceil(mysqli_num_rows(mysqli_query($mysqli,"SELECT * FROM users"))/10);
 				if($page>3){
-					?><a href="/admin/users/<?php echo $page-3; ?>"><span style="font-family:'Comic Sans;'"><<<</span></a>&nbsp;<?php
+					?><a href="/admin/users/<?php echo $page-3; ?>"><span style="font-family:'Comic Sans MS';"><<<</span></a>&nbsp;<?php
 				}
 				if($page>1){
-					?><a id="leftbutton" href="/admin/users/<?php echo $page-1; ?>"><span style="font-family:'Comic Sans;'"><</span></a><?php
+					?><a id="leftbutton" href="/admin/users/<?php echo $page-1; ?>"><span style="font-family:'Comic Sans MS';"><</span></a><?php
 				}
 				echo " $page ";
 				if($page<$num_pages){
-					?><a id="rightbutton" href="/admin/users/<?php echo $page+1; ?>"><span style="font-family:'Comic Sans;'">></span></a>&nbsp;<?php
+					?><a id="rightbutton" href="/admin/users/<?php echo $page+1; ?>"><span style="font-family:'Comic Sans MS';">></span></a>&nbsp;<?php
 				}
 				if($page<$num_pages-2){
-					?><a href="/admin/users/<?php echo $page+3; ?>"><span style="font-family:'Comic Sans;'">>>></span></a><?php
+					?><a href="/admin/users/<?php echo $page+3; ?>"><span style="font-family:'Comic Sans MS';">>>></span></a><?php
 				}
 				?>
 				</h3>
@@ -259,17 +259,17 @@ while($row = mysqli_fetch_assoc($query)){
 			<h3>
 			<?php
 				if($page>3){
-					?><a href="/admin/users/<?php echo $page-3; ?>"><span style="font-family:'Comic Sans;'"><<<</span></a>&nbsp;<?php
+					?><a href="/admin/users/<?php echo $page-3; ?>"><span style="font-family:'Comic Sans MS';"><<<</span></a>&nbsp;<?php
 				}
 				if($page>1){
-					?><a id="leftbutton" href="/admin/users/<?php echo $page-1; ?>"><span style="font-family:'Comic Sans;'"><</span></a><?php
+					?><a id="leftbutton" href="/admin/users/<?php echo $page-1; ?>"><span style="font-family:'Comic Sans MS';"><</span></a><?php
 				}
 				echo " $page ";
 				if($page<$num_pages){
-					?><a id="rightbutton" href="/admin/users/<?php echo $page+1; ?>"><span style="font-family:'Comic Sans;'">></span></a>&nbsp;<?php
+					?><a id="rightbutton" href="/admin/users/<?php echo $page+1; ?>"><span style="font-family:'Comic Sans MS';">></span></a>&nbsp;<?php
 				}
 				if($page<$num_pages-2){
-					?><a href="/admin/users/<?php echo $page+3; ?>"><span style="font-family:'Comic Sans;'">>>></span></a><?php
+					?><a href="/admin/users/<?php echo $page+3; ?>"><span style="font-family:'Comic Sans MS';">>>></span></a><?php
 				}
 			?>
 			</h3>
@@ -351,17 +351,17 @@ while($row = mysqli_fetch_assoc($query)){
 					$url = "/admin/log/";
 				}
 				if($page>3){
-					?><a href="<?php echo $url; ?><?php echo $page-3; ?>"><span style="font-family:'Comic Sans;'"><<<</span></a>&nbsp;<?php
+					?><a href="<?php echo $url; ?><?php echo $page-3; ?>"><span style="font-family:'Comic Sans MS';"><<<</span></a>&nbsp;<?php
 				}
 				if($page>1){
-					?><a id="leftbutton" href="<?php echo $url; ?><?php echo $page-1; ?>"><span style="font-family:'Comic Sans;'"><</span></a><?php
+					?><a id="leftbutton" href="<?php echo $url; ?><?php echo $page-1; ?>"><span style="font-family:'Comic Sans MS';"><</span></a><?php
 				}
 				echo " $page ";
 				if($page<$num_pages){
-					?><a id="rightbutton" href="<?php echo $url; ?><?php echo $page+1; ?>"><span style="font-family:'Comic Sans;'">></span></a>&nbsp;<?php
+					?><a id="rightbutton" href="<?php echo $url; ?><?php echo $page+1; ?>"><span style="font-family:'Comic Sans MS';">></span></a>&nbsp;<?php
 				}
 				if($page<$num_pages-2){
-					?><a href="<?php echo $url; ?><?php echo $page+3; ?>"><span style="font-family:'Comic Sans;'">>>></span></a><?php
+					?><a href="<?php echo $url; ?><?php echo $page+3; ?>"><span style="font-family:'Comic Sans MS';">>>></span></a><?php
 				}
 				?></h3>
 			<table>
@@ -417,17 +417,17 @@ while($row = mysqli_fetch_assoc($query)){
 					$url = "/admin/log/";
 				}
 				if($page>3){
-					?><a href="<?php echo $url; ?><?php echo $page-3; ?>"><span style="font-family:'Comic Sans;'"><<<</span></a>&nbsp;<?php
+					?><a href="<?php echo $url; ?><?php echo $page-3; ?>"><span style="font-family:'Comic Sans MS';"><<<</span></a>&nbsp;<?php
 				}
 				if($page>1){
-					?><a id="leftbutton" href="<?php echo $url; ?><?php echo $page-1; ?>"><span style="font-family:'Comic Sans;'"><</span></a><?php
+					?><a id="leftbutton" href="<?php echo $url; ?><?php echo $page-1; ?>"><span style="font-family:'Comic Sans MS';"><</span></a><?php
 				}
 				echo " $page ";
 				if($page<$num_pages){
-					?><a id="rightbutton" href="<?php echo $url; ?><?php echo $page+1; ?>"><span style="font-family:'Comic Sans;'">></span></a>&nbsp;<?php
+					?><a id="rightbutton" href="<?php echo $url; ?><?php echo $page+1; ?>"><span style="font-family:'Comic Sans MS';">></span></a>&nbsp;<?php
 				}
 				if($page<$num_pages-2){
-					?><a href="<?php echo $url; ?><?php echo $page+3; ?>"><span style="font-family:'Comic Sans;'">>>></span></a><?php
+					?><a href="<?php echo $url; ?><?php echo $page+3; ?>"><span style="font-family:'Comic Sans MS';">>>></span></a><?php
 				}
 				?></h3><?php
 			}elseif($mode=="pipes"){							// ###################### PIPÁK ######################
@@ -441,17 +441,17 @@ while($row = mysqli_fetch_assoc($query)){
 				<?php
 				$num_pages = ceil(mysqli_num_rows(mysqli_query($mysqli,"SELECT * FROM pipe"))/10);
 				if($page>3){
-					?><a href="/admin/pipes/<?php echo $page-3; ?>"><span style="font-family:'Comic Sans;'"><<<</span></a>&nbsp;<?php
+					?><a href="/admin/pipes/<?php echo $page-3; ?>"><span style="font-family:'Comic Sans MS';"><<<</span></a>&nbsp;<?php
 				}
 				if($page>1){
-					?><a id="leftbutton" href="/admin/pipes/<?php echo $page-1; ?>"><span style="font-family:'Comic Sans;'"><</span></a><?php
+					?><a id="leftbutton" href="/admin/pipes/<?php echo $page-1; ?>"><span style="font-family:'Comic Sans MS';"><</span></a><?php
 				}
 				echo " $page ";
 				if($page<$num_pages){
-					?><a id="rightbutton" href="/admin/pipes/<?php echo $page+1; ?>"><span style="font-family:'Comic Sans;'">></span></a>&nbsp;<?php
+					?><a id="rightbutton" href="/admin/pipes/<?php echo $page+1; ?>"><span style="font-family:'Comic Sans MS';">></span></a>&nbsp;<?php
 				}
 				if($page<$num_pages-2){
-					?><a href="/admin/pipes/<?php echo $page+3; ?>"><span style="font-family:'Comic Sans;'">>>></span></a><?php
+					?><a href="/admin/pipes/<?php echo $page+3; ?>"><span style="font-family:'Comic Sans MS';">>>></span></a><?php
 				}
 				?></h3>
 			<table>
