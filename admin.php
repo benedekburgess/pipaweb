@@ -167,7 +167,7 @@ while($row = mysqli_fetch_assoc($query)){
 				}
 				if($error!="username" && $error!="password"){
 					$page = $uri[3];
-				}else($uri[3]==""){
+				}else{
 					$page = 1;
 				}
 				$num_pages = ceil(mysqli_num_rows(mysqli_query($mysqli,"SELECT * FROM users"))/15);
@@ -229,7 +229,7 @@ while($row = mysqli_fetch_assoc($query)){
 				}
 				if($error!="username" && $error!="password"){
 					$page = $uri[3];
-				}else($uri[3]==""){
+				}else{
 					$page = 1;
 				}
 				$num_pages = ceil(mysqli_num_rows(mysqli_query($mysqli,"SELECT * FROM users"))/15);
