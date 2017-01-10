@@ -320,6 +320,9 @@ while($row = mysqli_fetch_assoc($query)){
 					$url = "/admin/log/";
 					echo 2;
 				}elseif($arrsize==5 || $arrsize==6 || ($arrsize==5 && $uri[3]=="user_id")){
+					if($uri[3]=="user_id"){
+						$gb_value = "'".$gb_value."'";
+					}
 					$url = "/admin/log/".$group_by."/".$gb_value."/";
 					echo 3;
 				}else{
