@@ -517,7 +517,13 @@ while($row = mysqli_fetch_assoc($query)){
 				?>
 				<h3>
 				<?php
-				$numpages = ceil(mysqli_num_rows(mysqli_query($mysqli,"SELECT * FROM iptable"))/15);
+					if(isset($uri[3]) && $uri[3]!=""){
+						$page=$uri[3];
+					}else{
+						$page = 1;
+					}
+					$page2 = ($page-1)*15;
+				echo $numpages = ceil(mysqli_num_rows(mysqli_query($mysqli,"SELECT * FROM iptable"))/15);
 				if($page>3){
 					?><a href="/admin/ips/<?php echo $page-3; ?>"><span style="font-family:'Comic Sans';"><<<</span></a>&nbsp;<?php
 				}
@@ -540,12 +546,6 @@ while($row = mysqli_fetch_assoc($query)){
 						<th><b><h3>Alias</h3></b></th>
 					</tr>
 					<?php
-					if(isset($uri[3]) && $uri[3]!=""){
-						$page=$uri[3];
-					}else{
-						$page = 1;
-					}
-					$page2 = ($page-1)*15;
 					$query = mysqli_query($mysqli,"SELECT * FROM iptable LIMIT 15 OFFSET $page2");
 					while($row = mysqli_fetch_assoc($query)){
 						$ip = $row['ip'];
@@ -563,7 +563,6 @@ while($row = mysqli_fetch_assoc($query)){
 				</table>
 				<h3>
 				<?php
-				$numpages = ceil(mysqli_num_rows(mysqli_query($mysqli,"SELECT * FROM iptable"))/15);
 				if($page>3){
 					?><a href="/admin/ips/<?php echo $page-3; ?>"><span style="font-family:'Comic Sans';"><<<</span></a>&nbsp;<?php
 				}
