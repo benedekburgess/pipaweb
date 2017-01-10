@@ -137,6 +137,7 @@ while($row = mysqli_fetch_assoc($query)){
 							<input type="hidden" name="sent" value="<?php echo $id; ?>">
 							<input type="submit" value="Elküld">
 						</form>
+						<h3><a href="mosas">Pipamosás</a></h3>
 						
 						<?php
 						
