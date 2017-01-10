@@ -472,6 +472,7 @@ while($row = mysqli_fetch_assoc($query)){
 					$ts = $row['ts'];
 					$type = $row['type'];
 					$mosas = $row['mosas'];
+					$ujszen = $row['uj_szen'];
 					$by = get_username($row['user_id'],$mysqli);
 					$diff = (time()-$ts)/60;
 					if($diff>0 && $diff<15){
@@ -492,6 +493,7 @@ while($row = mysqli_fetch_assoc($query)){
 						<td><h3><a href="/remove/<?php echo $id; ?>"><span style="font-family:'Comic Sans MS';">X</span></a></h3></td>
 						<td><h3><?php if($vanpipa!="Meghalt"){ ?><a href="/kill/<?php echo $id; ?>"><span style="font-family:'Comic Sans MS';">X</span></a><?php } ?></h3></td>
 						<td><h3><img width="24" src="<?php if($mosas!=0){ echo "/img/pipa.png"; }else{ echo "/img/x.png"; }?>"></h3></td>
+						<td><h3><img width="24" src="<?php if($ujszen!=0){ echo "/img/pipa.png"; }else{ echo "/img/x.png"; }?>"></h3></td>
 					</tr>
 					<?php
 				}
