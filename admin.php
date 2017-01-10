@@ -182,7 +182,7 @@ while($row = mysqli_fetch_assoc($query)){
 					<tr>
 						<td><h3><?php echo $id; ?></h3></td>
 						<td><h3 class="user"><?php echo $username; ?></h3></td>
-						<td><h3><?php if($current_user_admin==2){ ?><a href="/chgadmin/<?php echo $id; ?>"><?php } ?><img width="24" src="<?php if($admin==true){ echo "/img/pipa.png"; }else{ echo "/img/x.png"; }?>"><?php if($current_user_admin==2){ ?></a><?php } ?></h3></td>
+						<td><h3><?php if($current_user_admin==2 && $admin!=2){ ?><a href="/chgadmin/<?php echo $id; ?>"><?php } ?><img width="24" src="<?php if($admin==true){ echo "/img/pipa.png"; }else{ echo "/img/x.png"; }?>"><?php if($current_user_admin==2){ ?></a><?php } ?></h3></td>
 						<td><h3><?php if(($admin==false || $current_su==true) && $user_id!=$id){ ?><a href="/remove_user/<?php echo $id; ?>"><span style="font-family:'Comic Sans MS';">X</span></a><?php } ?></h3></td>
 						<td><h3><?php
 						if($admin==false && $current_user_admin > 0){
