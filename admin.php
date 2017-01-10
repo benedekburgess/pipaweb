@@ -151,13 +151,20 @@ while($row = mysqli_fetch_assoc($query)){
 			if($current_user_admin<1){
 				?>
 		<section>
+		<?php
+		
+				if($uri[2]=="users"){
+					echo "<h3>Jelszóváltoztatás sikeres!</h3>";
+				}else{
+					echo "<h3>Jelszóváltoztatás: </h3>";
+				}
+				?>
 			<form action="/changepw" method="POST">
 				<input type="hidden" name="username" value="<?php echo $current_username; ?>">
 				<input type="password" name="pw1" placeholder="Új jelszó">
 				<input type="password" name="pw2" placeholder="Jelszó megint">
 				<input type="submit" value="Elküld">
 			</form>
-		
 		</section>
 				<?php
 			}
