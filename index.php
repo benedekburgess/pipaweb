@@ -12,6 +12,16 @@ if($uri[1]=="fb"){
 		add_to_log($mysqli,"fblnk",0);
 	}
 	header("Location: /");
+	exit();
+}
+if($uri[1]=="qr"){
+	if(isset($user_id)){
+		add_to_log($mysqli,"qr",$user_id);
+	}else{
+		add_to_log($mysqli,"qr");
+	}
+	header("Location: /");
+	exit();
 }
 if(isset($uri[1]) && !empty($uri[1]) && $uri[1]!="fb"){
 	include_once $uri[1] .".php";
