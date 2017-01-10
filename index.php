@@ -7,9 +7,9 @@ if($uri[1]=="admin"){
 }
 if($uri[1]=="fb"){
 	if(isset($user_id)){
-		add_to_log($mysqli,"fb_link",$user_id);
+		add_to_log($mysqli,"fb link",$user_id);
 	}else{
-		add_to_log($mysqli,"fb_link",0);
+		add_to_log($mysqli,"fb link",0);
 	}
 	header("Location: /");
 }
@@ -19,9 +19,9 @@ if(isset($uri[1]) && !empty($uri[1]) && $uri[1]!="fb"){
 }
 setcookie('admin');
 if(isset($user_id)){
-	add_to_log($mysqli,"view_page:index.php",$user_id);
+	add_to_log($mysqli,"view page index",$user_id);
 }else{
-	add_to_log($mysqli,"view_page:index.php",0);
+	add_to_log($mysqli,"view page index",0);
 }
 $vanpipa = false;
 $query = mysqli_query($mysqli,"SELECT * FROM pipe");

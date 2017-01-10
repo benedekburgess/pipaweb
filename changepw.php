@@ -32,9 +32,9 @@ $admin = $row['admin'];
 if($current_user_admin==2 || $current_username==$username || ($current_user_admin==1 && $admin==false)){
 	mysqli_query($mysqli,"UPDATE users SET password='$password', salt='$salt' WHERE username='$username'");
 }else{
-	add_to_log($mysqli,"failed_pw_chg",$uid);
+	add_to_log($mysqli,"failed pw chg",$uid);
 	header("Location: ../admin/users");
 }
-add_to_log($mysqli,"chgpw:$username",$uid);
+add_to_log($mysqli,"chgpw: $username",$uid);
 header("Location: ../admin/users");
 ?>

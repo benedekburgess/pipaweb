@@ -22,7 +22,7 @@ if(isset($uri[2]) && $uri[2]!=""){
 		}
 		$query = mysqli_query($mysqli,"UPDATE info SET description='$set' WHERE name='$name'");
 		echo mysqli_error($mysqli);
-		add_to_log($mysqli,"change_state:$name",$user_id);
+		add_to_log($mysqli,"chg state: $name",$user_id);
 	}
 }
 header("Location: ../admin");

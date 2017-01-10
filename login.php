@@ -110,7 +110,7 @@ if(isset($db_salt)){
 	if($hashed_pw == $db_pw){
 		setcookie("uid",$db_id);
 		$_SESSION['uid'] = $db_id;
-		add_to_log($mysqli,"login:$db_id",$db_id);
+		add_to_log($mysqli,"login: $db_id",$db_id);
 		if(isset($szar)){
 			header("Location: ../admin/$szar");
 		}else{
@@ -118,19 +118,19 @@ if(isset($db_salt)){
 		}
 	}else{
 		if(!isset($szar)){
-			add_to_log($mysqli,"login_attempt:$username",0);
+			add_to_log($mysqli,"fail lgn: $username",0);
 			header("Location: ../admin/12");
 		}else{
-			add_to_log($mysqli,"login_attempt:$username",0);
+			add_to_log($mysqli,"fail lgn: $username",0);
 			header("Location: ../admin/$szar");
 		}
 	}
 }else{
 	if(!isset($szar)){
-		add_to_log($mysqli,"login_attempt:$username",0);
+		add_to_log($mysqli,"fail lgn: $username",0);
 		header("Location: ../admin/12");
 	}else{
-		add_to_log($mysqli,"login_attempt:$username",0);
+		add_to_log($mysqli,"fail lgn: $username",0);
 		header("Location: ../admin/$szar");
 	}
 }

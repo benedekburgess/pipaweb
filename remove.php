@@ -9,6 +9,6 @@ if(!isset($uri[2]) || $uri[2]==""){
 }
 $id = $uri[2];
 mysqli_query($mysqli,"DELETE FROM pipe WHERE id='$id'");
-add_to_log($mysqli,"remove_pipe:$id",$user_id);
+add_to_log($mysqli,"remove pipe: $id",$user_id);
 header("Location: ../admin/pipes");
 ?>

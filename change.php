@@ -29,11 +29,11 @@ if(isset($_POST['type']) && isset($_POST['time']) && isset($_POST['sent'])){
 			$time = time()-45*60;
 		}
 		$query = mysqli_query($mysqli,"UPDATE pipe SET type='$type', ts='$time' WHERE id='$id'");
-		add_to_log($mysqli,"change_pipe:type,time",$user_id);
+		add_to_log($mysqli,"chg pipe:type",$user_id);
 		echo mysqli_error($mysqli);
 	}else{
 		$query = mysqli_query($mysqli,"UPDATE pipe SET type='$type' WHERE id='$id'");
-		add_to_log($mysqli,"change_pipe:type",$user_id);
+		add_to_log($mysqli,"chg pipe:type",$user_id);
 		echo mysqli_error($mysqli);
 	}
 	header("Location: ../admin");
