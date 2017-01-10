@@ -111,7 +111,7 @@ while($row = mysqli_fetch_assoc($query)){
 			$pipatext = "pipa_".$mosni."_".$vanpipa;
 			?>
 			<br>
-			<img src="img/<?php echo $pipatext; ?>.png" style="max-width:320px; clear:both;">
+			<img src="img/<?php echo $pipatext; ?>.png" style="max-height:250px; clear:both;">
 			<?php
 			echo "<br><span style='font-size:14px;'>Az elmúlt 24 órában $count db pipa volt</span><br>";
 			?>
@@ -168,8 +168,8 @@ while($row = mysqli_fetch_assoc($query)){
 		$szentext = "szen_".$vaneszen;
 		?>
 		<nav>
-			<img src="img/<?php echo $szentext; ?>.png" style="max-width:320px; position:relative; margin-top:30px;">
-			<img src="img/<?php echo $dohanytext; ?>.png" style="max-width:320px; margin-top:30px;">
+			<img src="img/<?php echo $szentext; ?>.png" style="max-width:320px; position:relative; margin-top:50px;">
+			<img src="img/<?php echo $dohanytext; ?>.png" style="max-width:320px; margin-top:50px;">
 		</nav>
 		<span class="adminlink">
 		</span>
