@@ -379,7 +379,6 @@ while($row = mysqli_fetch_assoc($query)){
 				}else{
 					$url = "/admin/log/";
 				}
-				$num_pages = ceil(mysqli_num_rows(mysqli_query($mysqli,$query))/15);
 				if($page>3){
 					?><a href="<?php echo $url; ?><?php echo $page-3; ?>"><span style="font-family:'Comic Sans;'"><<<</span></a>&nbsp;<?php
 				}
