@@ -312,10 +312,10 @@ while($row = mysqli_fetch_assoc($query)){
 				?></h3>
 			<table>
 				<tr>
-					<th><h3><b><a href="ip">IP</a></b></h3></th>
-					<th><h3><b><a href="data">Művelet</a></b></h3></th>
-					<th><h3><b><a href="ts">Idő</a></b></h3></th>
-					<th><h3><b><a href="user_id">Felhasználó</a></b></h3></th>
+					<th><h3><b><a href="/admin/log/ip">IP</a></b></h3></th>
+					<th><h3><b><a href="/admin/log/data">Művelet</a></b></h3></th>
+					<th><h3><b><a href="/admin/log/ts">Idő</a></b></h3></th>
+					<th><h3><b><a href="/admin/log/user_id">Felhasználó</a></b></h3></th>
 				</tr>
 				<?php
 				$page2 = ($page-1)*15;
@@ -334,10 +334,10 @@ while($row = mysqli_fetch_assoc($query)){
 					$uid = $row['user_id'];
 					?>
 				<tr>
-					<td><h3><a href="ip/<?php echo $ip; ?>"><?php echo get_ip($ip,$mysqli); ?></a></h3></td>
-					<td><h3><a href="data/<?php echo $data; ?>"><?php echo $data; ?></a></h3></td>
+					<td><h3><a href="/admin/log/ip/<?php echo $ip; ?>"><?php echo get_ip($ip,$mysqli); ?></a></h3></td>
+					<td><h3><a href="/admin/log/data/<?php echo $data; ?>"><?php echo $data; ?></a></h3></td>
 					<td><h3><?php echo gmdate("Y/n/d H:i:s",$ts+3600); ?></h3></td>
-					<td><h3><a href="user_id/<?php echo $uid; ?>"><?php echo get_username($uid,$mysqli); ?></a></h3></td
+					<td><h3><a href="/admin/log/user_id/<?php echo $uid; ?>"><?php echo get_username($uid,$mysqli); ?></a></h3></td
 					
 				</tr>
 					<?php
