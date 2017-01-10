@@ -286,6 +286,17 @@ while($row = mysqli_fetch_assoc($query)){
 					}elseif(!isset($uri[5]) && !is_numeric($uri[4])){
 						$page = 1;
 					}
+					if(isset($_POST['order'])){
+						$order = $_POST['order'];
+						if($order=="ASC"){
+							$neworder="DESC";
+						}else{
+							$neworder="ASC";
+						}
+					}else{
+						$order="ASC";
+						$neworder ="DESC";
+					}
 				}
 				?>
 				<h3>
@@ -322,17 +333,17 @@ while($row = mysqli_fetch_assoc($query)){
 				?></h3>
 			<table>
 				<tr>
-					<th><h3><b><a href="/admin/log/ip">IP</a></b></h3></th>
-					<th><h3><b><a href="/admin/log/data">Művelet</a></b></h3></th>
-					<th><h3><b><a href="/admin/log/ts">Idő</a></b></h3></th>
-					<th><h3><b><a href="/admin/log/user_id">Felhasználó</a></b></h3></th>
+					<th><h3><b><form action="" method="POST"><input type="hidden" name="order" value="<?php echo $neworder; ?>"><a onClick="form.submit()" href="/admin/log/ip">IP</a></form></b></h3></th>
+					<th><h3><b><form action="" method="POST"><input type="hidden" name="order" value="<?php echo $neworder; ?>"><a onClick="form.submit()" href="/admin/log/data">Művelet</a></form></b></h3></th>
+					<th><h3><b><form action="" method="POST"><input type="hidden" name="order" value="<?php echo $neworder; ?>"><a onClick="form.submit()" href="/admin/log/ts">Idő</a></form></b></h3></th>
+					<th><h3><b><form action="" method="POST"><input type="hidden" name="order" value="<?php echo $neworder; ?>"><a onClick="form.submit()" href="/admin/log/user_id">Felhasználó</a></form></b></h3></th>
 				</tr>
 				<?php
 				$page2 = ($page-1)*15;
 				if(isset($gb_value)){
-					$query = "SELECT * FROM log WHERE $group_by='$gb_value' ORDER BY ts DESC LIMIT 15 OFFSET $page2";
+					$query = "SELECT * FROM log WHERE $group_by='$gb_value' ORDER BY ts $order LIMIT 15 OFFSET $page2";
 				}elseif(isset($group_by)){
-					$query = "SELECT * FROM log ORDER BY $group_by ASC LIMIT 15 OFFSET $page2";
+					$query = "SELECT * FROM log ORDER BY $group_by $order LIMIT 15 OFFSET $page2";
 				}else{
 					$query ="SELECT * FROM log ORDER BY ts DESC LIMIT 15 OFFSET $page2";
 				}
