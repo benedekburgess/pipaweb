@@ -111,7 +111,7 @@ while($row = mysqli_fetch_assoc($query)){
 			$pipatext = "pipa_".$mosni."_".$vanpipa;
 			?>
 			<br>
-			<img src="img/<?php echo $pipatext; ?>.png" style="max-height:250px; clear:both;">
+			<img src="img/<?php echo $pipatext; ?>.png" style="max-height:400px; clear:both;">
 			<?php
 			echo "<br><span style='font-size:14px;'>Az elmúlt 24 órában $count db pipa volt</span><br>";
 			?>
