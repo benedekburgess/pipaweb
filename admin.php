@@ -370,7 +370,7 @@ while($row = mysqli_fetch_assoc($query)){
 					<th><h3><b>Mosás</b></h3></th>
 				</tr>
 				<?php
-				$page2 = ($page-1)*15;
+				$page2 = ($page-1)*10;
 				$query = mysqli_query($mysqli,"SELECT * FROM pipe ORDER BY ts DESC LIMIT 10 OFFSET $page2");
 				while($row = mysqli_fetch_assoc($query)){
 					$id = $row['id'];
