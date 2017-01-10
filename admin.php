@@ -170,7 +170,9 @@ while($row = mysqli_fetch_assoc($query)){
 				}else{
 					$page = 1;
 				}
-				echo $page;
+				if($page==""){
+					$page=1;
+				}
 				?>
 				<h3><?php
 				$num_pages = ceil(mysqli_num_rows(mysqli_query($mysqli,"SELECT * FROM users"))/10);
