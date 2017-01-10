@@ -4,9 +4,10 @@ setcookie('admin');
 if($logged_in==false){
 	header("Location: ../admin");
 }
-echo $username=$uri[2];
+echo $userid=$uri[2];
 die();
-$query = mysqli_query($mysqli,"SELECT * FROM users WHERE username='$username'");
+$query = mysqli_query($mysqli,"SELECT * FROM users WHERE id='$userid'");
+$username = $row['username'];
 $row = mysqli_fetch_assoc($query);
 $admin = $row['admin'];
 if($admin==2){
@@ -20,7 +21,7 @@ if($current_user_admin==2 && ($admin==1 || $admin==0)){
 	}elseif($admin==0){
 		$admin = 1;
 	}
-	mysqli_query($mysqli,"UPDATE users SET admin='$admin' WHERE username='$username'");
+	mysqli_query($mysqli,"UPDATE users SET admin='$admin' WHERE id='$userid'");
 }else{
 	add_to_log($mysqli,"failed_admin_chg",$uid);
 	header("Location: ../admin/users");
