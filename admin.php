@@ -171,7 +171,7 @@ while($row = mysqli_fetch_assoc($query)){
 					$page = 1;
 				}
 				?>
-				<h3>
+				<h3><?php
 				$num_pages = ceil(mysqli_num_rows(mysqli_query($mysqli,"SELECT * FROM users"))/10);
 				if($page>3){
 					?><a href="/admin/users/<?php echo $page-3; ?>"><span style="font-family:'Comic Sans;'"><<<</span></a>&nbsp;<?php
