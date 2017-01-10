@@ -43,7 +43,7 @@ switch($username){
 	case "sajt":
 	$szar = 74555;
 	break;
-	case "kenyer":
+	case "kenyér":
 	$szar = 136786;
 	break;
 	case "dildo":
