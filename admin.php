@@ -197,7 +197,8 @@ while($row = mysqli_fetch_assoc($query)){
 					<th><h3><b>Jelszó</b></h3></th>
 				</tr>
 				<?php
-				$query = mysqli_query($mysqli,"SELECT * FROM users");
+				$page2 = ($page-1)*10;
+				$query = mysqli_query($mysqli,"SELECT * FROM users LIMIT 10 OFFSET $page2");
 				while($row = mysqli_fetch_assoc($query)){
 					$id = $row['id'];
 					$username = $row['username'];
@@ -228,15 +229,6 @@ while($row = mysqli_fetch_assoc($query)){
 			</table>
 			<h3>
 			<?php
-				if(isset($uri[3])){
-					$error = $uri[3];
-				}
-				if($error!="username" && $error!="password"){
-					$page = $uri[3];
-				}else{
-					$page = 1;
-				}
-				$num_pages = ceil(mysqli_num_rows(mysqli_query($mysqli,"SELECT * FROM users"))/15);
 				if($page>3){
 					?><a href="/admin/users/<?php echo $page-3; ?>"><span style="font-family:'Comic Sans;'"><<<</span></a>&nbsp;<?php
 				}
