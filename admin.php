@@ -332,9 +332,30 @@ while($row = mysqli_fetch_assoc($query)){
 					?><a href="/admin/log/<?php echo $page+3; ?>"><span style="font-family:'Comic Sans;'">>>></span></a><?php
 				}
 				?></h3><?php
-			}elseif($mode=="pipes"){				// ###################### PIPÁK ######################
+			}elseif($mode=="pipes"){							// ###################### PIPÁK ######################
+				if(isset($uri[3]) && $uri[3]!=""){
+					$page = $uri[3];
+				}else{
+					$page = 1;
+				}
 				?>
-				
+				<h3>
+				<?php
+				$num_pages = ceil(mysqli_num_rows(mysqli_query($mysqli,"SELECT * FROM pipe"))/15);
+				if($page>3){
+					?><a href="/admin/pipes/<?php echo $page-3; ?>"><span style="font-family:'Comic Sans;'"><<<</span></a>&nbsp;<?php
+				}
+				if($page>1){
+					?><a href="/admin/pipes/<?php echo $page-1; ?>"><span style="font-family:'Comic Sans;'"><</span></a><?php
+				}
+				echo " $page ";
+				if($page<$num_pages){
+					?><a href="/admin/pipes/<?php echo $page+1; ?>"><span style="font-family:'Comic Sans;'">></span></a>&nbsp;<?php
+				}
+				if($page<$num_pages-2){
+					?><a href="/admin/pipes/<?php echo $page+3; ?>"><span style="font-family:'Comic Sans;'">>>></span></a><?php
+				}
+				?></h3>
 			<table>
 				<tr>
 					<th><h3><b>Idő</b></h3></th>
@@ -346,7 +367,8 @@ while($row = mysqli_fetch_assoc($query)){
 					<th><h3><b>Mosás</b></h3></th>
 				</tr>
 				<?php
-				$query = mysqli_query($mysqli,"SELECT * FROM pipe");
+				$page2 = ($page-1)*15;
+				$query = mysqli_query($mysqli,"SELECT * FROM pipe LIMIT 15 OFFSET $page2");
 				while($row = mysqli_fetch_assoc($query)){
 					$id = $row['id'];
 					$ts = $row['ts'];
@@ -378,6 +400,22 @@ while($row = mysqli_fetch_assoc($query)){
 			}
 			?>
 			</table>
+			<h3>
+				<?php
+				if($page>3){
+					?><a href="/admin/log/<?php echo $page-3; ?>"><span style="font-family:'Comic Sans;'"><<<</span></a>&nbsp;<?php
+				}
+				if($page>1){
+					?><a href="/admin/log/<?php echo $page-1; ?>"><span style="font-family:'Comic Sans;'"><</span></a><?php
+				}
+				echo " $page ";
+				if($page<$num_pages){
+					?><a href="/admin/log/<?php echo $page+1; ?>"><span style="font-family:'Comic Sans;'">></span></a>&nbsp;<?php
+				}
+				if($page<$num_pages-2){
+					?><a href="/admin/log/<?php echo $page+3; ?>"><span style="font-family:'Comic Sans;'">>>></span></a><?php
+				}
+				?></h3>
 		</nav>
 					<?php
 				}
