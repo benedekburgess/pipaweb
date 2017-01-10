@@ -358,6 +358,9 @@ while($row = mysqli_fetch_assoc($query)){
 					$data = $row['data'];
 					$ts = $row['ts'];
 					$uid = $row['user_id'];
+					if($uid==""){
+						$uid=0;
+					}
 					?>
 				<tr>
 					<td><h3><a href="/admin/log/ip/<?php echo $ip; ?>"><?php echo get_ip($ip,$mysqli); ?></a></h3></td>
