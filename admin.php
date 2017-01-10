@@ -155,6 +155,8 @@ while($row = mysqli_fetch_assoc($query)){
 		
 				if($uri[2]=="users"){
 					echo "<h3>Jelszóváltoztatás sikeres!</h3>";
+				}elseif($uri[2]=="failed"){
+					echo "<h3>Jelszóváltoztatás sikertelen!</h3>";
 				}else{
 					echo "<h3>Jelszóváltoztatás: </h3>";
 				}
