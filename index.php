@@ -90,13 +90,13 @@ while($row = mysqli_fetch_assoc($query)){
 			<?php
 			if($vanpipa==false){
 				echo "Nincs";
-				echo "<br><span style='font-size:14px;'>".gmdate("H:i:s", $ts+7500)." -kor volt utoljára</span>";
+				echo "<br><span style='font-size:14px;'>".gmdate("H:i:s", $ts+3600+4200)." -kor volt utoljára</span>";
 			}elseif($vanpipa=="keszul"){
 				echo "Készül - ".$type." lesz<br><span style='font-size:14px;'>".gmdate("H:i", $ts+3600)." -kor kezdődött</span>";
 			}elseif($vanpipa=="van"){
-				echo "Van - ".$type."<br><span style='font-size:14px;'>".gmdate("H:i", $ts+600+3600)." -kor kezdődött</span>";
+				echo "Van - ".$type."<br><span style='font-size:14px;'>".gmdate("H:i", $ts+900+3600)." -kor kezdődött</span>";
 			}elseif($vanpipa=="meghal"){
-				echo "Kezd meghalni - ".$type."<br><span style='font-size:14px;'>".gmdate("H:i", $ts+600+360)." -kor kezdődött</span>";
+				echo "Kezd meghalni - ".$type."<br><span style='font-size:14px;'>".gmdate("H:i", $ts+900+360)." -kor kezdődött</span>";
 			}
 			if($vanpipa==false){
 				$vanpipa = "nincs";
