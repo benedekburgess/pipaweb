@@ -11,10 +11,9 @@ $username=$uri[2];
 
 $query = mysqli_query($mysqli,"SELECT * FROM users WHERE username='$username'");
 $row = mysqli_fetch_assoc($query);
-echo $admin = $row['admin'];
-die();
 if($admin==2){
 	header("Location: ../admin/users");
+	die();
 }
 
 if($admin==1){
@@ -28,6 +27,7 @@ if($current_user_admin==2){
 }else{
 	add_to_log($mysqli,"failed_admin_chg",$uid);
 	header("Location: ../admin/users");
+	die();
 }
 add_to_log($mysqli,"chgadmin:$username",$uid);
 header("Location: ../admin/users");
