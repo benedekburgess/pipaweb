@@ -313,13 +313,13 @@ while($row = mysqli_fetch_assoc($query)){
 				}
 				$arrsize = count($uri);
 				$num_pages = ceil(mysqli_num_rows(mysqli_query($mysqli,$query))/15);
-				if(($arrsize==4 && !is_numeric($uri[3])) || ($arrsize==5 && is_numeric($uri[4])) || (!isset($uri[4]) && $uri[3]=="user_id") || ($arrsize==5 && $uri[3]=="user_id")){
+				if(($arrsize==4 && !is_numeric($uri[3])) || ($arrsize==5 && is_numeric($uri[4])) || (!isset($uri[4]) && $uri[3]=="user_id")){
 					$url = "/admin/log/".$group_by."/";
 					echo 1;
 				}elseif($arrsize==3){
 					$url = "/admin/log/";
 					echo 2;
-				}elseif($arrsize==5 || $arrsize==6){
+				}elseif($arrsize==5 || $arrsize==6 || ($arrsize==5 && $uri[3]=="user_id")){
 					$url = "/admin/log/".$group_by."/".$gb_value."/";
 					echo 3;
 				}else{
