@@ -13,6 +13,8 @@ if($admin==2){
 }
 
 if($current_user_admin==2 && ($admin==1 || $admin==0)){
+	echo $admin;
+	die();
 	if($admin==1){
 		$admin = 0;
 	}elseif($admin==0){
