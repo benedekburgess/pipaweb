@@ -5,11 +5,22 @@ body{
 html{
 	font-family:Arial !important;
 }
-header{
-	width:calc(100% - 20px);
-	font-size:16pt;
-	padding:10px;
-	background:rgba(0,0,0,0.4);
+@media screen and (min-width:600px){
+	header{
+		width:calc(100% - 20px);
+		font-size:16pt;
+		padding:10px;
+		background:rgba(0,0,0,0.4);
+	}
+}
+@media screen and (max-width:600px){
+	header{
+		width:calc(100% - 20px);
+		font-size:16pt;
+		padding:10px;
+		background:rgba(0,0,0,0.4);
+		height:70px;
+	}
 }
 aside{
 	width:calc(100%);
