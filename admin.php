@@ -371,6 +371,8 @@ while($row = mysqli_fetch_assoc($query)){
 				<?php
 				$arrsize = count($uri);
 				if(($arrsize==4 && !is_numeric($uri[4])) || ($arrsize==5 && is_numeric($uri[4]))){
+					echo $arrsize;
+					echo $uri[4];
 					$url = "/admin/log/".$group_by."/";
 				}elseif($arrsize==3){
 					$url = "/admin/log/";
