@@ -302,6 +302,9 @@ while($row = mysqli_fetch_assoc($query)){
 				<h3>
 				<?php
 				if(isset($gb_value)){
+					if($group_by=="user_id"){
+						$gb_value = explode("'",$gb_value)[1];
+					}
 					$query = "SELECT * FROM log WHERE $group_by='$gb_value'";
 				}elseif(isset($group_by)){
 					$query = "SELECT * FROM log ORDER BY $group_by ASC";
