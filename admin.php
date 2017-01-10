@@ -299,21 +299,25 @@ while($row = mysqli_fetch_assoc($query)){
 				}
 				$arrsize = count($uri);
 				if($arrsize==4){
-					
+					$url = "/admin/log/".$group_by."/";
+				}elseif($arrsize==3){
+					$url = "/admin/log/";
+				}elseif($arrsize==5){
+					$url = "/admin/log/".$group_by."/".$gb_value."/";
 				}
 				$num_pages = ceil(mysqli_num_rows(mysqli_query($mysqli,$query))/15);
 				if($page>3){
-					?><a href="/admin/log/<?php echo $page-3; ?>"><span style="font-family:'Comic Sans;'"><<<</span></a>&nbsp;<?php
+					?><a href="<?php echo $url; ?><?php echo $page-3; ?>"><span style="font-family:'Comic Sans;'"><<<</span></a>&nbsp;<?php
 				}
 				if($page>1){
-					?><a id="leftbutton" href="/admin/log/<?php echo $page-1; ?>"><span style="font-family:'Comic Sans;'"><</span></a><?php
+					?><a id="leftbutton" href="<?php echo $url; ?><?php echo $page-1; ?>"><span style="font-family:'Comic Sans;'"><</span></a><?php
 				}
 				echo " $page ";
 				if($page<$num_pages){
-					?><a id="rightbutton" href="/admin/log/<?php echo $page+1; ?>"><span style="font-family:'Comic Sans;'">></span></a>&nbsp;<?php
+					?><a id="rightbutton" href="<?php echo $url; ?><?php echo $page+1; ?>"><span style="font-family:'Comic Sans;'">></span></a>&nbsp;<?php
 				}
 				if($page<$num_pages-2){
-					?><a href="/admin/log/<?php echo $page+3; ?>"><span style="font-family:'Comic Sans;'">>>></span></a><?php
+					?><a href="<?php echo $url; ?><?php echo $page+3; ?>"><span style="font-family:'Comic Sans;'">>>></span></a><?php
 				}
 				?></h3>
 			<table>
