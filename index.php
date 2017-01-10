@@ -176,6 +176,6 @@ while($row = mysqli_fetch_assoc($query)){
 		<span class="fasz" style="text-align:right;">Írta: beni<br>
 						Hint: vannak easter egg-ek<br>
 						Támogatóink: DJ KotyogósHerka<br>
-						Sztyúp</span>
+						Hosted by: Sztyúp</span>
 	</body>
 </html>
