@@ -82,7 +82,7 @@ while($row = mysqli_fetch_assoc($query)){
 			<span style="text-align:right; display:block; float:right;">Hello<?php if($logged_in==true){ echo " ".$current_username; } ?>! |
 				
 				<a href="admin">Admin</a><?php if($logged_in==true){ ?>
-				<a href="logout.php">Kijelentkezés</a><?php } ?>
+				<a href="/logout">Kijelentkezés</a><?php } ?>
 				
 			</span>
 		</header>
