@@ -7,6 +7,7 @@ if($logged_in==false){
 $username=$uri[2];
 $query = mysqli_query($mysqli,"SELECT * FROM users WHERE username='$username'");
 $row = mysqli_fetch_assoc($query);
+$admin = $row['admin'];
 if($admin==2){
 	header("Location: ../admin/users");
 	die();
