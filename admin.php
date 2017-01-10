@@ -522,11 +522,11 @@ while($row = mysqli_fetch_assoc($query)){
 					?><a href="/admin/ips/<?php echo $page-3; ?>"><span style="font-family:'Comic Sans';"><<<</span></a>&nbsp;<?php
 				}
 				if($page>1){
-					?><a href="/admin/ips/<?php echo $page-1; ?>"><span style="font-family:'Comic Sans';"><</span></a><?php
+					?><a id="leftbutton" href="/admin/ips/<?php echo $page-1; ?>"><span style="font-family:'Comic Sans';"><</span></a><?php
 				}
 				echo " $page ";
 				if($page<$numpages){
-					?><a href="/admin/ips/<?php echo $page+1; ?>"><span style="font-family:'Comic Sans';">></span></a>&nbsp;<?php
+					?><a id="rightbutton" href="/admin/ips/<?php echo $page+1; ?>"><span style="font-family:'Comic Sans';">></span></a>&nbsp;<?php
 				}
 				if($page<$numpages-2){
 					?><a href="/admin/ips/<?php echo $page+3; ?>"><span style="font-family:'Comic Sans';">>>></span></a><?php
