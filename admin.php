@@ -523,7 +523,7 @@ while($row = mysqli_fetch_assoc($query)){
 						$page = 1;
 					}
 					$page2 = ($page-1)*15;
-				echo $numpages = ceil(mysqli_num_rows(mysqli_query($mysqli,"SELECT * FROM iptable"))/15);
+				$numpages = ceil(mysqli_num_rows(mysqli_query($mysqli,"SELECT * FROM iptable"))/15);
 				if($page>3){
 					?><a href="/admin/ips/<?php echo $page-3; ?>"><span style="font-family:'Comic Sans';"><<<</span></a>&nbsp;<?php
 				}
