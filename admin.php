@@ -224,9 +224,12 @@ while($row = mysqli_fetch_assoc($query)){
 				?>
 			</table>
 			<?php
-				if(isset($uri[4]) && $uri[4]!=""){
-					$page = $uri[4];
-				}else($uri[4]==""){
+				if(isset($uri[3])){
+					$error = $uri[3];
+				}
+				if($error!="username" && $error!="password"){
+					$page = $uri[3];
+				}else($uri[3]==""){
 					$page = 1;
 				}
 				$num_pages = ceil(mysqli_num_rows(mysqli_query($mysqli,"SELECT * FROM users"))/15);
