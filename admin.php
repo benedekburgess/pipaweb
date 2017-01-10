@@ -609,8 +609,10 @@ while($row = mysqli_fetch_assoc($query)){
 		
 		</footer>
 	</body>
-		<span class="fasz">Írta: beni<br>
-						Hint 2: próbálgass felhasználóneveket</span>
+		<span class="fasz" style="text-align:right;">Írta: beni<br>
+						Hint 2: próbálgass felhasználóneveket<br>
+						Támogatóink: <a target="_blank" href="https://www.youtube.com/channel/UCLlTfVahBA62Nn2zLPDGSMg">DJ KotyogósHerka</a><br>
+						Hosted by: Sztyúp</span>
 	<script type="text/javascript" src="/js/jquery.js"></script>
 	<script type="text/javascript" src="/js/main.js"></script>
 </html>
