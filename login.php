@@ -97,7 +97,7 @@ switch($username){
 	case "bubi":
 	$szar = 786121;
 	break;
-	case: "bedu":
+	case "bedu":
 	$szar = 8511122;
 	break;
 }
