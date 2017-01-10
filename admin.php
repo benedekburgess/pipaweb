@@ -368,7 +368,7 @@ while($row = mysqli_fetch_assoc($query)){
 				</tr>
 				<?php
 				$page2 = ($page-1)*15;
-				$query = mysqli_query($mysqli,"SELECT * FROM pipe LIMIT 15 OFFSET $page2 ORDER BY ts DESC");
+				$query = mysqli_query($mysqli,"SELECT * FROM pipe ORDER BY ts DESC LIMIT 15 OFFSET $page2");
 				while($row = mysqli_fetch_assoc($query)){
 					$id = $row['id'];
 					$ts = $row['ts'];
