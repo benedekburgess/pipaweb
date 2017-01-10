@@ -299,7 +299,6 @@ while($row = mysqli_fetch_assoc($query)){
 				}
 				$arrsize = count($uri);
 				if($arrsize==4 || ($arrsize==5 && is_numeric($uri[4]))){
-					echo "asd";
 					$url = "/admin/log/".$group_by."/";
 				}elseif($arrsize==3){
 					$url = "/admin/log/";
@@ -346,7 +345,7 @@ while($row = mysqli_fetch_assoc($query)){
 					?>
 				<tr>
 					<td><h3><a href="/admin/log/ip/<?php echo $ip; ?>"><?php echo get_ip($ip,$mysqli); ?></a></h3></td>
-					<td><h3><a href="/admin/log/data/'<?php echo $data; ?>'"><?php echo $data; ?></a></h3></td>
+					<td><h3><a href="/admin/log/data/<?php echo $data; ?>"><?php echo $data; ?></a></h3></td>
 					<td><h3><?php echo gmdate("Y/n/d H:i:s",$ts+3600); ?></h3></td>
 					<td><h3><a href="/admin/log/user_id/<?php echo $uid; ?>"><?php echo get_username($uid,$mysqli); ?></a></h3></td
 					
