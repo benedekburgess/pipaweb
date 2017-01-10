@@ -12,6 +12,6 @@ if($current_user_admin<1){
 }
 $id = $uri[2];
 mysqli_query($mysqli,"DELETE FROM users WHERE id='$id'");
-add_to_log($mysqli,"rem user: $id",$user_id);
+add_to_log($mysqli,"remuser:$id",$user_id);
 header("Location: ../admin/users");
 ?>

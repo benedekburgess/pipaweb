@@ -2,12 +2,12 @@
 require_once "inc/init.php";
 if(isset($user_id)){
 	if(!isset($_COOKIE['admin'])){
-		add_to_log($mysqli,"view page admin",$user_id);
+		add_to_log($mysqli,"viewpg_admin",$user_id);
 		setcookie('admin','true');
 	}
 }else{
 	if(!isset($_COOKIE['admin'])){
-		add_to_log($mysqli,"view page admin",0);
+		add_to_log($mysqli,"viewpg_admin",0);
 		setcookie('admin','true');
 	}
 }
