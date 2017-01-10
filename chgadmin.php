@@ -4,8 +4,7 @@ setcookie('admin');
 if($logged_in==false){
 	header("Location: ../admin");
 }
-echo $userid=$uri[2];
-die();
+$userid=$uri[2];
 $query = mysqli_query($mysqli,"SELECT * FROM users WHERE id='$userid'");
 $username = $row['username'];
 $row = mysqli_fetch_assoc($query);
