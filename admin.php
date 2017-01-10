@@ -121,7 +121,7 @@ while($row = mysqli_fetch_assoc($query)){
 						
 					<input type="submit" value="Elküld">
 						</form>
-						<?php if($iter>3){ ?><h3><a href="mosas">Pipamosás</a></h3><?php } ?>
+						<h3><a href="mosas">Pipamosás</a></h3>
 					<?php
 					}else{
 						
