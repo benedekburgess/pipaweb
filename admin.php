@@ -291,7 +291,7 @@ while($row = mysqli_fetch_assoc($query)){
 				if(isset($gb_value)){
 					$query = "SELECT * FROM log WHERE $group_by='$gb_value'";
 				}elseif(isset($group_by)){
-					$query = "SELECT * FROM log ORDER BY $group_by ASC"
+					$query = "SELECT * FROM log ORDER BY $group_by ASC";
 				}else{
 					$query = "SELECT * FROM log ORDER BY ts";
 				}
