@@ -52,8 +52,13 @@ while($row = mysqli_fetch_assoc($query)){
 	</head>
 	<body>
 		<header>
-			Van-e pipa a 1020-ban? - Admin
-			<span style="text-align:right; display:block; float:right;">Hello <?php if($logged_in==true){ echo $current_username; } ?>!</span>
+			Van-e pipa a 1020-ban?
+			<span style="text-align:right; display:block; float:right;">Hello <?php if($logged_in==true){ echo $current_username; } ?>! |&nbsp;
+				
+				<a href="admin">Admin</a><?php if($logged_in==true){ ?>
+				<a href="logout.php">Kijelentkezés</a><?php } ?>
+				
+			</span>
 		</header>
 		<aside>
 <?php	
