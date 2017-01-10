@@ -299,6 +299,7 @@ while($row = mysqli_fetch_assoc($query)){
 				}
 				$arrsize = count($uri);
 				if($arrsize==4){
+					echo "asd";
 					$url = "/admin/log/".$group_by."/";
 				}elseif($arrsize==3){
 					$url = "/admin/log/";
