@@ -5,8 +5,10 @@ setcookie("admin");
 if($logged_in==false){
 	header("Location: ../");
 }
-if(isset($uri[2]) $$ $uri[2]!=""){
+if(isset($uri[2]) && $uri[2]!=""){
 	$email = $uri[2];
+}else{
+	
 }
 $query = mysqli_query($mysqli,"SELECT * FROM emailek");
 $fasz = false;
