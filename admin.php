@@ -314,7 +314,7 @@ while($row = mysqli_fetch_assoc($query)){
 					$url = "/admin/log/".$group_by."/";
 				}elseif($arrsize==3){
 					$url = "/admin/log/";
-				}elseif($arrsize==5){
+				}elseif($arrsize==5 || $arrsize==6){
 					$url = "/admin/log/".$group_by."/".$gb_value."/";
 				}else{
 					$url = "/admin/log/";
