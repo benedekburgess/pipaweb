@@ -46,7 +46,7 @@ aside{
 	display:block;
 	float:right;
 	padding:10px;
-	background:black !important;
+	background-color:blue !important;
 	clear:none;
 }
 .adminlink{
