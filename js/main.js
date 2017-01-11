@@ -67,6 +67,7 @@ $('#swipetable').on("swipeleft",function(){
 		window.location = link;
 		
 	}
+	console.log('asd');
 });
 $('#swipetable').on("swiperight",function(){
 	var link = $("#leftbutton").attr('href');
