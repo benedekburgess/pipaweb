@@ -40,8 +40,7 @@ if($logged_in==false){
 			<h4>Zene toplista</h4>
 		</aside>
 		<section>
-		kaki
-			<h3>Szavazás</h3>
+			Szavazás
 		</section>
 	</body>
 	<script type="text/javascript" src="/js/jquery.js"></script>
