@@ -101,7 +101,7 @@ while($row = mysqli_fetch_assoc($query)){
 					Admin
 				</span>
 			</a>
-			<span class="right_text">Hello<?php if($logged_in==true){ echo " ".$current_nick; } ?>! | </span>
+			<span class="right_text">Hello<?php if($logged_in==true){ echo " ".$current_nick; } ?>!</span>
 		</header>
 		<aside>
 			<?php
