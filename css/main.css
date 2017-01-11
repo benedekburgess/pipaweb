@@ -1,6 +1,9 @@
 body{
 	max-width:800px;
 	margin:auto;
+	background-image: url("img/bg.png");
+	background-position:center;
+	background-repeat:none;
 }
 html{
 	font-family:Arial !important;
