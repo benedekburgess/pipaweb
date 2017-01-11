@@ -34,8 +34,8 @@ html{
 		color:white;
 		padding-right:0px;
 	}
-	.right_text{
-		clear:left;
+	.header_button{
+		margin-top:10px;
 	}
 }
 aside{
