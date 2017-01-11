@@ -141,7 +141,7 @@ table{
 td{
 	border-left:1px solid rgba(255,255,255,0.4);
 	padding:3px;
-	
+	color:white;
 	border-bottom:1px solid rgba(255,255,255,0.4);
 }
 
@@ -149,6 +149,7 @@ th{
 	border-left:1px solid rgba(255,255,255,0.4);
 	padding:3px;
 	border-bottom:2px solid rgba(255,255,255,0.7);
+	color:white;
 }
 footer{
 	width:calc(100%);
