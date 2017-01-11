@@ -44,6 +44,10 @@ html{
 		clear:both;
 	}
 }
+.clrall{
+	clear:none;
+	display:inline;
+}
 aside{
 	width:calc(100%);
 	background:rgba(255,255,255,0.3);
