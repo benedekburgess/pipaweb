@@ -1,7 +1,5 @@
 <?php
 require_once "inc/init.php";
-$fasz = "fasszal";
-echo 'szeretem a rántott húst $fasz';
 if($logged_in==false){
 	header("Location: /");
 }
