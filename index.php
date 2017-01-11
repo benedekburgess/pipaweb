@@ -89,13 +89,14 @@ while($row = mysqli_fetch_assoc($query)){
 	<body>
 		<header>
 			Van-e pipa a 1020-ban?
-			<span style="text-align:right; display:block; float:right;">Hello<?php if($logged_in==true){ echo " ".$current_nick; } ?>! | </span>
-			<span class="header_button">
-				<a href="admin">Admin</a><?php if($logged_in==true){ ?>
-			</span>
+			
 			<span class="header_button">
 				<a href="/logout">Kijelentkezés</a><?php } ?>
 			</span>
+			<span class="header_button">
+				<a href="admin">Admin</a><?php if($logged_in==true){ ?>
+			</span>
+			<span style="text-align:right; display:block; float:right;">Hello<?php if($logged_in==true){ echo " ".$current_nick; } ?>! | </span>
 		</header>
 		<aside>
 			<?php

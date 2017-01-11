@@ -48,6 +48,8 @@ aside{
 	padding:10px;
 	background-color:blue !important;
 	clear:none;
+	position:relative;
+	bottom:10px;
 }
 .adminlink{
 	display:block;
