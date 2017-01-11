@@ -95,7 +95,7 @@ while($row = mysqli_fetch_assoc($query)){
 			</div>
 			<div class="header_button">
 				<a href="/logout">Kijelentkezés</a><?php } ?>
-			<div class="header_button">
+			</div>
 		</header>
 		<aside>
 			<?php
