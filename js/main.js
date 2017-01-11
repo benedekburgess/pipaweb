@@ -61,14 +61,14 @@ $(document).ready(function(){
 
 	}
 });
-$('body').on("swipeleft",function(){
+$('table').on("swipeleft",function(){
 	var link = $("#rightbutton").attr('href');
 	if(link!=undefined){
 		window.location = link;
 		
 	}
 });
-$('body').on("swiperight",function(){
+$('table').on("swiperight",function(){
 	var link = $("#leftbutton").attr('href');
 	if(link!=undefined){
 		window.location = link;
