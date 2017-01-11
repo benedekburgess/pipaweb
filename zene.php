@@ -36,5 +36,8 @@ if($logged_in==false){
 				<span class="right_text">Hello<?php if($logged_in==true){ echo " ".$current_nick; } ?>!</span>
 			</span>
 		</header>
+		<aside>
+		
+		</aside>
 	</body>
 </html>
