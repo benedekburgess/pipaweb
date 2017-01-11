@@ -194,7 +194,7 @@ while($row = mysqli_fetch_assoc($query)){
 				if(isset($uri[2])){
 					$mode = $uri[2];
 					?>
-		<nav>
+		<nav id="swipetable">
 			<?php
 			if($mode=="users"){						// ###################### FELHASZNÁLÓK ######################
 				if(isset($uri[3])){
@@ -226,7 +226,7 @@ while($row = mysqli_fetch_assoc($query)){
 				}
 				?>
 				</h3>
-			<table id="swipetable">
+			<table>
 				<tr>
 					<th><h3><b>ID</b></h3></th>
 					<th><h3><b>Felhasználónév</b></h3></th>
@@ -373,7 +373,7 @@ while($row = mysqli_fetch_assoc($query)){
 					?><a href="<?php echo $url; ?><?php echo $page+3; ?>"><span style="font-family:'Comic Sans MS';">>>></span></a><?php
 				}
 				?></h3>
-			<table id="swipetable">
+			<table>
 				<tr>
 					<th><h3><b><a onClick="$(this).parent.submit()" href="/admin/log/ip">IP</a></b></h3></th>
 					<th><h3><b><a onClick="$(this).parent.submit()" href="/admin/log/data">Művelet</a></b></h3></th>
@@ -463,7 +463,7 @@ while($row = mysqli_fetch_assoc($query)){
 					?><a href="/admin/pipes/<?php echo $page+3; ?>"><span style="font-family:'Comic Sans MS';">>>></span></a><?php
 				}
 				?></h3>
-			<table id="swipetable">
+			<table>
 				<tr>
 					<th><h3><b>Idő</b></h3></th>
 					<th><h3><b>Dohány</b></h3></th>
@@ -551,7 +551,7 @@ while($row = mysqli_fetch_assoc($query)){
 				}
 				?>
 				</h3>
-				<table id="swipetable">
+				<table>
 					<tr>
 						<th><b><h3>ID</h3></b></th>
 						<th><b><h3>IP</h3></b></th>
