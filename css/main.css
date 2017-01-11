@@ -37,6 +37,9 @@ html{
 	.header_button{
 		margin-top:10px;
 	}
+	.right_text{
+		margin-top:10px;
+	}
 }
 aside{
 	width:calc(100%);
