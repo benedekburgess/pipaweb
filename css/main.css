@@ -54,6 +54,7 @@ aside{
 }
 .header_button:hover{
 	background-color:rgba(255,255,255,0.6);
+	text-decoration:underline;
 }
 .right_text{
 	position:relative;
