@@ -25,5 +25,5 @@ if(isset($uri[2]) && $uri[2]!=""){
 		add_to_log($mysqli,"chgstt:$name",$user_id);
 	}
 }
-header("Location: ../admin");
+//header("Location: ../admin");
 ?>
