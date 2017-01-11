@@ -18,6 +18,15 @@ function add_user_to_db($username,$password,$admin,$mysqli){
 	$error = mysqli_query($mysqli,"INSERT INTO users (username,password,salt,admin) VALUES ('$username','$hashed_password','$salt','$admin')");
 	return mysqli_error($mysqli);
 }
+
+function testing($value){
+	if($value==true){
+		if($_SERVER['REMOTE_ADDR']!='152.66.180.120'){
+			die("<h1>500 - Internal kurvaanyád error</h1>");
+		}
+	}
+}
+testing(true);
 if(isset($_SESSION['uid'])){
 	$logged_in=true;
 	$user_id = mysqli_real_escape_string($mysqli,$_SESSION['uid']);
