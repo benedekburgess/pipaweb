@@ -33,14 +33,14 @@ $(document).ready(function(){
 			break;
 		}
 	});
-	$('table').on("swipeleft",function(){
+	$('body').on("swipeleft",function(){
 		var link = $("#rightbutton").attr('href');
 		if(link!=undefined){
 			window.location = link;
 			
 		}
 	});
-	$('table').on("swiperight",function(){
+	$('body').on("swiperight",function(){
 		var link = $("#leftbutton").attr('href');
 		if(link!=undefined){
 			window.location = link;
