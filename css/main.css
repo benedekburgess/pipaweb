@@ -4,7 +4,7 @@ body{
 	background-image: url("/img/bg.jpg");
 }
 *{
-	text-outline: 2px 2px black;
+	-webkit-text-stroke:1px black;
 	color:white !important;
 }
 html{
