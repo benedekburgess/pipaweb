@@ -92,6 +92,7 @@ form input{
 	bottom:5px;
 	right:5px;
 	font-size:10pt !important;
+	color:white;
 }
 section{
 	width:calc(100%);
