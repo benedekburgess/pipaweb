@@ -112,7 +112,7 @@ if(isset($db_salt)){
 	$hashed_pw .= $db_salt; echo "<br>";
 	echo $hashed_pw = sha1($hashed_pw);
 	if($hashed_pw == $db_pw){
-		setcookie("uid",$db_id);
+		setcookie("uid",$db_id);		
 		$_SESSION['uid'] = $db_id;
 		add_to_log($mysqli,"login:$db_id",$db_id);
 		if(isset($szar)){
