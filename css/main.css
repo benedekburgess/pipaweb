@@ -46,11 +46,11 @@ aside{
 }
 a{
 	font-family:Arial !important;
-	color:#069;
+	color:red;
 	text-decoration:none;
 }
 a:hover{
-	color:#c60;
+	color:rgba(255,100,0,0.7);
 	text-decoration:underline;
 }
 a.button{
