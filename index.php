@@ -52,7 +52,7 @@ while($row = mysqli_fetch_assoc($query)){
 	if($szenek==0){
 		$szeniter -= 3;
 	}else{
-		$szeniter = 57;
+		$szeniter += 57;
 	}
 	$diff = (time()-$timestamp)/60;
 	if($diff>0 && $diff<15){
