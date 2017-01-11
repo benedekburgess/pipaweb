@@ -16,6 +16,7 @@ html{
 		font-size:16pt;
 		padding:10px;
 		background:rgba(255,255,255,0.4);
+		color:white;
 	}
 }
 @media screen and (max-width:565px){
@@ -25,6 +26,7 @@ html{
 		padding:10px;
 		background:rgba(255,255,255,0.4);
 		height:50px;
+		color:white;
 	}
 }
 aside{
@@ -34,6 +36,7 @@ aside{
 	text-align:center;
 	font-size:30pt;
 	padding-top:20px;
+	color:white;
 }
 .adminlink{
 	display:block;
@@ -97,12 +100,14 @@ section{
 	font-size:20pt;
 	padding-top:10px;
 	padding-bottom:10px;
+	color:white;
 }
 section h2{
 	font-size:14pt !important;
 	font-weight:normal;
 	padding:inherit;
 	margin:inherit;
+	color:white;
 }
 nav{
 	width:calc(100%);
@@ -148,6 +153,7 @@ footer{
 	font-size:20pt;
 	padding-bottom:10px;
 	margin-top:none;
+	color:white;
 }
 
 footer .info{
@@ -159,6 +165,7 @@ footer .info{
 	padding-bottom:10px;
 	margin:auto;
 	float:left;
+	color:white;
 }
 footer .info:hover{
 	opacity:0.8;
