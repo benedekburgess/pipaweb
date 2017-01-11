@@ -37,7 +37,10 @@ if($logged_in==false){
 			</span>
 		</header>
 		<aside>
-		<h4>Zene toplista</h4>
+			<h4>Zene toplista</h4>
 		</aside>
+		<nav>
+			<h3>Szavazás</h3>
+		</nav>
 	</body>
 </html>
