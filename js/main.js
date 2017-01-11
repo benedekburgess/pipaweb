@@ -61,18 +61,20 @@ $(document).ready(function(){
 
 	}
 });
-$('#swipetable').on("swipeleft",function(){
-	var link = $("#rightbutton").attr('href');
-	if(link!=undefined){
-		window.location = link;
-		
-	}
-	console.log('asd');
-});
-$('#swipetable').on("swiperight",function(){
-	var link = $("#leftbutton").attr('href');
-	if(link!=undefined){
-		window.location = link;
-		
-	}
+$(document).on("pageinit",function(){
+	$(document).on("swipeleft",function(){
+		var link = $("#rightbutton").attr('href');
+		if(link!=undefined){
+			window.location = link;
+			
+		}
+		console.log('asd');
+	});
+	$(document).on("swiperight",function(){
+		var link = $("#leftbutton").attr('href');
+		if(link!=undefined){
+			window.location = link;
+			
+		}
+	});
 });
