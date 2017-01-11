@@ -1,11 +1,6 @@
 body{
 	max-width:800px;
 	margin:auto;
-	background-image: url("/img/bg.jpg");
-}
-*{
-	-webkit-text-stroke:1px rgba(0,0,0,0.5);
-	color:white !important;
 }
 html{
 	font-family:Arial !important;
