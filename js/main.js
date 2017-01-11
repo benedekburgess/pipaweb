@@ -33,20 +33,7 @@ $(document).ready(function(){
 			break;
 		}
 	});
-	$('body').on("swipeleft",function(){
-		var link = $("#rightbutton").attr('href');
-		if(link!=undefined){
-			window.location = link;
-			
-		}
-	});
-	$('body').on("swiperight",function(){
-		var link = $("#leftbutton").attr('href');
-		if(link!=undefined){
-			window.location = link;
-			
-		}
-	});*/
+	
 	$(document).ready(function () {
 	  if (!Notification) {
 		alert('Desktop notifications not available in your browser. Try Chromium.'); 
@@ -72,5 +59,19 @@ $(document).ready(function(){
 
 	  }
 
+	}
+});
+$('body').on("swipeleft",function(){
+	var link = $("#rightbutton").attr('href');
+	if(link!=undefined){
+		window.location = link;
+		
+	}
+});
+$('body').on("swiperight",function(){
+	var link = $("#leftbutton").attr('href');
+	if(link!=undefined){
+		window.location = link;
+		
 	}
 });
