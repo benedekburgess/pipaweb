@@ -61,6 +61,7 @@ $(document).ready(function(){
 
 	}
 });
+$(document).on('pageinit',function(event){
 	$('*').on("swipeleft",function(){
 		var link = $("#rightbutton").attr('href');
 		if(link!=undefined){
@@ -77,3 +78,4 @@ $(document).ready(function(){
 			
 		}
 	});
+});
