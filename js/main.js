@@ -61,7 +61,7 @@ $(document).ready(function(){
 
 	}
 });
-	$(document).on("swipeleft",function(){
+	$('*').on("swipeleft",function(){
 		var link = $("#rightbutton").attr('href');
 		if(link!=undefined){
 			window.location = link;
@@ -70,7 +70,7 @@ $(document).ready(function(){
 		console.log('asd');
 	});
 	console.log("asd");
-	$(document).on("swiperight",function(){
+	$('*').on("swiperight",function(){
 		var link = $("#leftbutton").attr('href');
 		if(link!=undefined){
 			window.location = link;
