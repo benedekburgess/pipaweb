@@ -18,6 +18,8 @@ if(isset($uri[2]) && $uri[2]!=""){
 		}elseif($set=="true"){
 			$set = "nemelado";
 		}elseif($set=="nemelado"){
+			$set = "false";
+		}else{
 			$set = "vanelado";
 		}
 		$query = mysqli_query($mysqli,"UPDATE info SET description='$set' WHERE name='$name'");
