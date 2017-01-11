@@ -43,7 +43,7 @@ aside{
 	color:white;
 }
 .header_link{
-	display:block;
+	display:inline-block;
 	float:right;
 	padding:10px;
 	background:black !important;
