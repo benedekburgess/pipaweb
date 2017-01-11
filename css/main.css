@@ -42,6 +42,12 @@ aside{
 	padding-top:20px;
 	color:white;
 }
+.header_link{
+	display:block;
+	float:right;
+	padding:10px;
+	background:black;
+}
 .adminlink{
 	display:block;
 	position:absolute;
