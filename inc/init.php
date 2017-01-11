@@ -22,11 +22,11 @@ function add_user_to_db($username,$password,$admin,$mysqli){
 function testing($value){
 	if($value==true){
 		if($_SERVER['REMOTE_ADDR']!='152.66.180.120'){
-			die("<h1>500 - Internal kurvaanyád error</h1>");
+			die("<h1>500 - A weboldal az EU-n kívül nem érhető el :(</h1>");
 		}
 	}
 }
-testing(true);
+testing(false);
 if(isset($_SESSION['uid'])){
 	$logged_in=true;
 	$user_id = mysqli_real_escape_string($mysqli,$_SESSION['uid']);
