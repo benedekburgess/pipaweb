@@ -5,7 +5,11 @@ body{
 	background-position:center top;
 	background-repeat:no-repeat;
 	background-attachment:fixed;
-	background-size: 100%;
+	background-size: 100%;-webkit-filter: blur(5px);
+	-moz-filter: blur(2px);
+	-o-filter: blur(2px);
+	-ms-filter: blur(2px);
+	filter: blur(2px);
 }
 html{
 	font-family:Arial !important;
@@ -16,11 +20,6 @@ html{
 		font-size:16pt;
 		padding:10px;
 		background:rgba(255,255,255,0.4);
-		-webkit-filter: blur(5px);
-		-moz-filter: blur(5px);
-		-o-filter: blur(5px);
-		-ms-filter: blur(5px);
-		filter: blur(5px);
 	}
 }
 @media screen and (max-width:565px){
@@ -30,11 +29,6 @@ html{
 		padding:10px;
 		background:rgba(255,255,255,0.4);
 		height:50px;
-		-webkit-filter: blur(5px);
-		-moz-filter: blur(5px);
-		-o-filter: blur(5px);
-		-ms-filter: blur(5px);
-		filter: blur(5px);
 	}
 }
 aside{
@@ -44,11 +38,6 @@ aside{
 	text-align:center;
 	font-size:30pt;
 	padding-top:20px;
-	-webkit-filter: blur(5px);
-	-moz-filter: blur(5px);
-	-o-filter: blur(5px);
-	-ms-filter: blur(5px);
-	filter: blur(5px);
 }
 .adminlink{
 	display:block;
@@ -112,11 +101,6 @@ section{
 	font-size:20pt;
 	padding-top:10px;
 	padding-bottom:10px;
-	-webkit-filter: blur(5px);
-	-moz-filter: blur(5px);
-	-o-filter: blur(5px);
-	-ms-filter: blur(5px);
-	filter: blur(5px);
 }
 section h2{
 	font-size:14pt !important;
@@ -131,11 +115,6 @@ nav{
 	font-size:20pt;
 	padding-top:10px;
 	padding-bottom:10px;
-	-webkit-filter: blur(5px);
-	-moz-filter: blur(5px);
-	-o-filter: blur(5px);
-	-ms-filter: blur(5px);
-	filter: blur(5px);
 }
 #box{
 	display:none;
