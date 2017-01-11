@@ -39,8 +39,11 @@ if($logged_in==false){
 		<aside>
 			<h4>Zene toplista</h4>
 		</aside>
-		<footer>
+		<section>
+		kaki
 			<h3>Szavazás</h3>
-		</footer>
+		</section>
 	</body>
+	<script type="text/javascript" src="/js/jquery.js"></script>
+	<script type="text/javascript" src="/js/ajax.js"></script>
 </html>
