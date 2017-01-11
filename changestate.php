@@ -13,11 +13,11 @@ if(isset($uri[2]) && $uri[2]!=""){
 	if(mysqli_num_rows($query)==1){
 		$row = mysqli_fetch_assoc($query);
 		$set = $row['description'];
-		if($set=="true"){
+		if($set=="vanelado"){
+			$set = "van";
+		}elseif($set=="van"){
 			$set = "nemelado";
 		}elseif($set=="nemelado"){
-			$set = "false";
-		}else{
 			$set = "true";
 		}
 		$query = mysqli_query($mysqli,"UPDATE info SET description='$set' WHERE name='$name'");
