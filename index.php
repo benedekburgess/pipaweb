@@ -106,7 +106,7 @@ while($row = mysqli_fetch_assoc($query)){
 			}elseif($vanpipa=="van"){
 				echo "Van - ".$type."<br><span style='font-size:14px;'>".gmdate("H:i", $ts+900+3600)." -kor kezdődött</span>";
 			}elseif($vanpipa=="meghal"){
-				echo "Kezd meghalni - ".$type."<br><span style='font-size:14px;'>".gmdate("H:i", $ts+900+360)." -kor kezdődött</span>";
+				echo "Kezd meghalni - ".$type."<br><span style='font-size:14px;'>".gmdate("H:i", $ts+900+3600)." -kor kezdődött</span>";
 			}
 			if($vanpipa==false){
 				$vanpipa = "nincs";
