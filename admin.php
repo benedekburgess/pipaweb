@@ -53,19 +53,21 @@ while($row = mysqli_fetch_assoc($query)){
 	<body>
 		<header>
 			Van-e pipa a 1020-ban? - Admin
-			<?php if($logged_in==true){ ?>
-			<a href="/logout">
-				<span class="header_button">
-					Kijelentkezés
-				</span>
-			</a>
-			<?php } ?>
-			<a href="/">
-				<span class="header_button">
-					Vissza
-				</span>
-			</a>
-			<span class="right_text">Hello<?php if($logged_in==true){ echo " ".$current_nick; } ?>!</span>
+			<div class="clrall">
+				<?php if($logged_in==true){ ?>
+				<a href="/logout">
+					<span class="header_button">
+						Kijelentkezés
+					</span>
+				</a>
+				<?php } ?>
+				<a href="/">
+					<span class="header_button">
+						Vissza
+					</span>
+				</a>
+				<span class="right_text">Hello<?php if($logged_in==true){ echo " ".$current_nick; } ?>!</span>
+			</div>
 		</header>
 		<aside>
 <?php	

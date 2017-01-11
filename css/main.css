@@ -40,6 +40,9 @@ html{
 	.right_text{
 		margin-top:10px;
 	}
+	.clrall{
+		clear:both;
+	}
 }
 aside{
 	width:calc(100%);
