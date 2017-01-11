@@ -67,6 +67,13 @@ a.button:hover{
 }
 form input{
 	font-family:Arial;
+	text-shadow: none !important;
+}
+option{
+	text-shadow: none !important;
+}
+select{
+	text-shadow: none !important;
 }
 @media screen and (max-width: 600px){
 	form input{
