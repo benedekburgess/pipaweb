@@ -14,16 +14,16 @@ if(isset($uri[2]) && $uri[2]!=""){
 		$row = mysqli_fetch_assoc($query);
 		$set = $row['description'];
 		if($set=="vanelado"){
-			$set = "van";
-		}elseif($set=="van"){
+			$set = "true";
+		}elseif($set=="true"){
 			$set = "nemelado";
 		}elseif($set=="nemelado"){
-			$set = "true";
+			$set = "vanelado";
 		}
 		$query = mysqli_query($mysqli,"UPDATE info SET description='$set' WHERE name='$name'");
 		echo mysqli_error($mysqli);
 		add_to_log($mysqli,"chgstt:$name",$user_id);
 	}
 }
-//header("Location: ../admin");
+header("Location: ../admin");
 ?>
