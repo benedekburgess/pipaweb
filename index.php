@@ -151,7 +151,7 @@ while($row = mysqli_fetch_assoc($query)){
 				break;
 				
 			}
-			if($row['name']=='szen'){
+			/*if($row['name']=='szen'){
 				if($szeniter>18){
 					$query = "UPDATE info SET description='true' WHERE name='szen'";
 				}elseif($szeniter<=18 && $szeniter>0){
@@ -160,7 +160,7 @@ while($row = mysqli_fetch_assoc($query)){
 					$query = "UPDATE info SET description='nincs' WHERE name='szen'";
 				}
 				mysqli_query($mysqli,$query);
-			}
+			}*/
 			?>
 			</h3>
 			</div>
