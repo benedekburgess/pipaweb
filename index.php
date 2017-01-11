@@ -88,7 +88,7 @@ while($row = mysqli_fetch_assoc($query)){
 	</head>
 	<body>
 		<header>
-			Van-e pipa a 1020-ban?
+			Van-e pipa a 1020-ban? - Home
 			<span class="clrall">
 				<?php if($logged_in==true){ ?>
 				<a href="/logout">
