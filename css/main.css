@@ -47,6 +47,7 @@ aside{
 	float:right;
 	padding:10px;
 	background:black;
+	clear:none;
 }
 .adminlink{
 	display:block;
