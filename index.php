@@ -36,7 +36,7 @@ if(isset($user_id)){
 $vanpipa = false;
 $query = mysqli_query($mysqli,"SELECT * FROM pipe");
 $count = 0;
-$szeniter = 72;
+$szeniter = 60;
 while($row = mysqli_fetch_assoc($query)){
 	$timestamp = $row['ts'];
 	if(($timestamp+86400)>time()){
@@ -52,7 +52,7 @@ while($row = mysqli_fetch_assoc($query)){
 	if($szenek==0){
 		$szeniter -= 3;
 	}else{
-		$szeniter = 69;
+		$szeniter = 57;
 	}
 	$diff = (time()-$timestamp)/60;
 	if($diff>0 && $diff<15){
