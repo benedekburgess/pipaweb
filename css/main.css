@@ -175,6 +175,13 @@ h3{
 	margin-top:0px;
 	color:white;
 }
+h4{
+	font-size:15pt !important;
+	font-weight:normal;
+	margin-bottom:0px;
+	margin-top:0px;
+	color:white;
+}
 table{
 	margin:auto;
 	background:rgba(0,0,0,0.7);
