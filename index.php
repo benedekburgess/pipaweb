@@ -134,8 +134,22 @@ while($row = mysqli_fetch_assoc($query)){
 				$vanedohany=$row['description'];
 			}
 		?>
-			<div <?php if($row['description']=="nemelado"){ echo "title='= Nincs eladó'"; } ?> class="info" style="<?php if($row['name']=="szen"){ ?>border-right:1px solid rgba(0,0,0,0.4);<?php 
-			} if($row['description']=="true"){ ?>background:green;<?php }elseif($row['description']=="nemelado"){ echo "background:yellow;"; }else{ echo "background:rgba(255,50,0,1);"; } ?>"><?php 
+			<div <?php 
+			if($row['description']=="nemelado"){
+				echo "title='= Nincs eladó'"; } 
+			?> class="info" style="<?php 
+			if($row['name']=="szen"){
+				?>border-right:1px solid rgba(0,0,0,0.4);<?php 
+			} 
+			if($row['description']=="true"){
+				?>background:green;<?php 
+			}elseif($row['description']=="nemelado"){
+				echo "background:yellow;"; 
+			}elseif($row['description']=="vanelado"){ 
+				echo "background:lightblue"; 
+			}else{
+				echo "background:rgba(255,50,0,1);";
+			}			?>"><?php 
 			if($row['name']=="szen"){ echo "Szén"; } if($row['name']=="dohany"){ echo "Dohány"; } ?>
 			<h3>
 			<?php 
@@ -148,6 +162,9 @@ while($row = mysqli_fetch_assoc($query)){
 				break;
 				default:
 				echo "Nincs";
+				break;
+				case "vanelado":
+				echo "Van eladó";
 				break;
 				
 			}
