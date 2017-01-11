@@ -70,6 +70,7 @@ $(document).on("pageinit",function(){
 		}
 		console.log('asd');
 	});
+	console.log("asd");
 	$(document).on("swiperight",function(){
 		var link = $("#leftbutton").attr('href');
 		if(link!=undefined){
