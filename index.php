@@ -158,16 +158,15 @@ while($row = mysqli_fetch_assoc($query)){
 		<?php
 			if($row['name']=='szen'){
 				if($szeniter>18){
-					$query = "UPDATE info SET description='true' WHERE name='szen'";
+					$szen_query = "UPDATE info SET description='true' WHERE name='szen'";
 				}elseif($szeniter<=18 && $szeniter>0){
-					$query = "UPDATE info SET description='nemelado' WHERE name='szen'";
+					$szen_query = "UPDATE info SET description='nemelado' WHERE name='szen'";
 				}else{
-					$query = "UPDATE info SET description='nincs' WHERE name='szen'";
+					$szen_query = "UPDATE info SET description='nincs' WHERE name='szen'";
 				}
-				$query = mysqli_query($mysqli,$query);
-				echo mysqli_error($mysqli);
 			}
 		}
+		mysqli_query($mysqli,$szen_query);
 		?>
 		
 		</footer>
