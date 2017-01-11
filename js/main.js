@@ -47,7 +47,7 @@ $(document).ready(function(){
 			
 		}
 	});*/
-	document.addEventListener('DOMContentLoaded', function () {
+	$(document).ready(function () {
 	  if (!Notification) {
 		alert('Desktop notifications not available in your browser. Try Chromium.'); 
 		return;
@@ -72,5 +72,5 @@ $(document).ready(function(){
 
 	  }
 
-}
+	}
 });
