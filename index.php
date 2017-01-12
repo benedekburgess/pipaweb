@@ -150,36 +150,18 @@ while($row = mysqli_fetch_assoc($query)){
 			if($row['name']=="szen"){
 				?>border-right:1px solid rgba(0,0,0,0.4);<?php 
 			} 
+			?>"><?php
 			if($row['description']=="true"){
-				?>background:green;<?php 
+				$allapot = "van";
 			}elseif($row['description']=="nemelado"){
-				echo "background:yellow;"; 
+				$allapot = "venni_kene";
 			}elseif($row['description']=="vanelado"){ 
-				echo "background:lightblue"; 
+				$allapot = "elado";
 			}else{
-				echo "background:rgba(255,50,0,1);";
-			}			?>"><?php 
-			if($row['name']=="szen"){ echo "Szén"; } if($row['name']=="dohany"){ echo "Dohány"; } ?>
-			<h3>
-			<?php 
-			switch($row['description']){
-				case "true":
-				echo "Van";
-				break;
-				case "nemelado":
-				echo "Kevés van";
-				break;
-				default:
-				echo "Nincs";
-				break;
-				case "vanelado":
-				echo "Van eladó";
-				break;
-				
+				$allapot = "nincs";
 			}
-			
 			?>
-			</h3>
+				<img src="/img/btn_<?php echo $row['name']; ?>_<?php echo $allapot; ?>.png" style="width:100%;">
 			</div>
 		<?php
 			if($row['name']=='szen'){
