@@ -143,14 +143,8 @@ while($row = mysqli_fetch_assoc($query)){
 				$vanedohany=$row['description'];
 			}
 		?>
-			<div <?php 
-			if($row['description']=="nemelado"){
-				echo "title='= Nincs eladó'"; } 
-			?> class="info" style="<?php 
-			if($row['name']=="szen"){
-				?>border-right:1px solid rgba(0,0,0,0.4);<?php 
-			} 
-			?>"><?php
+			<div class="info">
+			<?php
 			if($row['description']=="true"){
 				$allapot = "van";
 			}elseif($row['description']=="nemelado"){
