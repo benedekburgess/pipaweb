@@ -37,7 +37,29 @@ if($logged_in==false){
 			</span>
 		</header>
 		<aside>
-			<h4>Zene toplista</h4>
+			<h4>Zene várólista</h4>
+			<table>
+				<tr>
+					<th><h3><b></b></h3></th>
+				</tr>
+			<?php
+			$query = mysqli_query($mysqli,"SELECT * FROM music WHERE played='0' ORDER BY votes DESC");
+			$rank = 1;
+			while($row = mysqli_fetch_assoc($query)){
+				$link = $row['link'];
+				$title = $row['name'];
+				$votes = $row['votes'];
+				$rank++;
+				?>
+				<tr>
+					<td><h3><?php echo $rank; ?></h3></td>
+					<td><h3><?php echo $title; ?></h3></td>
+					<td><h3><?php echo $votes; ?></h3></td>
+					<td><h3><?php if($rank==1){ ?><a href=""></a><?php } ?></h3></td>
+				</tr>
+				<?php
+			}
+			?>
 		</aside>
 		<section>
 			Szavazás

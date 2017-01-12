@@ -512,17 +512,17 @@ while($row = mysqli_fetch_assoc($query)){
 			<h3>
 				<?php
 				if($page>3){
-					?><a href="/admin/log/<?php echo $page-3; ?>"><span style="font-family:'Comic Sans MS';"><<<</span></a>&nbsp;<?php
+					?><a href="/admin/pipes/<?php echo $page-3; ?>"><span style="font-family:'Comic Sans MS';"><<<</span></a>&nbsp;<?php
 				}
 				if($page>1){
-					?><a href="/admin/log/<?php echo $page-1; ?>"><span style="font-family:'Comic Sans MS';"><</span></a><?php
+					?><a href="/admin/pipes/<?php echo $page-1; ?>"><span style="font-family:'Comic Sans MS';"><</span></a><?php
 				}
 				echo " $page ";
 				if($page<$num_pages){
-					?><a href="/admin/log/<?php echo $page+1; ?>"><span style="font-family:'Comic Sans MS';">></span></a>&nbsp;<?php
+					?><a href="/admin/pipes/<?php echo $page+1; ?>"><span style="font-family:'Comic Sans MS';">></span></a>&nbsp;<?php
 				}
 				if($page<$num_pages-2){
-					?><a href="/admin/log/<?php echo $page+3; ?>"><span style="font-family:'Comic Sans MS';">>>></span></a><?php
+					?><a href="/admin/pipes/<?php echo $page+3; ?>"><span style="font-family:'Comic Sans MS';">>>></span></a><?php
 				}
 				?></h3><?php 
 			}elseif($mode=="ips"){
@@ -603,27 +603,28 @@ while($row = mysqli_fetch_assoc($query)){
 		<footer>
 		<?php 
 		if($logged_in==true){
-		$query = mysqli_query($mysqli,"SELECT * FROM info");
-		while($row = mysqli_fetch_assoc($query)){
-		?>
-			<a class="info button"<?php if($row['name']=="dohany"){ ?> href="/changestate/<?php echo $row['name']; ?>"<?php } ?> style="<?php if($row['name']=="szen"){ 
-			?>border-right:1px solid rgba(0,0,0,0.4);
-			<?php } 
-			if($row['description']=="true"){ 
-				echo "background:green;";
-			}elseif($row['description']=="nemelado"){ 
-				echo "background:yellow;"; 
-			}elseif($row['description']=="vanelado"){
-				echo "background:lightblue;";
-			}else{ 
-				echo "background:rgba(255,50,0,1);"; 
-			}
-			?>">
-				<div><?php if($row['name']=="szen"){ echo "Szén"; } if($row['name']=="dohany"){ echo "Dohány"; } ?></div>
-			</a>
-				
-		<?php
-		} }
+			$query = mysqli_query($mysqli,"SELECT * FROM info");
+			while($row = mysqli_fetch_assoc($query)){
+			?>
+				<a class="info button"<?php if($row['name']=="dohany"){ ?> href="/changestate/<?php echo $row['name']; ?>"<?php } ?> style="<?php if($row['name']=="szen"){ 
+				?>border-right:1px solid rgba(0,0,0,0.4);
+				<?php } 
+				if($row['description']=="true"){ 
+					$allapot = "van";
+				}elseif($row['description']=="nemelado"){ 
+					$allapot = "venni_kene"; 
+				}elseif($row['description']=="vanelado"){
+					$allapot = "elado";
+				}else{ 
+					$allapot = "nincs"; 
+				}
+				?>">
+					<div><img style="width:50% !important;" src="/img/btn_<?php echo $row['name']; ?>_<?php echo $allapot; ?>"></div>
+				</a>
+					
+			<?php
+			} 
+		}
 		?>
 		
 		</footer>
