@@ -41,7 +41,13 @@ if($logged_in==false){
 		</aside>
 		<section>
 			Szavazás
+			<?php
+			
+			?>
 		</section>
+		<nav>
+			Új szám leadása
+		</nav>
 	</body>
 	<script type="text/javascript" src="/js/jquery.js"></script>
 	<script type="text/javascript" src="/js/ajax.js"></script>
