@@ -224,3 +224,6 @@ footer .info{
 footer .info:hover{
 	opacity:0.8;
 }
+nav.music_page{
+	color:white;
+}

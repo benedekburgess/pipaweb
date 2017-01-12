@@ -45,7 +45,7 @@ if($logged_in==false){
 			
 			?>
 		</section>
-		<nav>
+		<nav class="music_page">
 			Új szám leadása
 		</nav>
 	</body>
