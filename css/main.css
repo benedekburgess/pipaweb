@@ -161,6 +161,7 @@ nav{
 	font-size:20pt;
 	padding-top:10px;
 	padding-bottom:10px;
+	color:white;
 }
 #box{
 	display:none;
@@ -223,7 +224,4 @@ footer .info{
 }
 footer .info:hover{
 	opacity:0.8;
-}
-nav.music_page{
-	color:white;
 }
