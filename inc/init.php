@@ -26,7 +26,7 @@ function testing($value){
 		}
 	}
 }
-testing(true);
+testing(false);
 if(isset($_SESSION['uid'])){
 	$logged_in=true;
 	$user_id = mysqli_real_escape_string($mysqli,$_SESSION['uid']);
