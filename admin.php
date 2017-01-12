@@ -619,7 +619,7 @@ while($row = mysqli_fetch_assoc($query)){
 					$allapot = "nincs"; 
 				}
 				?>">
-					<div><img style="width:50% !important;" src="/img/btn_<?php echo $row['name']; ?>_<?php echo $allapot; ?>.png"></div>
+					<div><img style="width:100% !important;" src="/img/btn_<?php echo $row['name']; ?>_<?php echo $allapot; ?>.png"></div>
 				</a>
 					
 			<?php
