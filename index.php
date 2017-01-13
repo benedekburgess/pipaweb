@@ -170,7 +170,7 @@ while($row = mysqli_fetch_assoc($query)){ // rolls through all pipes in the data
 			if($row['name']=="dohany"){
 				$vanedohany=$row['description'];
 			}
-		?><div class="info">
+		?>	<div class="info">
 			<?php
 			if($row['description']=="true"){
 				$allapot = "van";
@@ -181,7 +181,7 @@ while($row = mysqli_fetch_assoc($query)){ // rolls through all pipes in the data
 			}else{
 				$allapot = "nincs";
 			}
-			?><img src="/img/btn_<?php echo $row['name']; ?>_<?php echo $allapot; ?>.png" style="width:100%;">
+			?>	<img src="/img/btn_<?php echo $row['name']; ?>_<?php echo $allapot; ?>.png" style="width:100%;">
 			</div>
 		<?php
 			if($row['name']=='szen'){
@@ -195,9 +195,7 @@ while($row = mysqli_fetch_assoc($query)){ // rolls through all pipes in the data
 			}
 		}
 		mysqli_query($mysqli,$szen_query);
-		?>
-		
-		</footer>
+		?></footer>
 		<?php
 		if($szeniter>18){
 			$vaneszen = "van";
@@ -215,16 +213,14 @@ while($row = mysqli_fetch_assoc($query)){ // rolls through all pipes in the data
 		}
 			
 		$szentext = "szen_".$vaneszen;
-		?>
-		<nav>
+		?><nav>
 			<img src="img/<?php echo $szentext; ?>.png" style="max-width:320px; position:relative; margin-top:30px; margin-right:10px;">
 			<img src="img/<?php echo $dohanytext; ?>.png" style="max-width:320px; margin-top:30px; margin-left:10px;">
 		</nav>
-		<span class="adminlink">
-		</span>
 		<span class="fasz" style="text-align:right;">Írta: beni<br>
-						Hint: vannak easter egg-ek<br>
-						Támogatóink: <a target="_blank" href="https://www.youtube.com/channel/UCLlTfVahBA62Nn2zLPDGSMg">DJ KotyogósHerka</a><br>
-						Hosted by: Sztyúp</span>
+			Hint: vannak easter egg-ek<br>
+			Támogatóink: <a target="_blank" href="https://www.youtube.com/channel/UCLlTfVahBA62Nn2zLPDGSMg">DJ KotyogósHerka</a><br>
+			Hosted by: Sztyúp
+		</span>
 	</body>
 </html>
