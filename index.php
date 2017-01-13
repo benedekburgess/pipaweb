@@ -181,8 +181,7 @@ while($row = mysqli_fetch_assoc($query)){ // rolls through all pipes in the data
 			}else{
 				$allapot = "nincs";
 			}
-			?>
-				<img src="/img/btn_<?php echo $row['name']; ?>_<?php echo $allapot; ?>.png" style="width:100%;">
+			?><img src="/img/btn_<?php echo $row['name']; ?>_<?php echo $allapot; ?>.png" style="width:100%;">
 			</div>
 		<?php
 			if($row['name']=='szen'){
