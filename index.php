@@ -211,7 +211,7 @@ while($row = mysqli_fetch_assoc($query)){ // rolls through all pipes in the data
 		}else{
 			$dohanytext = "dohany_van";
 		}
-			
+		echo $szeniter;
 		$szentext = "szen_".$vaneszen;
 		?><nav>
 			<img src="img/<?php echo $szentext; ?>.png" style="max-width:320px; position:relative; margin-top:30px; margin-right:10px;">
