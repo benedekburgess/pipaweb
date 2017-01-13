@@ -67,7 +67,7 @@ while($row = mysqli_fetch_assoc($query)){ // rolls through all pipes in the data
 	if($szenek==0){ // if wasn't washed decreases szeniter by 3 (the number of coals needed for one pipe), else increases number of coals by 69 (3 less than number of coals in a box)
 		$szeniter -= 3;
 	}else{
-		$szeniter += 69;
+		$szeniter = 69;
 	}
 	
 	$diff = (time()-$timestamp)/60; // calculates difference in minutes between now and when the pipe started
