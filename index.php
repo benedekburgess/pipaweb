@@ -1,77 +1,100 @@
 <?php
-error_reporting(-1);
-require_once "inc/init.php";
-if($uri[1]=="admin"){
-	require_once "admin.php";
-	exit();
+
+require_once "inc/init.php"; // initialise databases and functions, and global variables such as $user_id and $mysqli
+
+switch($uri[1]){ // special cases of the first part of the url (admin, fb link and qr code)
+	
+	case "admin":
+		require_once "admin.php";
+		exit();
+	
+	case "fb":
+		if(isset($user_id)){
+			add_to_log($mysqli,"fblink",$user_id);
+		}else{
+			add_to_log($mysqli,"fblink",0);
+		}
+		break;
+	
+	case "qr":
+		if(isset($user_id)){
+			add_to_log($mysqli,"qr",$user_id);
+		}else{
+			add_to_log($mysqli,"qr",0);
+		}
+		break;
+
 }
-if($uri[1]=="fb"){
-	if(isset($user_id)){
-		add_to_log($mysqli,"fblnk",$user_id);
-	}else{
-		add_to_log($mysqli,"fblnk",0);
-	}
-	header("Location: /");
-	exit();
-}
-if($uri[1]=="qr"){
-	if(isset($user_id)){
-		add_to_log($mysqli,"qr",$user_id);
-	}else{
-		add_to_log($mysqli,"qr");
-	}
-	header("Location: /");
-	exit();
-}
-if(isset($uri[1]) && !empty($uri[1]) && $uri[1]!="fb"){
+
+if(isset($uri[1]) && !empty($uri[1]) && $uri[1]!="fb" && $uri[1]!="qr"){ // if first part of the url is set but isn't one of the special cases
 	include_once $uri[1] .".php";
 	exit();
 }
-setcookie('admin');
-if(isset($user_id)){
+
+setcookie('admin'); // sets the admin cookie to NULL (view_pg: admin only gets logged if this cookie is NULL)
+
+if(isset($user_id)){ // logs the viewing of the index page
 	add_to_log($mysqli,"viewpg_index",$user_id);
 }else{
 	add_to_log($mysqli,"viewpg_index",0);
 }
-$vanpipa = false;
-$query = mysqli_query($mysqli,"SELECT * FROM pipe");
-$count = 0;
-$szeniter = 60;
-while($row = mysqli_fetch_assoc($query)){
-	$timestamp = $row['ts'];
-	if(($timestamp+86400)>time()){
+
+$vanpipa = false; // sets $vanpipa variable to default value of false
+
+$query = mysqli_query($mysqli,"SELECT * FROM pipe"); // queries the database for all pipes
+
+$count = 0; // sets the $count varialbe to 0
+$szeniter = 72; // sets the szeniter variable to default value of 72
+
+while($row = mysqli_fetch_assoc($query)){ // rolls through all pipes in the database
+	
+	$timestamp = $row['ts']; // gets pipe timestamp from the database
+	
+	if(($timestamp+86400)>time()){ // increases pipe count if the timestamp is larger than 24 hours ago
 		$count++;
 	}
-	$mosas = $row['mosas'];
-	if($mosas!=0){
+	
+	$mosas = $row['mosas']; // gets if selected pipe was washed or not
+	
+	if($mosas!=0){ // if it was washed it sets the iterator to 0
 		$iter = 0;
 	}else{
 		$iter++;
 	}
-	$szenek = $row['uj_szen'];
-	if($szenek==0){
+	
+	$szenek = $row['uj_szen']; // gets if new box of coals was opened in selected pipe
+	
+	if($szenek==0){ // if wasn't washed decreases szeniter by 3 (the number of coals needed for one pipe), else increases number of coals by 69 (3 less than number of coals in a box)
 		$szeniter -= 3;
 	}else{
-		$szeniter += 57;
+		$szeniter += 69;
 	}
-	$diff = (time()-$timestamp)/60;
-	if($diff>0 && $diff<15){
+	
+	$diff = (time()-$timestamp)/60; // calculates difference in minutes between now and when the pipe started
+	
+	if($diff>0 && $diff<15){ // if difference is in 0-15 sets vanpipa to keszul
 		$type = $row['type'];
 		$vanpipa = "keszul";
 		$ts = $row['ts'];
-	}elseif($diff>=15 && $diff<45){
+		
+	}elseif($diff>=15 && $diff<50){ // pipe between 15 and 50 minutes are active
 		$type = $row['type'];
 		$vanpipa = "van";
 		$ts = $row['ts'];
-	}elseif($diff>=45 && $diff<70){
+		
+	}elseif($diff>=50 && $diff<70){ // dying from 50 to 70 minutes
 		$type = $row['type'];
 		$vanpipa = "meghal";
 		$ts = $row['ts'];
-	}else{
+		
+	}else{ // dead after 70 minutes (not active, therefore vanpipa stays false)
 		$id = $row['id'];
 		$ts = $row['ts'];
+		
 	}
+	
 }
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -107,33 +130,38 @@ while($row = mysqli_fetch_assoc($query)){
 		</header>
 		<aside>
 			<?php
+			
 			if($vanpipa==false){
 				echo "Nincs";
 				echo "<br><span style='font-size:14px;'>".gmdate("H:i:s", $ts+3600+4200)." -kor volt utoljára</span>";
+				$vanpipa = "nincs";
+				
 			}elseif($vanpipa=="keszul"){
 				echo "Készül - ".$type." lesz<br><span style='font-size:14px;'>".gmdate("H:i", $ts+3600)." -kor kezdődött</span>";
+				
 			}elseif($vanpipa=="van"){
 				echo "Van - ".$type."<br><span style='font-size:14px;'>".gmdate("H:i", $ts+900+3600)." -kor kezdődött</span>";
+				
 			}elseif($vanpipa=="meghal"){
 				echo "Kezd meghalni - ".$type."<br><span style='font-size:14px;'>".gmdate("H:i", $ts+900+3600)." -kor kezdődött</span>";
+				
 			}
-			if($vanpipa==false){
-				$vanpipa = "nincs";
+			
+			if($iter<3){ // decides state of water (OK for 2 pipes after 3 it needs washing after 5 its 'you animals'
+				$mosni = "jo";
+			}elseif($iter>=3 && $iter<5){
+				$mosni = "mosni";
+			}else{
+				$mosni = "animals";
 			}
-		if($iter<3){
-			$mosni = "jo";
-		}elseif($iter>=3 && $iter<7){
-			$mosni = "mosni";
-		}else{
-			$mosni = "animals";
-		}
-			$pipatext = "pipa_".$mosni."_".$vanpipa;
-			?>
-			<br>
+		
+			$pipatext = "pipa_".$mosni."_".$vanpipa; // compiles name of image file needed for pipe status
+			
+			?><br>
 			<img src="img/<?php echo $pipatext; ?>.png" style="max-height:400px; clear:both;">
-			<?php
-			echo "<br><span style='font-size:14px;'>Az elmúlt 24 órában $count db pipa volt</span><br>";
-			?>
+			<br>
+			<span style='font-size:14px;'>Az elmúlt 24 órában $count db pipa volt</span>
+			<br>
 		</aside>
 		<footer>
 		<?php 
@@ -142,8 +170,7 @@ while($row = mysqli_fetch_assoc($query)){
 			if($row['name']=="dohany"){
 				$vanedohany=$row['description'];
 			}
-		?>
-			<div class="info">
+		?><div class="info">
 			<?php
 			if($row['description']=="true"){
 				$allapot = "van";
