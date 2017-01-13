@@ -1,3 +1,7 @@
+@font-face{
+	font-family: goodTimes;
+	src:url("/css/good times rg.ttf");
+}
 body{
 	max-width:800px;
 	margin:auto;
@@ -10,6 +14,7 @@ body{
 }
 *{
 	text-shadow: 2px 2px rgba(0,0,0,0.6);
+	font-family: goodTimes;
 }
 html{
 	font-family:Arial !important;
