@@ -160,7 +160,7 @@ while($row = mysqli_fetch_assoc($query)){ // rolls through all pipes in the data
 			?><br>
 			<img src="img/<?php echo $pipatext; ?>.png" style="max-height:400px; clear:both;">
 			<br>
-			<span style='font-size:14px;'>Az elmúlt 24 órában $count db pipa volt</span>
+			<span style='font-size:14px;'>Az elmúlt 24 órában <?php echo $count; ?> db pipa volt</span>
 			<br>
 		</aside>
 		<footer>
