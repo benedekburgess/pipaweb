@@ -34,8 +34,8 @@ if($current_user_admin==2 || $current_username==$username || ($current_user_admi
 	mysqli_query($mysqli,"UPDATE users SET password='$password', salt='$salt' WHERE username='$username'");
 }else{
 	add_to_log($mysqli,"fldpwchg",$uid);
-	header("Location: ../admin/users");
+	header("Location: ../admin/users/1");
 }
 add_to_log($mysqli,"chgpw:$username",$uid);
-header("Location: ../admin/users");
+header("Location: ../admin/users/1");
 ?>
