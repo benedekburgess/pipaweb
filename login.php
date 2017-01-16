@@ -14,12 +14,12 @@ if($username==""){
 }else{
 	$query = mysqli_query($mysqli,"SELECT * FROM easter_eggs");
 	echo mysqli_error($mysqli);
-	exit();
 	while($row = mysqli_fetch_assoc($query)){
 		if($row['trigger']==$username){
 			echo $szar = $row['lnk'];
 			exit();
 		}
+		echo $row['trigger'];
 	}
 }
 $query = mysqli_query($mysqli,"SELECT * FROM users WHERE username='$username'");
