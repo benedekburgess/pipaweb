@@ -40,6 +40,8 @@ $(document).ready(function(){
 	if(currentURL=="/admin/users/password"){
 		$.notify("A jelszók nem egyeznek!","error");
 	}
+	if(currentURL=="/admin/users/success"){
+		$.notify("Felhasználó hozzáadva!");
 	console.log(window.location.pathname);
 	$(document).ready(function () {
 	  if (!Notification) {
