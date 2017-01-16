@@ -69,7 +69,7 @@ if($logged_in==false){
 		</section>
 		<nav>
 			Új szám leadása
-			<form action="/ujzene" method="POST">
+			<form action="/ujzene" method="POST" id="form">
 				<input type="text" name="link" placeholder="Youtube link"><input type="submit" value="Elküld">
 			</form>
 		</nav>
