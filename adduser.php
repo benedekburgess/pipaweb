@@ -23,7 +23,7 @@ if(isset($_POST['username']) && isset($_POST['password']) && isset($_POST['passw
 	$query = mysqli_query($mysqli,"SELECT * FROM users WHERE username='$username'");
 	
 	if(mysqli_num_rows($query)!=0){
-		header("Location: ../admin/users/sername");
+		header("Location: ../admin/users/username");
 		exit();
 	}
 	$username = mysqli_real_escape_string($mysqli,$username);
