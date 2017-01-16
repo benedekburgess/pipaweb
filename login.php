@@ -4,102 +4,18 @@ setcookie('admin');
 $username = mysqli_real_escape_string($mysqli,$_POST['username']);
 $password = mysqli_real_escape_string($mysqli,$_POST['password']);
 if(strlen($username)>99){
-	header("Location: /pipa");
+	header("Location: /admin/12");
 }
 if(strlen($password)>99){
-	header("Location: /pipa");
+	header("Location: /admin/12");
 }
-switch($username){
-	case "rick":
-	$szar = 1311111;
-	break;
-	case "1020":
-	$szar = 6883213;
-	break;
-	case "thomas":
-	$szar = 65;
-	break;
-	case "angus":
-	$szar = 99;
-	break;
-	case "bob a fat":
-	$szar = 723;
-	break;
-	case "saci":
-	$szar = 873;
-	break;
-	case "erik":
-	$szar = 123;
-	break;
-	case "pocok":
-	$szar = 433;
-	break;
-	case "töröttkerámia":
-	$szar = 466;
-	break;
-	case "qpa":
-	$szar = 8496;
-	break;
-	case "sajt":
-	$szar = 74555;
-	break;
-	case "kenyér":
-	$szar = 136786;
-	break;
-	case "dildo":
-	$szar = 9745;
-	break;
-	case "csanád":
-	$szar = 69;
-	break;
-	case "":
-	$szar = 1;
-	break;
-	case "sztyúp":
-	$szar = 941111;
-	break;
-	case "purkess":
-	$szar = 123456789;
-	break;
-	/*case "beni":
-	$szar = 123456789;
-	break;*/
-	case "picimaci":
-	$szar = 486532;
-	break;
-	case "koza":
-	$szar = 75421;
-	break;
-	case "kápor":
-	$szar = 1895651;
-	break;
-	case "tuti":
-	$szar = 0;
-	break;
-	case "navi":
-	$szar = 8522;
-	break;
-	case "pufi":
-	$szar = 741258;
-	break;
-	case "ricsi":
-	$szar = 115588;
-	break;
-	case "mózes":
-	$szar = 789654;
-	break;
-	case "turha":
-	$szar = 56285;
-	break;
-	case "pepito":
-	$szar = 55996;
-	break;
-	case "bubi":
-	$szar = 786121;
-	break;
-	case "bedu":
-	$szar = 8511122;
-	break;
+if($username=""){
+	header("Location: /admin/1");
+}else{
+	$query = mysqli_query($mysqli,"SELECT * FROM easter_eggs WHERE trigger='$username'");
+	while($row = mysqli_fetch_assoc($query)){
+		$szar = $row['lnk'];
+	}
 }
 $query = mysqli_query($mysqli,"SELECT * FROM users WHERE username='$username'");
 while($row = mysqli_fetch_assoc($query)){

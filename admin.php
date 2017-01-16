@@ -70,43 +70,14 @@ while($row = mysqli_fetch_assoc($query)){
 			</div>
 		</header>
 		<aside>
-<?php	
-				$szar = array("",
-					12=>"Szar vagy",
-					65=>"<audio autoplay><source src='zsolt.mp3' type='audio/mpeg'>Régi a böngésződ <a href='zsolt.mp3'>ehez</a></audio>",
-					99=>"<a href='https://www.youtube.com/channel/UCLlTfVahBA62Nn2zLPDGSMg'>McGuyver</a>",
-					723=>"<iframe width='560' height='315' src='https://www.youtube.com/embed/wuxJKNutCoc' frameborder='0' allowfullscreen></iframe>",
-					873=>"Nem.",
-					123=>"<a href='http://www.bonnie.info/wp-content/uploads/2014/12/image-14.jpeg'>:)</a>",
-					433=>'<iframe width="560" height="315" src="https://www.youtube.com/embed/iGPQcZdG-fY" frameborder="0" allowfullscreen></iframe>',
-					466=>"Nem vicces.<br><img src='nemvicces.jpg'>",
-					8496=>"<img src='img/adobizonylat.jpg'>",
-					74555=>"Szarok a vicceid",
-					136786=>"<iframe width='560' height='315' src='https://www.youtube.com/embed/RIYUyq-UvI0' frameborder='0' allowfullscreen></iframe>",
-					9745=>"<img src='https://pbs.twimg.com/media/BXRdLmvCEAARF-p.jpg:large'>",
-					69=>"Csinicsani",
-					1=>"Miért hagyod üresen bazdmeg??",
-					941111=>'<iframe width="560" height="315" src="https://www.youtube.com/embed/ujGW96kgdxs" frameborder="0" allowfullscreen></iframe>',
-					123456789=>"<img width='640' src='http://rainbowsandlollipops.net/wp-content/uploads/2016/10/Brexit.jpg'>",
-					486532=>"<img src='https://www.antikvarium.hu/foto/varga-csaba-pici-maci-feloltozik-5899490-nagy.jpg'>",
-					75421=>"<script type='text/javascript'>alert('3 büntetőpont nevelőtanárral szembeni szemtelenségért');</script>
-							<img src='/img/koza.jpg' width='640'>
-							<br><span style='font-size:14px;'>Disclaimer: nem én csináltam</span>",
-					1895651=>"Ez sem egy lyuk",
-					0=>'<iframe width="560" height="315" src="https://www.youtube.com/embed/HzXTCE2OY5w" frameborder="0" allowfullscreen></iframe>',
-					8522=>"<img src='/img/navi.jpg'>",
-					741258=>"Szeretem ha horkolnak",
-					115588=>"Ví ár dö vándö vándö vándőő",
-					789654=>"<img src='https://i.ytimg.com/vi/9P1M138_H_Q/hqdefault.jpg'>X1000",
-					56285=>"<img src='https://csakazolvassamost.files.wordpress.com/2014/06/gerle-eva-takony-pisi.jpg'>",
-					55996=>"<img src='http://4vector.com/i/free-vector-pepito_065121_pepito.png'>",
-					786121=>"<img src='img/bubi.png'>",
-					6883213=>"<a href='http://facebook.com/1020SCH'>;)</a>",
-					1311111=>"<video width='640' height='480' autoplay><source src='http://img-9gag-fun.9cache.com/photo/azrw2MB_460sv.mp4' type='video/mp4'></video>",
-					8511122=>"<img src='/img/bedu.jpg' style='max-width:640px;'>");
-					if(isset($uri[2])){
-						echo $szar[$uri[2]];
+<?php
+				if(isset($uri[2])){
+					$query = mysqli_query($mysqli,"SELECT * FROM easter_eggs WHERE lnk='$uri[2]'");
+					while($row = mysqli_fetch_assoc($query)){
+						$content = $row['content'];
 					}
+					echo $content;
+				}
 				if($logged_in==false){
 					
 					?>
