@@ -293,7 +293,7 @@ while($row = mysqli_fetch_assoc($query)){
 			<hr>
 			<h3 style="margin-top:10px !important;">Új felhasználó:</h3>
 			<form action="/adduser" method="POST">
-				<input <?php if(isset($error)){ if($error=="username"){ ?>style="background:red;"<?php } } ?> type="text" name="username" placeholder="Felhasználónév"><br>
+				<input id="usernamebox" <?php if(isset($error)){ if($error=="username"){ ?>style="background:red;"<?php } } ?> type="text" name="username" placeholder="Felhasználónév"><br>
 				<input <?php if(isset($error)){ if($error=="password"){ ?>style="background:red;"<?php } } ?> type="password" name="password" placeholder="Jelszó"><br>
 				<input <?php if(isset($error)){ if($error=="password"){ ?>style="background:red;"<?php } } ?> type="password" name="password2" placeholder="Jelszó megint"><br>
 				<?php if($current_su==true){ ?><h3 style="margin-top:10px !important; margin-right:10px; display:inline !important;"><input type="checkbox" name="admin" id="admin" value="true"><label for="admin">Admin</h3></label><?php } ?><input type="submit" value="Elküld">
