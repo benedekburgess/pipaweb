@@ -38,6 +38,9 @@ if($logged_in==false){
 		</header>
 		<aside>
 			<h4>Zene várólista</h4>
+			<form action="/ujzene" method="POST" id="form">
+				<input type="text" name="link" placeholder="Youtube link"><input type="submit" value="Elküld">
+			</form>
 			<table>
 				<tr>
 					<th><h3><b>Rank</b></h3></th>
@@ -69,9 +72,6 @@ if($logged_in==false){
 		</section>
 		<nav>
 			Új szám leadása
-			<form action="/ujzene" method="POST" id="form">
-				<input type="text" name="link" placeholder="Youtube link"><input type="submit" value="Elküld">
-			</form>
 		</nav>
 	</body>
 	<script type="text/javascript" src="/js/jquery.js"></script>
