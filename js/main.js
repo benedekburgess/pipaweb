@@ -33,8 +33,7 @@ $(document).ready(function(){
 			break;
 		}
 	});
-	var currentUrl = window.location.href;
-	console.log(currentUrl);
+	console.log(window.location.href);
 	$(document).ready(function () {
 	  if (!Notification) {
 		alert('Desktop notifications not available in your browser. Try Chromium.'); 
