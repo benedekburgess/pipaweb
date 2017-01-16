@@ -292,6 +292,14 @@ while($row = mysqli_fetch_assoc($query)){
 			</div>
 			<hr>
 			<h3 style="margin-top:10px !important;">Új felhasználó:</h3>
+			<?php if(isset($error)){
+				
+			?><script type="text/javascript">
+			$.notify("Felhasználónév foglalt!","error");
+			</script>
+			<?php
+			
+			?>
 			<form action="/adduser" method="POST">
 				<input <?php if(isset($error)){ if($error=="username"){ ?>style="background:red;"<?php } } ?> type="text" name="username" placeholder="Felhasználónév"><br>
 				<input <?php if(isset($error)){ if($error=="password"){ ?>style="background:red;"<?php } } ?> type="password" name="password" placeholder="Jelszó"><br>
@@ -635,4 +643,5 @@ while($row = mysqli_fetch_assoc($query)){
 						Hosted by: Sztyúp</span>
 	<script type="text/javascript" src="/js/jquery.js"></script>
 	<script type="text/javascript" src="/js/main.js"></script>
+	<script type="text/javascript" src="/js/notify.js"></script>
 </html>
