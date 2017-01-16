@@ -26,7 +26,7 @@ switch($uri[1]){ // special cases of the first part of the url (admin, fb link a
 
 }
 
-if(isset($uri[1]) && !empty($uri[1]) && $uri[1]!="fb" && $uri[1]!="qr"){ // if first part of the url is set but isn't one of the special cases
+if(isset($uri[1]) && !empty($uri[1]) && $uri[1]!="fb" && $uri[1]!="qr" && $uri[1]!="byebye"){ // if first part of the url is set but isn't one of the special cases
 	include_once $uri[1] .".php";
 	exit();
 }
@@ -223,4 +223,7 @@ while($row = mysqli_fetch_assoc($query)){ // rolls through all pipes in the data
 			Hosted by: Sztyúp
 		</span>
 	</body>
+	<script type="text/javascript" src="/js/jquery.js"></script>
+	<script type="text/javascript" src="/js/notify.js"></script>
+	<script type="text/javascript" src="/js/main.js"></script>
 </html>

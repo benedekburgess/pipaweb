@@ -43,6 +43,9 @@ $(document).ready(function(){
 	if(currentURL=="/admin/users/success"){
 		$.notify("Felhasználó hozzáadva!","success");
 	}
+	if(currentURL=="/byebye"){
+		$.notify("Byebye!","info");
+	}
 	console.log(window.location.pathname);
 	$(document).ready(function () {
 	  if (!Notification) {
