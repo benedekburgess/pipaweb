@@ -66,9 +66,6 @@ if($logged_in==false){
 		</aside>
 		<section>
 			Szavazás
-			<?php
-			
-			?>
 		</section>
 		<nav>
 			Új szám leadása
