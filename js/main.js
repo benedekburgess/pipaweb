@@ -41,7 +41,7 @@ $(document).ready(function(){
 		$.notify("A jelszók nem egyeznek!","error");
 	}
 	if(currentURL=="/admin/users/success"){
-		$.notify("Felhasználó hozzáadva!");
+		$.notify("Felhasználó hozzáadva!","success");
 	}
 	console.log(window.location.pathname);
 	$(document).ready(function () {
