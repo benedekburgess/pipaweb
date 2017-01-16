@@ -46,6 +46,12 @@ $(document).ready(function(){
 	if(currentURL=="/byebye"){
 		$.notify("Byebye!","info");
 	}
+	if(currentURL=="/admin/users"){
+		$.notify("Jelszóváltoztatás sikeres!","info");
+	}
+	if(currentURL=="/admin/failed"){
+		$.notify("A két jelszó nem egyezik meg!","error");
+	}
 	console.log(window.location.pathname);
 	$(document).ready(function () {
 	  if (!Notification) {
