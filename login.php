@@ -5,21 +5,22 @@ $username = mysqli_real_escape_string($mysqli,$_POST['username']);
 $password = mysqli_real_escape_string($mysqli,$_POST['password']);
 if(strlen($username)>99){
 	header("Location: /admin/12");
+	exit();
 }
 if(strlen($password)>99){
 	header("Location: /admin/12");
+	exit();
 }
 if($username==""){
 	header("Location: /admin/1");
+	exit();
 }else{
 	$query = mysqli_query($mysqli,"SELECT * FROM easter_eggs");
 	echo mysqli_error($mysqli);
 	while($row = mysqli_fetch_assoc($query)){
 		if($row['trigger']==$username){
-			echo $szar = $row['lnk'];
-			exit();
+			$szar = $row['lnk'];
 		}
-		echo $row['trigger'];
 	}
 }
 $query = mysqli_query($mysqli,"SELECT * FROM users WHERE username='$username'");
