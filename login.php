@@ -13,6 +13,8 @@ if($username==""){
 	header("Location: /admin/1");
 }else{
 	$query = mysqli_query($mysqli,"SELECT * FROM easter_eggs WHERE trigger='$username'");
+	echo mysqli_error($mysqli);
+	exit();
 	while($row = mysqli_fetch_assoc($query)){
 		echo $szar = $row['lnk'];
 		exit();
