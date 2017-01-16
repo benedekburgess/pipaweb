@@ -49,6 +49,7 @@ while($row = mysqli_fetch_assoc($query)){
 		<link rel="icon" type="image/png" href="/img/favicon.png">
 		<link rel="stylesheet" type="text/css" href="/css/main.css" />
 		<title>Van-e pipa a 1020-ban? - Admin</title>
+		<script type="text/javascript" src="/js/notify.js"></script>
 	</head>
 	<body>
 		<header>
@@ -643,5 +644,4 @@ while($row = mysqli_fetch_assoc($query)){
 						Hosted by: Sztyúp</span>
 	<script type="text/javascript" src="/js/jquery.js"></script>
 	<script type="text/javascript" src="/js/main.js"></script>
-	<script type="text/javascript" src="/js/notify.js"></script>
 </html>
