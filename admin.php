@@ -71,7 +71,7 @@ while($row = mysqli_fetch_assoc($query)){
 		</header>
 		<aside>
 <?php
-				if(isset($uri[2])){
+				if(isset($uri[2]) && $uri[2]!="log" && $uri[2]!="users" && $uri[2]!="pipes" && $uri[2]!="ips"){
 					$query = mysqli_query($mysqli,"SELECT * FROM easter_eggs WHERE lnk='$uri[2]'");
 					while($row = mysqli_fetch_assoc($query)){
 						$content = $row['content'];
