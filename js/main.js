@@ -35,7 +35,7 @@ $(document).ready(function(){
 	});
 	var currentURL = window.location.pathname;
 	if(currentURL=="/admin/users/username"){
-		$('#usernamebox').notify("Felhasználónév foglalt!","error",{ position: "right"});
+		$.notify("Felhasználónév foglalt!","error");
 	}
 	console.log(window.location.pathname);
 	$(document).ready(function () {
