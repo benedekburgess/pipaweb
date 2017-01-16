@@ -40,7 +40,10 @@ if($logged_in==false){
 			<h4>Zene várólista</h4>
 			<table>
 				<tr>
-					<th><h3><b></b></h3></th>
+					<th><h3><b>Rank</b></h3></th>
+					<th><h3><b>Cím</b></h3></th>
+					<th><h3><b>Szavazatok</b></h3></th>
+					<th><h3><b>Link</b></h3></th>
 				</tr>
 			<?php
 			$query = mysqli_query($mysqli,"SELECT * FROM music WHERE played='0' ORDER BY votes DESC");
@@ -55,7 +58,7 @@ if($logged_in==false){
 					<td><h3><?php echo $rank; ?></h3></td>
 					<td><h3><?php echo $title; ?></h3></td>
 					<td><h3><?php echo $votes; ?></h3></td>
-					<td><h3><?php if($rank==1){ ?><a href=""></a><?php } ?></h3></td>
+					<td><h3><?php if($rank==1){ ?><a href=""><span style='font-family:"Comic Sans MS"'>X</span></a><?php } ?></h3></td>
 				</tr>
 				<?php
 			}
