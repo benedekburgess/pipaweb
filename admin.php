@@ -298,7 +298,7 @@ while($row = mysqli_fetch_assoc($query)){
 			$.notify("Felhasználónév foglalt!","error");
 			</script>
 			<?php
-			
+			}
 			?>
 			<form action="/adduser" method="POST">
 				<input <?php if(isset($error)){ if($error=="username"){ ?>style="background:red;"<?php } } ?> type="text" name="username" placeholder="Felhasználónév"><br>
