@@ -49,8 +49,6 @@ while($row = mysqli_fetch_assoc($query)){
 		<link rel="icon" type="image/png" href="/img/favicon.png">
 		<link rel="stylesheet" type="text/css" href="/css/main.css" />
 		<title>Van-e pipa a 1020-ban? - Admin</title>
-		<script type="text/javascript" src="/js/notify.js"></script>
-		<script type="text/javascript" src="/js/jquery.js"></script>
 	</head>
 	<body>
 		<header>
@@ -294,15 +292,6 @@ while($row = mysqli_fetch_assoc($query)){
 			</div>
 			<hr>
 			<h3 style="margin-top:10px !important;">Új felhasználó:</h3>
-			<?php if(isset($error)){
-				
-			?><script type="text/javascript">
-			$.notify("Felhasználónév foglalt!","error");
-			console.log("asd");
-			</script>
-			<?php
-			}
-			?>
 			<form action="/adduser" method="POST">
 				<input <?php if(isset($error)){ if($error=="username"){ ?>style="background:red;"<?php } } ?> type="text" name="username" placeholder="Felhasználónév"><br>
 				<input <?php if(isset($error)){ if($error=="password"){ ?>style="background:red;"<?php } } ?> type="password" name="password" placeholder="Jelszó"><br>
@@ -644,5 +633,7 @@ while($row = mysqli_fetch_assoc($query)){
 						Hint 2: próbálgass felhasználóneveket<br>
 						Támogatóink: <a target="_blank" href="https://www.youtube.com/channel/UCLlTfVahBA62Nn2zLPDGSMg">DJ KotyogósHerka</a><br>
 						Hosted by: Sztyúp</span>
+	<script type="text/javascript" src="/js/jquery.js"></script>
+	<script type="text/javascript" src="/js/notify.js"></script>
 	<script type="text/javascript" src="/js/main.js"></script>
 </html>
