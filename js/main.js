@@ -37,6 +37,9 @@ $(document).ready(function(){
 	if(currentURL=="/admin/users/username"){
 		$.notify("Felhasználónév foglalt!","error");
 	}
+	if(currentURL=="/admin/users/password"){
+		$.notify("A jelszók nem egyeznek!","error");
+	}
 	console.log(window.location.pathname);
 	$(document).ready(function () {
 	  if (!Notification) {

@@ -200,7 +200,7 @@ while($row = mysqli_fetch_assoc($query)){
 				if(isset($uri[3])){
 					$error = $uri[3];
 				}
-				if($error!="username" && $error!="password"){
+				if($error!="username" && $error!="password" && $error!="success"){
 					$page = $uri[3];
 				}else{
 					$page = 1;

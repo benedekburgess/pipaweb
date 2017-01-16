@@ -30,7 +30,8 @@ if(isset($_POST['username']) && isset($_POST['password']) && isset($_POST['passw
 	$password = mysqli_real_escape_string($mysqli,$password);
 	add_user_to_db($username,$password,$admin,$mysqli);
 	add_to_log($mysqli,"addusr:$username",$user_id);
-	header("Location: ../admin/users");
+	header("Location: ../admin/users/success");
+	exit();
 }else{
 	header("Location: ../admin/users");
 }
