@@ -9,7 +9,7 @@ if(strlen($username)>99){
 if(strlen($password)>99){
 	header("Location: /admin/12");
 }
-if($username=""){
+if($username==""){
 	header("Location: /admin/1");
 }else{
 	$query = mysqli_query($mysqli,"SELECT * FROM easter_eggs WHERE trigger='$username'");
