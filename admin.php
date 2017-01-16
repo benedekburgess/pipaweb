@@ -297,6 +297,7 @@ while($row = mysqli_fetch_assoc($query)){
 				
 			?><script type="text/javascript">
 			$.notify("Felhasználónév foglalt!","error");
+			console.log("asd");
 			</script>
 			<?php
 			}
