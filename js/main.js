@@ -33,7 +33,7 @@ $(document).ready(function(){
 			break;
 		}
 	});
-	console.log("asd");
+	console.log(window.location.pathname);
 	$(document).ready(function () {
 	  if (!Notification) {
 		alert('Desktop notifications not available in your browser. Try Chromium.'); 
