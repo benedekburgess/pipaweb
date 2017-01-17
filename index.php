@@ -220,6 +220,7 @@ while($row = mysqli_fetch_assoc($query)){ // rolls through all pipes in the data
 			Hint: vannak easter egg-ek<br>
 			Támogatóink: <a target="_blank" href="https://www.youtube.com/channel/UCLlTfVahBA62Nn2zLPDGSMg">DJ KotyogósHerka</a><br>
 			Hosted by: Sztyúp
+            A te neved: <?php echo $current_full_name; ?>
 		</span>
 	</body>
 	<script type="text/javascript" src="/js/jquery.js"></script>

@@ -41,6 +41,7 @@ if(isset($_SESSION['uid'])){
 			$current_su = false;
 		}
 		$current_nick = $row['nick'];
+		$current_full_name = $row['full_name'];
 	}
 }else{
 	$logged_in=false;
