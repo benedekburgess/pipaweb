@@ -45,6 +45,7 @@ if(isset($_SESSION['uid'])){
 	}
 }else{
 	$logged_in=false;
+	$current_full_name = 'Dr. Kaki';
 }
 function get_username($id,$mysqli){
 	$query = mysqli_query($mysqli,"SELECT * FROM users WHERE id='$id'");
